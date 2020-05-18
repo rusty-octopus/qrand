@@ -1,0 +1,4 @@
+{
+  "MD007": { "indent": 4 }, # mkdocs needs 4 spaces for sub-lists
+  "MD013": {"line_length": 120},
+}
