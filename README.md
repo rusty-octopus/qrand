@@ -3,19 +3,35 @@
 ## Design
 
 ```plantuml
-package "qrand_core crate" {
+package "qrand_core crate" as qrand_core_crate {
     interface Sequential
     interface Parallel
     component qrand_core
     component sobol
     component rd
 }
+note left of qrand_core_crate: no_std
 
 package "qrand crate" {
     interface Iterator
     interface ParallelIterator
     component qrand
 }
+
+component distribution_converter
+note right of distribution_converter: no_std
+
+package "qrand_int crate" as qrand_int_crate {
+    component qrand_int
+    interface SequentialInteger
+    interface ParallelInteger
+}
+note top of qrand_int_crate: no_std
+
+component quasi_monte_carlo_engine
+
+component quasi_monte_carlo_engine_embedded
+note top of quasi_monte_carlo_engine_embedded: no_std
 
 Sequential -- qrand_core
 Parallel -- qrand_core
@@ -28,6 +44,24 @@ qrand_core -- sobol
 
 Iterator -- qrand
 ParallelIterator -- qrand
+
+qrand_int --> Sequential
+qrand_int --> Parallel
+
+SequentialInteger -- qrand_int
+ParallelInteger -- qrand_int
+
+qrand --> SequentialInteger
+qrand --> ParallelInteger
+
+quasi_monte_carlo_engine --> ParallelIterator
+quasi_monte_carlo_engine --> Iterator
+quasi_monte_carlo_engine --> distribution_converter
+
+quasi_monte_carlo_engine_embedded --> Parallel
+quasi_monte_carlo_engine_embedded --> Sequential
+quasi_monte_carlo_engine_embedded --> distribution_converter
+
 ```
 
 ## Design ideas
@@ -45,6 +79,10 @@ ParallelIterator -- qrand
     * This means qrand_core could be as two crates
 * Use as base for a quasi monte carlo engine (embedded and not)
 * Use as base for dithering and other low discrepancy sequence use cases
+    * Simple Monte Carlo Integration
+    * Dithering
+    * Option pricing
+    * Use cases in simple git hub repos
 * Write an OpenCL lib for both (use Rust as base for compilation and tests, examples)
 
 ## Todo
