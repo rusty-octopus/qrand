@@ -71,6 +71,8 @@ quasi_monte_carlo_engine_embedded --> distribution_converter
 * Initialisation of Sobol sequence and Rd sequence via macros and during compile time
     * Init is necessary since especially alpha's for for Rd need to be approximated
 * qrand enables `std` interface for iterators and parallel iterators
+    * Compile option of qrand_core to dynamically create sequences
+    * e.g. "constructor" in two options: `::new(dim:usize)` & `::new(init_data:&[??])`
 * Sequential interface "uses" the succeeding value to calculate the next
 * Parallel interface does work independently, i.e. one can access each sequence element indepent of each other
 * There are infinite and finite sequences, which can be configured
@@ -89,7 +91,8 @@ quasi_monte_carlo_engine_embedded --> distribution_converter
 
 1. Define first simple interfaces & write unit tests
 2. Start with Sobol or Rd 1-Dimensional
-3. Then initialisation
+3. Find out how to write "pure virtual" interfaces / static factoy pattern in Rust
+4. Then initialisation
     * Sobol: polynomials & direction things
     * Rd: alphas, i.e. golden ratios
 
