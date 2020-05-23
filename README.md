@@ -70,6 +70,9 @@ quasi_monte_carlo_engine_embedded --> distribution_converter
     * Required memory (this means slice for all values in the dimension) needs to be allocated from the caller
 * Initialisation of Sobol sequence and Rd sequence via macros and during compile time
     * Init is necessary since especially alpha's for for Rd need to be approximated
+    * [Rust - constants](https://doc.rust-lang.org/rust-by-example/custom_types/constants.html)
+    * [Rust - Static items](https://doc.rust-lang.org/reference/items/static-items.html)
+    * [Rust - Constant items](https://doc.rust-lang.org/reference/items/constant-items.html)
 * qrand enables `std` interface for iterators and parallel iterators
     * Compile option of qrand_core to dynamically create sequences
     * e.g. "constructor" in two options: `::new(dim:usize)` & `::new(init_data:&[??])`
@@ -86,6 +89,17 @@ quasi_monte_carlo_engine_embedded --> distribution_converter
     * Option pricing
     * Use cases in simple git hub repos
 * Write an OpenCL lib for both (use Rust as base for compilation and tests, examples)
+
+## Open Items
+
+* Find a way for the Sequential Iterator to work
+    * Either add it to qrand crate
+    * Or Use two traits that extend Iterator + Sized
+    * Or expose two Structs that implement the required iterators
+    * For a blanket implementation, a get_dimension API is needed
+* How to calculate sequence with u64
+    * It is not clear at the moment how to get the alpha values from the inverse of the golden ratios
+    * Document this when you've found out
 
 ## Todo
 
