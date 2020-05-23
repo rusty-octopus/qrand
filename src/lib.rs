@@ -5,6 +5,9 @@
 #![crate_type = "lib"]
 #![warn(missing_docs)]
 #![warn(missing_doc_code_examples)]
+#![forbid(unsafe_code)]
+
+use core::iter::Iterator;
 
 /// Public errors of qrand_core
 pub enum QrandCoreError {
@@ -36,67 +39,57 @@ pub struct LowDiscrepancySequencePoint {
 
 /// Interface of a low-discrepance sequence.
 pub trait LowDiscrepancySequence {
-    /// Create new low discrepancy sequence with given dimension.
-    /// Returns the sequence or error if requested dimension is too large.
-    //fn new<T: LowDiscrepancySequence + Sized>(dim: usize) -> Result<T, QrandCoreError>;
-    /// Get the next point based on the given the current point.
-    /// Is used for sequential execution of the sequence.
-    /// Returns `None` when the end of the sequence was reached.
-    fn next_point(current_point: &mut LowDiscrepancySequencePoint) -> Option<()>;
+    /// Convert sequence into an iterator through the sequence
+    //fn into_iter(sequence_length: usize) -> dyn Iterator<Item = dyn Iterator<Item = f64>>;
+    // Fix dynamic type
+    // TODO: Blanket implementation possible?
+
     /// Get the j-th element of the point of n-th element of the sequence.
-    /// Is used for parallel execution instead of sequential execution.#
-    /// Returns `Ok` result with an `Option<f64>` which is none, when `n` is
-    /// larger than the length of the sequence.
+    /// Is used for parallel execution instead of sequential execution.
     /// Returns `QrandCoreError` when `point_element_j` is larger than the dimension
     /// of the sequence.
     fn get_j_th_of_n_th(
+        &self,
         point_element_j: usize,
         seq_element_n: usize,
-    ) -> Result<Option<f64>, QrandCoreError>;
-}
-
-/// Enum to describe the sequence length.
-/// Finite or infinite.
-pub enum SequenceLength {
-    /// Sequence is of finite length.
-    Finite(usize),
-    /// Sequence has infinite length.
-    Infinite,
+    ) -> Result<f64, QrandCoreError>;
 }
 
 struct Rd {
     dimension: usize,
-    length: SequenceLength,
-    alpha: [f64; 1],
+    alpha: [f64; 2],
 }
 
 impl Rd {
-    fn new(_dim: usize, sequence_length: SequenceLength) -> Self {
+    fn new(_dim: usize) -> Self {
         Rd {
-            dimension: 1,
-            length: sequence_length,
-            alpha: [1.0 / 1.6180339887498948482],
+            dimension: 2,
+            alpha: [0.7548776662466927, 0.5698402909980532],
         }
     }
 }
 
 impl LowDiscrepancySequence for Rd {
-    fn next_point(_current_point: &mut LowDiscrepancySequencePoint) -> Option<()> {
-        None
-    }
-
     fn get_j_th_of_n_th(
+        &self,
         _point_element_j: usize,
         _seq_element_n: usize,
-    ) -> Result<Option<f64>, QrandCoreError> {
-        Ok(None)
+    ) -> Result<f64, QrandCoreError> {
+        Ok(0.0)
     }
 }
 
 #[cfg(test)]
 mod tests {
+
+    use super::*;
+
     #[test]
-    fn it_works() {
-        assert_eq!(2 + 2, 4);
+    fn rd_2_values_for_2d() {
+        let rd = Rd::new(2);
+        assert_eq!(0.0, rd.get_j_th_of_n_th(0, 0).unwrap_or(1.1));
+        assert_eq!(0.0, rd.get_j_th_of_n_th(1, 0).unwrap_or(1.1));
+        assert_eq!(0.7548776662466927, rd.get_j_th_of_n_th(0, 0).unwrap_or(1.1));
+        assert_eq!(0.5698402909980532, rd.get_j_th_of_n_th(1, 0).unwrap_or(1.1));
     }
 }

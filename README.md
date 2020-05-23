@@ -90,11 +90,13 @@ quasi_monte_carlo_engine_embedded --> distribution_converter
 ## Todo
 
 1. Define first simple interfaces & write unit tests
-2. Start with Sobol or Rd 1-Dimensional
+2. Start with Sobol or Rd 2-Dimensional (enables visualization in plots)
 3. Find out how to write "pure virtual" interfaces / static factoy pattern in Rust
 4. Then initialisation
     * Sobol: polynomials & direction things
     * Rd: alphas, i.e. golden ratios
+    * Create as constants into the source code => program code vs. Stack!
+    * Consider max dimension although for Rd, e.g. output s.th. during compile time
 
 ## Links
 
@@ -109,3 +111,8 @@ quasi_monte_carlo_engine_embedded --> distribution_converter
 
 * [Roberts - The Unreasonable Effectiveness of Quasirandom Sequences](http://extremelearning.com.au/unreasonable-effectiveness-of-quasirandom-sequences/)
 * [Heitz - A Low-Discrepancy Sampler that Distributes Monte Carlo Errors as a Blue Noise in Screen Space](https://eheitzresearch.wordpress.com/762-2/)
+* [Monte Carlo and Quasi-Monte Carlo Wiki](http://roth.cs.kuleuven.be/wiki/Main_Page)
+* [Wikipedia - Low Discrepancy Sequences](https://en.wikipedia.org/wiki/Low-discrepancy_sequence)
+* [Wikipedia - Sobol sequence](https://en.wikipedia.org/wiki/Sobol_sequence)
+* [A practical guide to quasi monte carlo methods](https://people.cs.kuleuven.be/~dirk.nuyens/taiwan/)
+* [Wikipedia - Plastic number](https://en.wikipedia.org/wiki/Plastic_number)
