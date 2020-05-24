@@ -73,6 +73,7 @@ quasi_monte_carlo_engine_embedded --> distribution_converter
     * [Rust - constants](https://doc.rust-lang.org/rust-by-example/custom_types/constants.html)
     * [Rust - Static items](https://doc.rust-lang.org/reference/items/static-items.html)
     * [Rust - Constant items](https://doc.rust-lang.org/reference/items/constant-items.html)
+    * [global data in Rust](https://github.com/paulkernfeld/global-data-in-rust)
 * qrand enables `std` interface for iterators and parallel iterators
     * Compile option of qrand_core to dynamically create sequences
     * e.g. "constructor" in two options: `::new(dim:usize)` & `::new(init_data:&[??])`
@@ -100,12 +101,17 @@ quasi_monte_carlo_engine_embedded --> distribution_converter
 * How to calculate sequence with u64
     * It is not clear at the moment how to get the alpha values from the inverse of the golden ratios
     * Document this when you've found out
+    * One problem is that we need the most siginificant digits "after" the radix, i.e. conversion to i128 may be necessary
+* Can Sobol Seqeunce be completely calculated with u64?
+    * Yes they can, according to [sobol.cc](https://web.maths.unsw.edu.au/~fkuo/sobol/sobol.cc)
 
 ## Todo
 
 1. Define first simple interfaces & write unit tests
+    * Rename get_j_th_of_n_th to get_elem_of_dim
 2. Start with Sobol or Rd 2-Dimensional (enables visualization in plots)
 3. Find out how to write "pure virtual" interfaces / static factoy pattern in Rust
+4. Extract and heavily test own `fract` function
 4. Then initialisation
     * Sobol: polynomials & direction things
     * Rd: alphas, i.e. golden ratios

@@ -78,7 +78,8 @@ impl LowDiscrepancySequence for Rd {
             if value < 1.0 {
                 Ok(value)
             } else {
-                Ok(value - 1.0)
+                let integer_part = (value as u64) as f64;
+                Ok(value - integer_part)
             }
         } else {
             Err(QrandCoreError::create_point_element_not_existing())
