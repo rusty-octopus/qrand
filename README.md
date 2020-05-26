@@ -83,6 +83,11 @@ quasi_monte_carlo_engine_embedded --> distribution_converter
     * Infinite sequence may panic with `collect`
 * Sobol and Rd may be built options
     * This means qrand_core could be as two crates
+* Sobol initialisation
+    * Create a small tool that parses the Joe-Kuo direction numbers and creates a blob with already created polynomials
+        * or at least packs the data in binary
+    * This file can then easier be used during constant evaluation
+        * should be packed into a `'static`, immutable array with exact the size as chosen during compilation
 * Use as base for a quasi monte carlo engine (embedded and not)
 * Use as base for dithering and other low discrepancy sequence use cases
     * Simple Monte Carlo Integration
@@ -98,25 +103,65 @@ quasi_monte_carlo_engine_embedded --> distribution_converter
     * Or Use two traits that extend Iterator + Sized
     * Or expose two Structs that implement the required iterators
     * For a blanket implementation, a get_dimension API is needed
+    * `fn into_iter(len:usize) -> LowDiscrepancyIterator<DimensionIterator<f64>>`
+    * Check how `into_iter` resp. `iter` is implemented
+* SIMD optimization for Sobol:
+    * Execute the XORs with x_n on 4 Direction Numbers in parallel
+    * Or create several dimensions in one step parallel
+* What is faster for Rd?
+    * Use f64 for the calculation?
+    * Or use u128 and the convert to f64?
+    * Is usage of u128 necessary?
 * How to calculate sequence with u64
     * It is not clear at the moment how to get the alpha values from the inverse of the golden ratios
     * Document this when you've found out
     * One problem is that we need the most siginificant digits "after" the radix, i.e. conversion to i128 may be necessary
 * Can Sobol Seqeunce be completely calculated with u64?
     * Yes they can, according to [sobol.cc](https://web.maths.unsw.edu.au/~fkuo/sobol/sobol.cc)
+    * You just need 64 direction nummber per dimension
+* Can I create functions that are only used during constant evaluation and not added to the final binary
+    * Can I unit test these functions?
+* Is it necessary that the output is the one side open interval [0,1)? Or is it possible to have [0,1]?
 
 ## Todo
 
 1. Define first simple interfaces & write unit tests
     * Rename get_j_th_of_n_th to get_elem_of_dim
-2. Start with Sobol or Rd 2-Dimensional (enables visualization in plots)
+2. Start with Sobol 2-Dimensional (enables visualization in plots)
 3. Find out how to write "pure virtual" interfaces / static factoy pattern in Rust
 4. Extract and heavily test own `fract` function
-4. Then initialisation
+5. Then initialisation
     * Sobol: polynomials & direction things
     * Rd: alphas, i.e. golden ratios
     * Create as constants into the source code => program code vs. Stack!
     * Consider max dimension although for Rd, e.g. output s.th. during compile time
+
+### Library & executable to create direction numbers
+
+* Library that extracts the values and creates the required direction numbers
+* Exports these as u32 (u64?) array
+* Write the array as byte array to a file
+    * Consider Endianness
+* can be used with `include_bytes!` macro
+
+### Benchmarks
+
+* Rd
+    * f64 vs. u128 speed & performance
+    * also test that the result is closely the "same"
+* Sobol calculation vs. Rd calculation
+    * I.e. f64 multiplication vs. 32 XORss
+
+### Sobol details
+
+* Direction numbers are required to calculate the points in the sequence
+* Number of dimensions equals number of direction numbers
+* Direction numbers are derived from primitive polynomials & initialisation values
+* Program Memory usage: 32 direction numbers per dimension!
+
+### Postpone
+
+* Rd sequence especially in u64 including generating alphas in integer arithmetic
 
 ## Links
 
@@ -126,6 +171,7 @@ quasi_monte_carlo_engine_embedded --> distribution_converter
 * [quasi-rd](https://crates.io/crates/quasi-rd)
 * [sobol](https://crates.io/crates/sobol)
 * [blue-noise-sampler](https://crates.io/crates/blue-noise-sampler)
+* [rand - issue](https://github.com/rust-random/rand/issues/182)
 
 ### References
 
@@ -136,3 +182,6 @@ quasi_monte_carlo_engine_embedded --> distribution_converter
 * [Wikipedia - Sobol sequence](https://en.wikipedia.org/wiki/Sobol_sequence)
 * [A practical guide to quasi monte carlo methods](https://people.cs.kuleuven.be/~dirk.nuyens/taiwan/)
 * [Wikipedia - Plastic number](https://en.wikipedia.org/wiki/Plastic_number)
+* [Savine - Sobol sequence explained](https://medium.com/@antoine_savine/sobol-sequence-explained-188f422b246b)
+* [Joe & Kuo - Sobol sequence generator](https://web.maths.unsw.edu.au/~fkuo/sobol/)
+* [Sobol seqeunce explained](http://deltaquants.com/sobol-sequence-simplified)

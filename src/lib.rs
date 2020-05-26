@@ -2,10 +2,16 @@
 //! Is #[no_std]
 
 #![no_std]
-#![crate_type = "lib"]
+#![no_builtins]
+#![no_implicit_prelude]
+#![crate_type = "staticlib"]
 #![warn(missing_docs)]
 #![warn(missing_doc_code_examples)]
 #![forbid(unsafe_code)]
+
+extern crate core;
+use core::result::Result;
+use core::result::Result::{Err, Ok};
 
 /// Public errors of qrand_core
 pub enum QrandCoreError {
@@ -91,6 +97,9 @@ impl LowDiscrepancySequence for Rd {
 mod tests {
 
     use super::*;
+    extern crate core;
+    use core::assert_eq;
+    use core::panic;
 
     #[test]
     fn rd_2_values_for_2d() {
