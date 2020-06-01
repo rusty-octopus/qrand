@@ -1,5 +1,12 @@
 # Readme
 
+## Learning goals
+
+* no_std
+* Compile time / constant evaluation
+* Debugging
+* Compile options (sobol, rd, etc.)
+
 ## Design
 
 ```plantuml
@@ -128,6 +135,7 @@ quasi_monte_carlo_engine_embedded --> distribution_converter
 1. Define first simple interfaces & write unit tests
     * Rename get_j_th_of_n_th to get_elem_of_dim
 2. Start with Sobol 2-Dimensional (enables visualization in plots)
+    * Extract directional numbers from sobol.cc and use the first 2 dimensions for the implementation
 3. Find out how to write "pure virtual" interfaces / static factoy pattern in Rust
 4. Extract and heavily test own `fract` function
 5. Then initialisation
@@ -135,6 +143,7 @@ quasi_monte_carlo_engine_embedded --> distribution_converter
     * Rd: alphas, i.e. golden ratios
     * Create as constants into the source code => program code vs. Stack!
     * Consider max dimension although for Rd, e.g. output s.th. during compile time
+6. Focus on a spike
 
 ### Library & executable to create direction numbers
 
@@ -185,3 +194,6 @@ quasi_monte_carlo_engine_embedded --> distribution_converter
 * [Savine - Sobol sequence explained](https://medium.com/@antoine_savine/sobol-sequence-explained-188f422b246b)
 * [Joe & Kuo - Sobol sequence generator](https://web.maths.unsw.edu.au/~fkuo/sobol/)
 * [Sobol seqeunce explained](http://deltaquants.com/sobol-sequence-simplified)
+* [sobol-test](https://people.sc.fsu.edu/~jburkardt/cpp_src/sobol_test/sobol_test.html)
+* [sobol](https://people.sc.fsu.edu/~jburkardt/cpp_src/sobol/sobol.html)
+* [sobolseq](https://github.com/stevengj/nlopt/blob/master/src/util/sobolseq.c)

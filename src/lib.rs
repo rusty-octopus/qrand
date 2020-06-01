@@ -10,6 +10,7 @@
 #![forbid(unsafe_code)]
 
 extern crate core;
+use core::marker::Sized;
 use core::result::Result;
 use core::result::Result::{Err, Ok};
 
@@ -42,7 +43,7 @@ pub struct LowDiscrepancySequencePoint {
 }
 
 /// Interface of a low-discrepance sequence.
-pub trait LowDiscrepancySequence {
+pub trait LowDiscrepancySequence: Sized {
     /// Convert sequence into an iterator through the sequence
     //fn into_iter(sequence_length: usize) -> dyn Iterator<Item = dyn Iterator<Item = f64>>;
     // Fix dynamic type
@@ -93,6 +94,57 @@ impl LowDiscrepancySequence for Rd {
     }
 }
 
+static DIRECTION_NUMBER: [u32; 64] = [
+    0x80000000, 0x40000000, 0x20000000, 0x10000000, 0x08000000, 0x04000000, 0x02000000, 0x01000000,
+    0x00800000, 0x00400000, 0x00200000, 0x00100000, 0x00080000, 0x00040000, 0x00020000, 0x00010000,
+    0x00008000, 0x00004000, 0x00002000, 0x00001000, 0x00000800, 0x00000400, 0x00000200, 0x00000100,
+    0x00000080, 0x00000040, 0x00000020, 0x00000010, 0x00000008, 0x00000004, 0x00000002, 0x00000001,
+    0x80000000, 0xc0000000, 0xa0000000, 0xf0000000, 0x88000000, 0xcc000000, 0xaa000000, 0xff000000,
+    0x80800000, 0xc0c00000, 0xa0a00000, 0xf0f00000, 0x88880000, 0xcccc0000, 0xaaaa0000, 0xffff0000,
+    0x80008000, 0xc000c000, 0xa000a000, 0xf000f000, 0x88008800, 0xcc00cc00, 0xaa00aa00, 0xff00ff00,
+    0x80808080, 0xc0c0c0c0, 0xa0a0a0a0, 0xf0f0f0f0, 0x88888888, 0xcccccccc, 0xaaaaaaaa, 0xffffffff,
+];
+
+struct Sobol {
+    dimension: usize,
+    direction_numbers: &'static [u32],
+}
+
+impl Sobol {
+    fn new() -> Sobol {
+        Sobol {
+            dimension: 2,
+            direction_numbers: &DIRECTION_NUMBER,
+        }
+    }
+}
+
+impl LowDiscrepancySequence for Sobol {
+    fn get_j_th_of_n_th(
+        &self,
+        point_element_j: usize,
+        seq_element_n: usize,
+    ) -> Result<f64, QrandCoreError> {
+        if point_element_j < self.dimension {
+            let mut n = seq_element_n;
+            let mut value: u32 = 0;
+            let mut index = 0;
+            while n > 0 {
+                if n & 1 == 1 {
+                    let direction_number = self.direction_numbers[32 * point_element_j + index];
+                    value ^= direction_number;
+                }
+                index += 1;
+                n >>= 1;
+            }
+            let two_pow_32: u64 = 0x100000000;
+            Ok(value as f64 / two_pow_32 as f64)
+        } else {
+            Err(QrandCoreError::create_point_element_not_existing())
+        }
+    }
+}
+
 #[cfg(test)]
 mod tests {
 
@@ -102,7 +154,7 @@ mod tests {
     use core::panic;
 
     #[test]
-    fn rd_2_values_for_2d() {
+    fn r2_values() {
         let rd = Rd::new(2);
         assert_eq!(0.0, rd.get_j_th_of_n_th(0, 0).unwrap_or(1.1));
         assert_eq!(0.0, rd.get_j_th_of_n_th(1, 0).unwrap_or(1.1));
@@ -113,5 +165,23 @@ mod tests {
             0.13968058199610645,
             rd.get_j_th_of_n_th(1, 2).unwrap_or(1.1)
         );
+    }
+
+    #[test]
+    fn sobol_values_for_dim_1() {
+        let sobol = Sobol::new();
+        assert_eq!(0.0, sobol.get_j_th_of_n_th(0, 0).unwrap_or(1.1));
+        assert_eq!(0.5, sobol.get_j_th_of_n_th(0, 1).unwrap_or(1.1));
+        assert_eq!(0.75, sobol.get_j_th_of_n_th(0, 2).unwrap_or(1.1));
+        assert_eq!(0.25, sobol.get_j_th_of_n_th(0, 3).unwrap_or(1.1));
+    }
+
+    #[test]
+    fn sobol_values_for_dim_2() {
+        let sobol = Sobol::new();
+        assert_eq!(0.0, sobol.get_j_th_of_n_th(1, 0).unwrap_or(1.1));
+        assert_eq!(0.5, sobol.get_j_th_of_n_th(1, 1).unwrap_or(1.1));
+        assert_eq!(0.25, sobol.get_j_th_of_n_th(1, 2).unwrap_or(1.1));
+        assert_eq!(0.75, sobol.get_j_th_of_n_th(1, 3).unwrap_or(1.1));
     }
 }
