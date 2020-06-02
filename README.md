@@ -115,6 +115,7 @@ quasi_monte_carlo_engine_embedded --> distribution_converter
 * SIMD optimization for Sobol:
     * Execute the XORs with x_n on 4 Direction Numbers in parallel
     * Or create several dimensions in one step parallel
+    * Could be a compile time option
 * What is faster for Rd?
     * Use f64 for the calculation?
     * Or use u128 and the convert to f64?
@@ -129,21 +130,20 @@ quasi_monte_carlo_engine_embedded --> distribution_converter
 * Can I create functions that are only used during constant evaluation and not added to the final binary
     * Can I unit test these functions?
 * Is it necessary that the output is the one side open interval [0,1)? Or is it possible to have [0,1]?
+* Parallelisation: Skip & Leap like in Matlab?
 
 ## Todo
 
 1. Define first simple interfaces & write unit tests
     * Rename get_j_th_of_n_th to get_elem_of_dim
-2. Start with Sobol 2-Dimensional (enables visualization in plots)
-    * Extract directional numbers from sobol.cc and use the first 2 dimensions for the implementation
-3. Find out how to write "pure virtual" interfaces / static factoy pattern in Rust
-4. Extract and heavily test own `fract` function
-5. Then initialisation
+2. Find out how to write "pure virtual" interfaces / static factoy pattern in Rust
+3. Extract and heavily test own `fract` function
+4. Then initialisation
     * Sobol: polynomials & direction things
     * Rd: alphas, i.e. golden ratios
     * Create as constants into the source code => program code vs. Stack!
     * Consider max dimension although for Rd, e.g. output s.th. during compile time
-6. Focus on a spike
+5. Focus on a spike
 
 ### Library & executable to create direction numbers
 
@@ -193,7 +193,12 @@ quasi_monte_carlo_engine_embedded --> distribution_converter
 * [Wikipedia - Plastic number](https://en.wikipedia.org/wiki/Plastic_number)
 * [Savine - Sobol sequence explained](https://medium.com/@antoine_savine/sobol-sequence-explained-188f422b246b)
 * [Joe & Kuo - Sobol sequence generator](https://web.maths.unsw.edu.au/~fkuo/sobol/)
+* [Joe & Kuo - Notes](https://web.maths.unsw.edu.au/~fkuo/sobol/joe-kuo-notes.pdf)
+    > With the implementation of Gray Code, we simply obtain the points in a different order, which still preserve their uniformity properties. It is because every block of 2m points for m=0,1,⋯ is the same as the original implementation.
 * [Sobol seqeunce explained](http://deltaquants.com/sobol-sequence-simplified)
 * [sobol-test](https://people.sc.fsu.edu/~jburkardt/cpp_src/sobol_test/sobol_test.html)
 * [sobol](https://people.sc.fsu.edu/~jburkardt/cpp_src/sobol/sobol.html)
 * [sobolseq](https://github.com/stevengj/nlopt/blob/master/src/util/sobolseq.c)
+* [Sobol sequence without direction numbers?](https://xilinx.github.io/Vitis_Libraries/quantitative_finance/guide_L1/SobolRsg/sobolrsg.html)
+* [Matlab - Sobol](https://de.mathworks.com/help/stats/sobolset.html)
+* [Matlab - Quasirandom](https://de.mathworks.com/help/stats/generating-quasi-random-numbers.html)

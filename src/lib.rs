@@ -145,6 +145,10 @@ impl LowDiscrepancySequence for Sobol {
     }
 }
 
+fn gray_code(n: usize) -> usize {
+    n ^ (n >> 1)
+}
+
 #[cfg(test)]
 mod tests {
 
@@ -152,6 +156,29 @@ mod tests {
     extern crate core;
     use core::assert_eq;
     use core::panic;
+
+    #[test]
+    fn test_gray_code() {
+        assert_eq!(0, gray_code(0));
+        assert_eq!(1, gray_code(1));
+
+        assert_eq!(2, gray_code(3));
+        assert_eq!(3, gray_code(2));
+
+        assert_eq!(6, gray_code(4));
+        assert_eq!(7, gray_code(5));
+        assert_eq!(5, gray_code(6));
+        assert_eq!(4, gray_code(7));
+
+        assert_eq!(12, gray_code(8));
+        assert_eq!(13, gray_code(9));
+        assert_eq!(15, gray_code(10));
+        assert_eq!(14, gray_code(11));
+        assert_eq!(10, gray_code(12));
+        assert_eq!(11, gray_code(13));
+        assert_eq!(9, gray_code(14));
+        assert_eq!(8, gray_code(15));
+    }
 
     #[test]
     fn r2_values() {
@@ -167,21 +194,31 @@ mod tests {
         );
     }
 
-    #[test]
-    fn sobol_values_for_dim_1() {
-        let sobol = Sobol::new();
-        assert_eq!(0.0, sobol.get_j_th_of_n_th(0, 0).unwrap_or(1.1));
-        assert_eq!(0.5, sobol.get_j_th_of_n_th(0, 1).unwrap_or(1.1));
-        assert_eq!(0.75, sobol.get_j_th_of_n_th(0, 2).unwrap_or(1.1));
-        assert_eq!(0.25, sobol.get_j_th_of_n_th(0, 3).unwrap_or(1.1));
-    }
+    const SOBOL_2D: [(f64, f64); 10] = [
+        (0.0, 0.0),
+        (0.5, 0.5),
+        (0.75, 0.25),
+        (0.25, 0.75),
+        (0.375, 0.375),
+        (0.875, 0.875),
+        (0.625, 0.125),
+        (0.125, 0.625),
+        (0.1875, 0.3125),
+        (0.6875, 0.8125),
+    ];
 
     #[test]
-    fn sobol_values_for_dim_2() {
+    fn sobol_values_for_2d() {
         let sobol = Sobol::new();
-        assert_eq!(0.0, sobol.get_j_th_of_n_th(1, 0).unwrap_or(1.1));
-        assert_eq!(0.5, sobol.get_j_th_of_n_th(1, 1).unwrap_or(1.1));
-        assert_eq!(0.25, sobol.get_j_th_of_n_th(1, 2).unwrap_or(1.1));
-        assert_eq!(0.75, sobol.get_j_th_of_n_th(1, 3).unwrap_or(1.1));
+        for n in 0..10 {
+            assert_eq!(
+                SOBOL_2D[n].0,
+                sobol.get_j_th_of_n_th(0, gray_code(n)).unwrap_or(1.1)
+            );
+            assert_eq!(
+                SOBOL_2D[n].1,
+                sobol.get_j_th_of_n_th(1, gray_code(n)).unwrap_or(1.1)
+            );
+        }
     }
 }
