@@ -89,7 +89,7 @@ quasi_monte_carlo_engine_embedded --> distribution_converter
 * There are infinite and finite sequences, which can be configured
     * Infinite sequence may panic with `collect`
 * Sobol and Rd may be built options
-    * This means qrand_core could be as two crates
+    * This means qrand_core could be used as two crates
 * Sobol initialisation
     * Create a small tool that parses the Joe-Kuo direction numbers and creates a blob with already created polynomials
         * or at least packs the data in binary
@@ -101,6 +101,7 @@ quasi_monte_carlo_engine_embedded --> distribution_converter
     * Dithering
     * Option pricing
     * Use cases in simple git hub repos
+* Use cargo fuzzing
 * Write an OpenCL lib for both (use Rust as base for compilation and tests, examples)
 
 ## Open Items
