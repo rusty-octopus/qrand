@@ -6,6 +6,7 @@
 * Compile time / constant evaluation
 * Debugging
 * Compile options (sobol, rd, etc.)
+* Parallelisation / (concurrency)
 
 ## Design
 
@@ -135,16 +136,14 @@ quasi_monte_carlo_engine_embedded --> distribution_converter
 
 ## Todo
 
-1. Define first simple interfaces & write unit tests
-    * Rename get_j_th_of_n_th to get_elem_of_dim
-2. Find out how to write "pure virtual" interfaces / static factoy pattern in Rust
-3. Extract and heavily test own `fract` function
-4. Then initialisation
+1. Find out how to write "pure virtual" interfaces / static factoy pattern in Rust
+2. Extract and heavily test own `fract` function
+3. Then initialisation
     * Sobol: polynomials & direction things
     * Rd: alphas, i.e. golden ratios
     * Create as constants into the source code => program code vs. Stack!
     * Consider max dimension although for Rd, e.g. output s.th. during compile time
-5. Focus on a spike
+4. Focus on a spike
 
 ### Library & executable to create direction numbers
 
@@ -174,6 +173,8 @@ quasi_monte_carlo_engine_embedded --> distribution_converter
 * Rd sequence especially in u64 including generating alphas in integer arithmetic
 
 ## Links
+
+* [API guidelines checklist](https://rust-lang.github.io/api-guidelines/checklist.html)
 
 ### Alternative crates
 

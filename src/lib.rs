@@ -49,15 +49,11 @@ pub trait LowDiscrepancySequence: Sized {
     // Fix dynamic type
     // TODO: Blanket implementation possible?
 
-    /// Get the j-th element of the point of n-th element of the sequence.
+    /// Get the n-th sequence element of the specified dimensions.
     /// Is used for parallel execution instead of sequential execution.
-    /// Returns `QrandCoreError` when `point_element_j` is larger than the dimension
+    /// Returns `QrandCoreError` when `dim` is larger than the dimension
     /// of the sequence.
-    fn get_j_th_of_n_th(
-        &self,
-        point_element_j: usize,
-        seq_element_n: usize,
-    ) -> Result<f64, QrandCoreError>;
+    fn element(&self, n: usize, dim: usize) -> Result<f64, QrandCoreError>;
 }
 
 struct Rd {
@@ -75,13 +71,9 @@ impl Rd {
 }
 
 impl LowDiscrepancySequence for Rd {
-    fn get_j_th_of_n_th(
-        &self,
-        point_element_j: usize,
-        seq_element_n: usize,
-    ) -> Result<f64, QrandCoreError> {
-        if point_element_j < self.dimension {
-            let value = seq_element_n as f64 * self.alpha[point_element_j];
+    fn element(&self, n: usize, dim: usize) -> Result<f64, QrandCoreError> {
+        if dim < self.dimension {
+            let value = n as f64 * self.alpha[dim];
             if value < 1.0 {
                 Ok(value)
             } else {
@@ -120,18 +112,14 @@ impl Sobol {
 }
 
 impl LowDiscrepancySequence for Sobol {
-    fn get_j_th_of_n_th(
-        &self,
-        point_element_j: usize,
-        seq_element_n: usize,
-    ) -> Result<f64, QrandCoreError> {
-        if point_element_j < self.dimension {
-            let mut n = seq_element_n;
+    fn element(&self, n: usize, dim: usize) -> Result<f64, QrandCoreError> {
+        if dim < self.dimension {
+            let mut n = n;
             let mut value: u32 = 0;
             let mut index = 0;
             while n > 0 {
                 if n & 1 == 1 {
-                    let direction_number = self.direction_numbers[32 * point_element_j + index];
+                    let direction_number = self.direction_numbers[32 * dim + index];
                     value ^= direction_number;
                 }
                 index += 1;
@@ -183,15 +171,12 @@ mod tests {
     #[test]
     fn r2_values() {
         let rd = Rd::new(2);
-        assert_eq!(0.0, rd.get_j_th_of_n_th(0, 0).unwrap_or(1.1));
-        assert_eq!(0.0, rd.get_j_th_of_n_th(1, 0).unwrap_or(1.1));
-        assert_eq!(0.7548776662466927, rd.get_j_th_of_n_th(0, 1).unwrap_or(1.1));
-        assert_eq!(0.5698402909980532, rd.get_j_th_of_n_th(1, 1).unwrap_or(1.1));
-        assert_eq!(0.5097553324933854, rd.get_j_th_of_n_th(0, 2).unwrap_or(1.1));
-        assert_eq!(
-            0.13968058199610645,
-            rd.get_j_th_of_n_th(1, 2).unwrap_or(1.1)
-        );
+        assert_eq!(0.0, rd.element(0, 0).unwrap_or(1.1));
+        assert_eq!(0.0, rd.element(0, 1).unwrap_or(1.1));
+        assert_eq!(0.7548776662466927, rd.element(1, 0).unwrap_or(1.1));
+        assert_eq!(0.5698402909980532, rd.element(1, 1).unwrap_or(1.1));
+        assert_eq!(0.5097553324933854, rd.element(2, 0).unwrap_or(1.1));
+        assert_eq!(0.13968058199610645, rd.element(2, 1).unwrap_or(1.1));
     }
 
     const SOBOL_2D: [(f64, f64); 10] = [
@@ -211,14 +196,8 @@ mod tests {
     fn sobol_values_for_2d() {
         let sobol = Sobol::new();
         for n in 0..10 {
-            assert_eq!(
-                SOBOL_2D[n].0,
-                sobol.get_j_th_of_n_th(0, gray_code(n)).unwrap_or(1.1)
-            );
-            assert_eq!(
-                SOBOL_2D[n].1,
-                sobol.get_j_th_of_n_th(1, gray_code(n)).unwrap_or(1.1)
-            );
+            assert_eq!(SOBOL_2D[n].0, sobol.element(gray_code(n), 0).unwrap_or(1.1));
+            assert_eq!(SOBOL_2D[n].1, sobol.element(gray_code(n), 1).unwrap_or(1.1));
         }
     }
 }
