@@ -141,15 +141,13 @@ quasi_monte_carlo_engine_embedded --> distribution_converter
 
 ## Todo
 
-1. Find out how to write "pure virtual" interfaces / static factoy pattern in Rust
-2. Restructure: Low Discrepancy Sequence Sobol and Rd in their own modules, only use `pub(crate)` for their interfaces
-3. Extract and heavily test own `fract` function
-4. Then initialisation
+1. Extract and heavily test own `fract` function
+2. Then initialisation
     * Sobol: polynomials & direction things
     * Rd: alphas, i.e. golden ratios
     * Create as constants into the source code => program code vs. Stack!
     * Consider max dimension although for Rd, e.g. output s.th. during compile time
-5. Focus on a spike
+3. Focus on a spike
 
 ### Library & executable to create direction numbers
 
