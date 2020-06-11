@@ -4,6 +4,7 @@
 
 * no_std
 * Compile time / constant evaluation
+    * [Features](https://doc.rust-lang.org/cargo/reference/features.html)
 * Debugging
 * Compile options (sobol, rd, etc.)
 * Parallelisation / (concurrency)
@@ -104,6 +105,10 @@ quasi_monte_carlo_engine_embedded --> distribution_converter
     * Use cases in simple git hub repos
 * Use cargo fuzzing
 * Write an OpenCL lib for both (use Rust as base for compilation and tests, examples)
+* How does one calculate a square root with an abacus?
+    * This should resemble the way how I can calculate the alphas with integers
+    * This is about fixed precision calculus or something similar
+    * The same holds true for the inverse we need
 
 ## Open Items
 
@@ -137,13 +142,14 @@ quasi_monte_carlo_engine_embedded --> distribution_converter
 ## Todo
 
 1. Find out how to write "pure virtual" interfaces / static factoy pattern in Rust
-2. Extract and heavily test own `fract` function
-3. Then initialisation
+2. Restructure: Low Discrepancy Sequence Sobol and Rd in their own modules, only use `pub(crate)` for their interfaces
+3. Extract and heavily test own `fract` function
+4. Then initialisation
     * Sobol: polynomials & direction things
     * Rd: alphas, i.e. golden ratios
     * Create as constants into the source code => program code vs. Stack!
     * Consider max dimension although for Rd, e.g. output s.th. during compile time
-4. Focus on a spike
+5. Focus on a spike
 
 ### Library & executable to create direction numbers
 
