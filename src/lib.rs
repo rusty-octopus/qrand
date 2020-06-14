@@ -9,7 +9,8 @@
 #![warn(missing_doc_code_examples)]
 #![forbid(unsafe_code)]
 
-pub mod error;
+mod error;
+pub use error::QrandCoreError;
 mod low_discrepancy_sequence;
 pub use low_discrepancy_sequence::LowDiscrepancySequence;
 

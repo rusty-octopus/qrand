@@ -141,13 +141,36 @@ quasi_monte_carlo_engine_embedded --> distribution_converter
 
 ## Todo
 
-1. Extract and heavily test own `fract` function
-2. Then initialisation
+1. Solve interface resp. allocation & compilation
+2. Extract and heavily test own `fract` function
+3. Then initialisation
     * Sobol: polynomials & direction things
     * Rd: alphas, i.e. golden ratios
     * Create as constants into the source code => program code vs. Stack!
     * Consider max dimension although for Rd, e.g. output s.th. during compile time
-3. Focus on a spike
+4. Focus on a spike
+
+### Solution ideas for allocation & compilation
+
+* Make constant functions public and enable creation of alphas resp. direction numbers in a "two step" fashion
+    * Add a static array for alphas or direction numbers
+    * Create sequences with a ref to these arrays
+    * Con: No clear seperation of impl. to interface
+* Create macro that creates the array (as constant? / static?) and the sequence into the source code in one step
+    * Pro: A little bit more separation
+    * Con: No clear seperation of impl. to interface, apis of the struct are then available, although as insider "look"
+* Two steps but with even more interface separation
+    * Create one macro to create the static array to be placed "outside" of methods
+        * `compile_seq_data_?_into_binary`
+    * Create another macro to create a new sequence by using the name of the array as parameter
+    * Change `new_sequence` interface to
+        * `pub fn new_sequence(alphas: &[f64]) -> impl LowDiscrepancySequence` for Rd and
+        * `pub fn new_sequence(direction_numbers: &[u32]) -> impl LowDiscrepancySequence` for Sobol
+    * Con: Implementation detail (alphas / direction number still leaked)
+    * Pro: Simplifies interface to be used in non `no_std` use cases for qrand
+        * E.g. make the constant functions public in these cases
+    * Extend feautures heavily
+        * Macros for init, constant functions etc.
 
 ### Library & executable to create direction numbers
 

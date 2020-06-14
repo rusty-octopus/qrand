@@ -1,13 +1,25 @@
 #[cfg(test)]
 #[cfg_attr(tarpaulin, skip)]
 mod integration_tests {
+    #[cfg(any(feature = "rd"))]
+    use qrand_core::new;
+    //    #[cfg(any(feature = "rd", feature = "sobol"))]
+    //    use qrand_core::new_seq;
+    #[cfg(any(feature = "rd", feature = "sobol"))]
     use qrand_core::new_sequence;
+
     use qrand_core::LowDiscrepancySequence;
+
+    //    #[cfg(feature = "rd")]
+    //    use qrand_core::add_static_seq_data;
+
+    // #[cfg(feature = "rd")]
+    // add_static_seq_data!(2);
 
     #[cfg(feature = "rd")]
     #[test]
     fn test_rd_sequence() {
-        let rd = new_sequence(2);
+        let rd = new!(2);
         assert_eq!(0.0, rd.element(0, 0).unwrap_or(1.1));
         assert_eq!(0.0, rd.element(0, 1).unwrap_or(1.1));
         assert_eq!(0.7548776662466927, rd.element(1, 0).unwrap_or(1.1));

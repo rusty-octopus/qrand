@@ -9,21 +9,64 @@ use core::result::{Result, Result::Err, Result::Ok};
 use crate::error::QrandCoreError;
 use crate::low_discrepancy_sequence::LowDiscrepancySequence;
 
-/// Creates a new LowDiscrepancySequence
-pub fn new_sequence(dimension: usize) -> impl LowDiscrepancySequence {
-    Rd::new(dimension)
+#[macro_export]
+/// Adds static data necessary for the sequence
+//macro_rules! add_static_seq_data {
+//    ($dimension:expr) => {
+//        static ALPHAS: [f64; $dimension] = [0.0; $dimension];
+//    };
+//}
+
+#[macro_export]
+macro_rules! new {
+    ($dimension:expr) => {{
+        static ALPHAS: [f64; $dimension] = [0.7548776662466927, 0.5698402909980532];
+        let seq = new_sequence(&ALPHAS);
+        seq
+    }};
 }
+
+//macro_rules! create_alphas {
+//    ($number_of_elements:expr) => {
+//        static ALPHAS: [f64; $number_of_elements] = [0.0; $number_of_elements];
+//    };
+//}
+
+#[macro_export]
+/// Create a new sequence
+//macro_rules! new_seq {
+//    () => {
+//        new_sequence(&ALPHAS)
+//    };
+//}
+
+//static alphalpha: [f64; 2] = calculate_alphas(2);
+
+/// Creates a new LowDiscrepancySequence
+pub fn new_sequence(alphas: &'static [f64]) -> impl LowDiscrepancySequence {
+    //create_alphas!(dimension);
+    Rd::new(alphas.len(), alphas)
+}
+
+//const fn calculate_alphas(dim: usize) -> [f64; dim] {
+//    let mut array = [0.0; dim];
+//    alphas[0] = 0.7548776662466927;
+//    alphas[1] = 0.5698402909980532;
+//    alphas
+//}
+
+//static ALPHAS: [f64; 2] = calculate_alphas(2);
 
 struct Rd {
     dimension: usize,
-    alpha: [f64; 2],
+    alphas: &'static [f64],
 }
 
 impl Rd {
-    fn new(_dim: usize) -> Self {
+    fn new(_dim: usize, alphas: &'static [f64]) -> Self {
         Rd {
             dimension: 2,
-            alpha: [0.7548776662466927, 0.5698402909980532],
+            alphas: alphas,
         }
     }
 }
@@ -31,7 +74,7 @@ impl Rd {
 impl LowDiscrepancySequence for Rd {
     fn element(&self, n: usize, dim: usize) -> Result<f64, QrandCoreError> {
         if dim < self.dimension {
-            let value = n as f64 * self.alpha[dim];
+            let value = n as f64 * self.alphas[dim];
             if value < 1.0 {
                 Ok(value)
             } else {
@@ -54,7 +97,8 @@ mod tests {
 
     #[test]
     fn r2_values() {
-        let rd = Rd::new(2);
+        static ALPHAS: [f64; 2] = [0.7548776662466927, 0.5698402909980532];
+        let rd = Rd::new(ALPHAS.len(), &ALPHAS);
         assert_eq!(0.0, rd.element(0, 0).unwrap_or(1.1));
         assert_eq!(0.0, rd.element(0, 1).unwrap_or(1.1));
         assert_eq!(0.7548776662466927, rd.element(1, 0).unwrap_or(1.1));
