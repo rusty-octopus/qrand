@@ -2,7 +2,7 @@
 #[cfg_attr(tarpaulin, skip)]
 mod integration_tests {
     #[cfg(any(feature = "rd"))]
-    use qrand_core::new;
+    use qrand_core::new_sequence;
     //    #[cfg(any(feature = "rd", feature = "sobol"))]
     //    use qrand_core::new_seq;
     #[cfg(feature = "sobol")]
@@ -18,7 +18,8 @@ mod integration_tests {
     #[cfg(feature = "rd")]
     #[test]
     fn test_rd_sequence() {
-        let rd = new!(2);
+        //let rd = new!(2);
+        let rd = new_sequence(2);
         assert_eq!(0.0, rd.element(0, 0).unwrap_or(1.1));
         assert_eq!(0.0, rd.element(0, 1).unwrap_or(1.1));
         assert_eq!(0.7548776662466927, rd.element(1, 0).unwrap_or(1.1));

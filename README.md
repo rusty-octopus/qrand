@@ -150,6 +150,15 @@ quasi_monte_carlo_engine_embedded --> distribution_converter
     * Consider max dimension although for Rd, e.g. output s.th. during compile time
 4. Focus on a spike
 
+### Build.rs
+
+0. set up a workspace project
+1. To use the crate for embedded one must create a build.rs and println! two env variables
+    * The sequence & the dimension
+2. build dependencies for building the data
+3. Enable a non-default feature that can be used for std use cases (qrand vs. qrand_core)
+
+
 ### Solution ideas for allocation & compilation
 
 * Make constant functions public and enable creation of alphas resp. direction numbers in a "two step" fashion

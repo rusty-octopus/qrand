@@ -9,7 +9,9 @@ use core::result::{Result, Result::Err, Result::Ok};
 use crate::error::QrandCoreError;
 use crate::low_discrepancy_sequence::LowDiscrepancySequence;
 
-#[macro_export]
+//use crate::alphas::alphas;
+
+//#[macro_export]
 /// Adds static data necessary for the sequence
 //macro_rules! add_static_seq_data {
 //    ($dimension:expr) => {
@@ -26,12 +28,14 @@ use crate::low_discrepancy_sequence::LowDiscrepancySequence;
 //    }
 //}
 
+include!(concat!(env!("OUT_DIR"), "/alphas.rs"));
+
 #[macro_export]
 macro_rules! new {
     ($dimension:expr) => {{
         //use qrand_core::create_alphas;
         //create_alphas!($dimension);
-        static ALPHAS: [f64; $dimension] = [0.0; $dimension];
+        //static ALPHAS: [f64; $dimension] = [0.0; $dimension];
         let seq = $crate::new_sequence(&ALPHAS);
         seq
     }};
@@ -69,9 +73,15 @@ macro_rules! new {
 //static alphalpha: [f64; 2] = calculate_alphas(2);
 
 /// Creates a new LowDiscrepancySequence
-pub fn new_sequence(alphas: &'static [f64]) -> impl LowDiscrepancySequence {
+//pub fn new_sequence(alphas: &'static [f64]) -> impl LowDiscrepancySequence {
+//    //create_alphas!(dimension);
+//    Rd::new(alphas.len(), alphas)
+//}
+
+/// Creates a new LowDiscrepancySequence
+pub fn new_sequence(_dim: usize) -> impl LowDiscrepancySequence {
     //create_alphas!(dimension);
-    Rd::new(alphas.len(), alphas)
+    Rd::new(ALPHAS.len(), &ALPHAS)
 }
 
 //const fn calculate_alphas(dim: usize) -> [f64; dim] {
