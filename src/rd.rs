@@ -17,14 +17,40 @@ use crate::low_discrepancy_sequence::LowDiscrepancySequence;
 //    };
 //}
 
+//const fn create_alphas<const DIM: usize>() -> [f64; DIM] {
+//    let mut array = [0.0; DIM];
+//    let mut i = 0;
+//    for &mut x in array.iter_mut() {
+//        *x = i;
+//        i += 1;
+//    }
+//}
+
 #[macro_export]
 macro_rules! new {
     ($dimension:expr) => {{
-        static ALPHAS: [f64; $dimension] = [0.7548776662466927, 0.5698402909980532];
-        let seq = new_sequence(&ALPHAS);
+        //use qrand_core::create_alphas;
+        //create_alphas!($dimension);
+        static ALPHAS: [f64; $dimension] = [0.0; $dimension];
+        let seq = $crate::new_sequence(&ALPHAS);
         seq
     }};
 }
+
+//static ARRAY: [f64; 5] = 0..5.iter().map(|v| f64::into(v)).collect::<[f64]>();
+
+//#[macro_export]
+//macro_rules! create_alphas {
+//    ($dimension:expr) => {
+//        const fn c_a() -> [f64; $dimension] {
+//            let mut array: [f64; $dimension] = [0.0; $dimension];
+//            for x in 0..$dimension {
+//                array[x] = x
+//            }
+//        }
+//        static ALPHAS: [f64; $dimension] = c_a();
+//    };
+//}
 
 //macro_rules! create_alphas {
 //    ($number_of_elements:expr) => {
@@ -32,7 +58,7 @@ macro_rules! new {
 //    };
 //}
 
-#[macro_export]
+//#[macro_export]
 /// Create a new sequence
 //macro_rules! new_seq {
 //    () => {

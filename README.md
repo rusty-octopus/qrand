@@ -231,3 +231,10 @@ quasi_monte_carlo_engine_embedded --> distribution_converter
 * [Sobol sequence without direction numbers?](https://xilinx.github.io/Vitis_Libraries/quantitative_finance/guide_L1/SobolRsg/sobolrsg.html)
 * [Matlab - Sobol](https://de.mathworks.com/help/stats/sobolset.html)
 * [Matlab - Quasirandom](https://de.mathworks.com/help/stats/generating-quasi-random-numbers.html)
+* [cordic - crate](https://crates.io/crates/cordic)
+* [Macro Hygiene](https://doc.rust-lang.org/reference/macros-by-example.html#hygiene)
+    * referring to public methods and macros in the same crate without "using" them
+* [Incremental TT munchers](https://danielkeep.github.io/tlborm/book/pat-incremental-tt-munchers.html)
+* [Non-trivial macros](http://adventures.michaelfbryan.com/posts/non-trivial-macros/)
+* [cargo expand trait](https://crates.io/crates/cargo-expand)
+* [static_assertions](https://docs.rs/static_assertions/1.1.0/static_assertions/)

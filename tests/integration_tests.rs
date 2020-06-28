@@ -5,11 +5,10 @@ mod integration_tests {
     use qrand_core::new;
     //    #[cfg(any(feature = "rd", feature = "sobol"))]
     //    use qrand_core::new_seq;
-    #[cfg(any(feature = "rd", feature = "sobol"))]
+    #[cfg(feature = "sobol")]
     use qrand_core::new_sequence;
 
     use qrand_core::LowDiscrepancySequence;
-
     //    #[cfg(feature = "rd")]
     //    use qrand_core::add_static_seq_data;
 
