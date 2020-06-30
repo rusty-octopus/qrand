@@ -153,11 +153,15 @@ quasi_monte_carlo_engine_embedded --> distribution_converter
 ### Build.rs
 
 0. set up a workspace project
-1. To use the crate for embedded one must create a build.rs and println! two env variables
+1. Test application with build.rs to check if this works
+2. Re-design
+    * Dependencies
+    * CFG / Features table
+3. To use the crate for embedded one must create a build.rs and println! two env variables
     * The sequence & the dimension
-2. build dependencies for building the data
-3. Enable a non-default feature that can be used for std use cases (qrand vs. qrand_core)
-
+    * [build.rs - doc](https://doc.rust-lang.org/cargo/reference/build-scripts.html)
+4. build dependencies for building the data
+5. Enable a non-default feature that can be used for std use cases (qrand vs. qrand_core)
 
 ### Solution ideas for allocation & compilation
 
