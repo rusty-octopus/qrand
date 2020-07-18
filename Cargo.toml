@@ -6,7 +6,8 @@ edition = "2018"
 license = "MIT"
 
 [dependencies]
+rd_alphas = {path="../rd_alphas", optional=true}
 
 [features]
 sobol = []
-rd = []
+rd = ["rd_alphas"]

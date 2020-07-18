@@ -10,7 +10,7 @@ use core::result::Result;
 use crate::error::QrandCoreError;
 
 /// Interface of a low-discrepance sequence.
-pub trait LowDiscrepancySequence: Sized {
+pub trait LowDiscrepancySequence {
     /// Convert sequence into an iterator through the sequence
     //fn into_iter(sequence_length: usize) -> dyn Iterator<Item = dyn Iterator<Item = f64>>;
     // Fix dynamic type
