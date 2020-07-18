@@ -163,6 +163,16 @@ quasi_monte_carlo_engine_embedded --> distribution_converter
 4. build dependencies for building the data
 5. Enable a non-default feature that can be used for std use cases (qrand vs. qrand_core)
 
+### Procedural macros
+
+* [quote](https://crates.io/crates/quote)
+* [syn](https://crates.io/crates/syn)
+* [RustLatam 2019 - Alex Crichton: Procedural Macros vs Sliced Bread](https://www.youtube.com/watch?v=g4SYTOc8fL0)
+* [Procuderal Macros](https://doc.rust-lang.org/reference/procedural-macros.html)
+* [procedural macro workshop](https://github.com/dtolnay/proc-macro-workshop)
+* [Introduction to procedural macros in Rust](https://tinkering.xyz/introduction-to-proc-macros/)
+* [Procedural Macros in Rust 101](https://dev.to/naufraghi/procedural-macro-in-rust-101-k3f)
+
 ### Solution ideas for allocation & compilation
 
 * Make constant functions public and enable creation of alphas resp. direction numbers in a "two step" fashion
@@ -251,3 +261,4 @@ quasi_monte_carlo_engine_embedded --> distribution_converter
 * [Non-trivial macros](http://adventures.michaelfbryan.com/posts/non-trivial-macros/)
 * [cargo expand trait](https://crates.io/crates/cargo-expand)
 * [static_assertions](https://docs.rs/static_assertions/1.1.0/static_assertions/)
+* [5 essential elements of modular SW design](https://www.genui.com/insights/5-essential-elements-of-modular-software-design)

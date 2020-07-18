@@ -3,17 +3,14 @@ use std::fs;
 use std::path::Path;
 
 fn main() {
-    let out_dir = env::var_os("OUT_DIR").unwrap();
+    // TODO print out current path
+
+    let path = env::current_dir().unwrap();
+    println!("\n\nCurrent directory: {}\n\n", path.display());
+
+    let out_dir = env::var("OUT_DIR").unwrap();
     println!("OUT_DIR={:?}", out_dir);
-    let dimension = usize::from_str_radix(
-        env::var_os("CARGO_CFG_DIMENSION")
-            .unwrap()
-            .into_string()
-            .unwrap()
-            .as_str(),
-        10,
-    )
-    .unwrap();
+    let dimension = usize::from_str_radix(env::var("DIMENSION").unwrap().as_str(), 10).unwrap();
     println!("DIMENSION={:?}", dimension);
     let mut array_string = String::from("static ALPHAS:[f64;");
     array_string.push_str(dimension.to_string().as_str());
@@ -27,5 +24,5 @@ fn main() {
     fs::write(&dest_path, array_string).unwrap();
 
     // set reasons to rebuild
-    println!("cargo:rerun-if-env-changed=CARGO_CFG_DIMENSION");
+    println!("cargo:rerun-if-env-changed=DIMENSION");
 }
