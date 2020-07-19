@@ -9,9 +9,6 @@ use core::result::{Result, Result::Err, Result::Ok};
 use crate::error::QrandCoreError;
 use crate::low_discrepancy_sequence::LowDiscrepancySequence;
 
-extern crate rd_alphas;
-use rd_alphas::create;
-
 #[macro_export]
 macro_rules! compile_sequence_data {
     ($dimension:expr) => {

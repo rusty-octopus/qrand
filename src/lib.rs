@@ -19,9 +19,13 @@ mod rd;
 #[cfg(feature = "rd")]
 pub use rd::new_sequence;
 
+#[cfg(feature = "rd")]
+pub extern crate rd_alphas;
+//#[cfg(feature = "rd")]
+//pub use rd_alphas;
+
 //#[cfg(feature = "rd")]
 //mod alphas;
-
 #[cfg(feature = "sobol")]
 mod sobol;
 #[cfg(feature = "sobol")]
