@@ -27,13 +27,13 @@ static DIRECTION_NUMBER: [u32; 64] = [
     0x80808080, 0xc0c0c0c0, 0xa0a0a0a0, 0xf0f0f0f0, 0x88888888, 0xcccccccc, 0xaaaaaaaa, 0xffffffff,
 ];
 
-struct Sobol {
+struct Sobol<'a> {
     dimension: usize,
-    direction_numbers: &'static [u32],
+    direction_numbers: &'a [u32],
 }
 
-impl Sobol {
-    fn new() -> Sobol {
+impl<'a> Sobol<'a> {
+    fn new() -> Self {
         Sobol {
             dimension: 2,
             direction_numbers: &DIRECTION_NUMBER,
@@ -41,7 +41,7 @@ impl Sobol {
     }
 }
 
-impl LowDiscrepancySequence for Sobol {
+impl<'a> LowDiscrepancySequence for Sobol<'a> {
     fn element(&self, n: usize, dim: usize) -> Result<f64, QrandCoreError> {
         if dim < self.dimension {
             let mut n = n;

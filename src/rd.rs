@@ -108,13 +108,13 @@ pub fn new_sequence(alphas: &'static [f64]) -> impl LowDiscrepancySequence {
 
 //static ALPHAS: [f64; 2] = calculate_alphas(2);
 
-struct Rd {
+struct Rd<'a> {
     dimension: usize,
-    alphas: &'static [f64],
+    alphas: &'a [f64],
 }
 
-impl Rd {
-    fn new(_dim: usize, alphas: &'static [f64]) -> Self {
+impl<'a> Rd<'a> {
+    fn new(_dim: usize, alphas: &'a [f64]) -> Self {
         Rd {
             dimension: 2,
             alphas: alphas,
@@ -122,7 +122,7 @@ impl Rd {
     }
 }
 
-impl LowDiscrepancySequence for Rd {
+impl<'a> LowDiscrepancySequence for Rd<'a> {
     fn element(&self, n: usize, dim: usize) -> Result<f64, QrandCoreError> {
         if dim < self.dimension {
             let value = n as f64 * self.alphas[dim];
