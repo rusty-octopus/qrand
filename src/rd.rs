@@ -16,6 +16,14 @@ macro_rules! compile_sequence_data {
     };
 }
 
+#[macro_export]
+macro_rules! create_sequence {
+    ($dimension:expr) => {{
+        rd_alphas::create!($dimension);
+        $crate::new_sequence(&alphas)
+    }};
+}
+
 //use crate::alphas::alphas;
 
 //#[macro_export]
