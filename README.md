@@ -87,12 +87,12 @@ quasi_monte_carlo_engine_embedded --> distribution_converter
     * Compile option of qrand_core to dynamically create sequences
     * e.g. "constructor" in two options: `::new(dim:usize)` & `::new(init_data:&[??])`
 * Sequential interface "uses" the succeeding value to calculate the next
-* Parallel interface does work independently, i.e. one can access each sequence element indepent of each other
+* Parallel interface does work independently, i.e. one can access each sequence element independent of each other
 * There are infinite and finite sequences, which can be configured
     * Infinite sequence may panic with `collect`
 * Sobol and Rd may be built options
     * This means qrand_core could be used as two crates
-* Sobol initialisation
+* Sobol initialization
     * Create a small tool that parses the Joe-Kuo direction numbers and creates a blob with already created polynomials
         * or at least packs the data in binary
     * This file can then easier be used during constant evaluation
@@ -141,6 +141,7 @@ quasi_monte_carlo_engine_embedded --> distribution_converter
 
 ## Todo
 
+0. Test constant function and procedural macro!
 1. Solve interface resp. allocation & compilation
 2. Extract and heavily test own `fract` function
 3. Then initialisation
