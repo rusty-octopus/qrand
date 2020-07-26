@@ -8,6 +8,8 @@
 #![warn(missing_docs)]
 #![warn(missing_doc_code_examples)]
 #![forbid(unsafe_code)]
+#![feature(const_fn)]
+#![feature(const_generics)]
 
 mod error;
 pub use error::QrandCoreError;
@@ -18,9 +20,12 @@ pub use low_discrepancy_sequence::LowDiscrepancySequence;
 mod rd;
 #[cfg(feature = "rd")]
 pub use rd::new_sequence;
-
 #[cfg(feature = "rd")]
 pub extern crate rd_alphas;
+#[cfg(feature = "rd")]
+pub use rd::seq_dim;
+#[cfg(feature = "rd")]
+pub use rd::sequence;
 //#[cfg(feature = "rd")]
 //pub use rd_alphas;
 

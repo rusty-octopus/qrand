@@ -24,6 +24,19 @@ macro_rules! create_sequence {
     }};
 }
 
+#[cfg(feature = "rd")]
+extern crate rd_alphas;
+
+pub const fn sequence(dim: usize) -> impl LowDiscrepancySequence {
+    rd_alphas::create!(dim.to_string().as_str());
+    Rd::new(dim, &alphas)
+}
+
+pub const fn seq_dim<const DIM: usize>() -> impl LowDiscrepancySequence {
+    rd_alphas::create!(DIM);
+    Rd::new(DIM, &alphas)
+}
+
 //use crate::alphas::alphas;
 
 //#[macro_export]
@@ -114,7 +127,7 @@ struct Rd<'a> {
 }
 
 impl<'a> Rd<'a> {
-    fn new(_dim: usize, alphas: &'a [f64]) -> Self {
+    const fn new(_dim: usize, alphas: &'a [f64]) -> Self {
         Rd {
             dimension: 2,
             alphas: alphas,
