@@ -8,8 +8,8 @@
 #![warn(missing_docs)]
 #![warn(missing_doc_code_examples)]
 #![forbid(unsafe_code)]
-#![feature(const_fn)]
-#![feature(const_generics)]
+//#![feature(const_fn)]
+//#![feature(const_generics)]
 
 mod error;
 pub use error::QrandCoreError;
@@ -35,3 +35,6 @@ pub use rd::sequence;
 mod sobol;
 #[cfg(feature = "sobol")]
 pub use sobol::new_sequence;
+
+// TODO: Use monomorphization instead of interface?
+// fn get_sequence<T: LowDiscrepancySequence>() -> T {}

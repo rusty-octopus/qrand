@@ -141,10 +141,13 @@ quasi_monte_carlo_engine_embedded --> distribution_converter
 
 ## Todo
 
-0. Test constant function and procedural macro!
-1. Solve interface resp. allocation & compilation
-2. Extract and heavily test own `fract` function
-3. Then initialisation
+0. Create workspace from qrand_core repo and move files there
+1. Re-design
+2. Create solution with RD + Build script + embedded feature
+3. Test constant function and procedural macro!
+4. Solve interface resp. allocation & compilation
+5. Extract and heavily test own `fract` function
+6. Then initialisation
     * Sobol: polynomials & direction things
     * Rd: alphas, i.e. golden ratios
     * Create as constants into the source code => program code vs. Stack!

@@ -3,6 +3,10 @@ use std::fs;
 use std::path::Path;
 
 fn main() {
+    // Features can be identified
+    // https://doc.rust-lang.org/cargo/reference/environment-variables.html#environment-variables-cargo-sets-for-build-scripts
+    // CARGO_FEATURE_<name>
+
     // TODO print out current path
     /*
         let path = env::current_dir().unwrap();
