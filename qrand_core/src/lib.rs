@@ -8,8 +8,8 @@
 #![warn(missing_docs)]
 #![warn(missing_doc_code_examples)]
 #![forbid(unsafe_code)]
-//#![feature(const_fn)]
-//#![feature(const_generics)]
+#![feature(const_fn)]
+#![feature(const_generics)]
 
 mod error;
 pub use error::QrandCoreError;
@@ -21,7 +21,9 @@ mod rd;
 #[cfg(feature = "rd")]
 pub use rd::new_sequence;
 #[cfg(feature = "rd")]
-pub extern crate rd_alphas;
+extern crate qrand_rd_alphas;
+#[cfg(feature = "rd")]
+pub use qrand_rd_alphas::create;
 #[cfg(feature = "rd")]
 pub use rd::seq_dim;
 #[cfg(feature = "rd")]

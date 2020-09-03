@@ -1,0 +1,13 @@
+[package]
+name = "qrand_core"
+version = "0.1.0"
+authors = ["rusty-octopus <octopus@posteo.net>"]
+edition = "2018"
+license = "MIT"
+
+[dependencies]
+qrand_rd_alphas = {path="../qrand_rd_alphas", optional=true}
+
+[features]
+sobol = []
+rd = ["qrand_rd_alphas"]

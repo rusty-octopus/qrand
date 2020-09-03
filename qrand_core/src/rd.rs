@@ -19,21 +19,21 @@ macro_rules! compile_sequence_data {
 #[macro_export]
 macro_rules! create_sequence {
     ($dimension:expr) => {{
-        rd_alphas::create!($dimension);
+        $crate::create!($dimension);
         $crate::new_sequence(&alphas)
     }};
 }
 
 #[cfg(feature = "rd")]
-extern crate rd_alphas;
+extern crate qrand_rd_alphas;
 
 pub const fn sequence(dim: usize) -> impl LowDiscrepancySequence {
-    rd_alphas::create!(dim.to_string().as_str());
+    qrand_rd_alphas::create!(dim.to_string().as_str());
     Rd::new(dim, &alphas)
 }
 
 pub const fn seq_dim<const DIM: usize>() -> impl LowDiscrepancySequence {
-    rd_alphas::create!(DIM);
+    qrand_rd_alphas::create!(DIM);
     Rd::new(DIM, &alphas)
 }
 

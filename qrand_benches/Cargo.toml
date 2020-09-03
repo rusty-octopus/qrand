@@ -1,0 +1,18 @@
+[package]
+name = "qrand_benches"
+version = "0.1.0"
+authors = ["rusty-octopus <octopus@posteo.net>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies.qrand_core]
+path = "../qrand_core"
+features = ["rd"]
+
+[dev-dependencies]
+criterion = "0.3.1"
+
+[[bench]]
+name = "comparison_calculations"
+harness = false
