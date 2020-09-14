@@ -2,7 +2,7 @@
 #[cfg_attr(tarpaulin, skip)]
 mod integration_tests {
     #[cfg(any(feature = "rd"))]
-    use qrand_core::{create_sequence, seq_dim, sequence};
+    use qrand_core::get_sequence;
     //compile_sequence_data!(2);
 
     #[cfg(feature = "sobol")]
@@ -18,35 +18,7 @@ mod integration_tests {
     #[cfg(feature = "rd")]
     #[test]
     fn test_rd_sequence() {
-        //let rd = new!(2);
-        //let rd = new_sequence(2);
-        //compile_sequence_data!(2);
-        //let sequence = get_sequence!();
-        let sequence = create_sequence!(2);
-        assert_eq!(0.0, sequence.element(0, 0).unwrap_or(1.1));
-        assert_eq!(0.0, sequence.element(0, 1).unwrap_or(1.1));
-        assert_eq!(0.7548776662466927, sequence.element(1, 0).unwrap_or(1.1));
-        assert_eq!(0.5698402909980532, sequence.element(1, 1).unwrap_or(1.1));
-        assert_eq!(0.5097553324933854, sequence.element(2, 0).unwrap_or(1.1));
-        assert_eq!(0.13968058199610645, sequence.element(2, 1).unwrap_or(1.1));
-    }
-
-    #[cfg(feature = "rd")]
-    #[test]
-    fn test_rd_sequence_const_fn() {
-        let sequence = sequence(2);
-        assert_eq!(0.0, sequence.element(0, 0).unwrap_or(1.1));
-        assert_eq!(0.0, sequence.element(0, 1).unwrap_or(1.1));
-        assert_eq!(0.7548776662466927, sequence.element(1, 0).unwrap_or(1.1));
-        assert_eq!(0.5698402909980532, sequence.element(1, 1).unwrap_or(1.1));
-        assert_eq!(0.5097553324933854, sequence.element(2, 0).unwrap_or(1.1));
-        assert_eq!(0.13968058199610645, sequence.element(2, 1).unwrap_or(1.1));
-    }
-
-    #[cfg(feature = "rd")]
-    #[test]
-    fn test_rd_sequence_const_generics() {
-        let sequence = seq_dim::<2>();
+        let sequence = get_sequence();
         assert_eq!(0.0, sequence.element(0, 0).unwrap_or(1.1));
         assert_eq!(0.0, sequence.element(0, 1).unwrap_or(1.1));
         assert_eq!(0.7548776662466927, sequence.element(1, 0).unwrap_or(1.1));

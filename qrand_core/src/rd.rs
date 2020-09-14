@@ -9,117 +9,12 @@ use core::result::{Result, Result::Err, Result::Ok};
 use crate::error::QrandCoreError;
 use crate::low_discrepancy_sequence::LowDiscrepancySequence;
 
-#[macro_export]
-macro_rules! compile_sequence_data {
-    ($dimension:expr) => {
-        rd_alphas::create!($dimension);
-    };
+// including the generated alphas.rs
+include!(concat!(env!("OUT_DIR"), "/alphas.rs"));
+
+pub fn get_sequence() -> impl LowDiscrepancySequence {
+    Rd::new(&ALPHAS)
 }
-
-#[macro_export]
-macro_rules! create_sequence {
-    ($dimension:expr) => {{
-        $crate::create!($dimension);
-        $crate::new_sequence(&alphas)
-    }};
-}
-
-#[cfg(feature = "rd")]
-extern crate qrand_rd_alphas;
-
-pub const fn sequence(dim: usize) -> impl LowDiscrepancySequence {
-    qrand_rd_alphas::create!(dim.to_string().as_str());
-    Rd::new(dim, &alphas)
-}
-
-pub const fn seq_dim<const DIM: usize>() -> impl LowDiscrepancySequence {
-    qrand_rd_alphas::create!(DIM);
-    Rd::new(DIM, &alphas)
-}
-
-//use crate::alphas::alphas;
-
-//#[macro_export]
-/// Adds static data necessary for the sequence
-//macro_rules! add_static_seq_data {
-//    ($dimension:expr) => {
-//        static ALPHAS: [f64; $dimension] = [0.0; $dimension];
-//    };
-//}
-
-//const fn create_alphas<const DIM: usize>() -> [f64; DIM] {
-//    let mut array = [0.0; DIM];
-//    let mut i = 0;
-//    for &mut x in array.iter_mut() {
-//        *x = i;
-//        i += 1;
-//    }
-//}
-
-//include!(concat!(env!("OUT_DIR"), "/alphas.rs"));
-
-#[macro_export]
-macro_rules! get_sequence {
-    () => {{
-        //use qrand_core::create_alphas;
-        //create_alphas!($dimension);
-        //static ALPHAS: [f64; $dimension] = [0.0; $dimension];
-        let seq = $crate::new_sequence(&alphas);
-        seq
-    }};
-}
-
-//static ARRAY: [f64; 5] = 0..5.iter().map(|v| f64::into(v)).collect::<[f64]>();
-
-//#[macro_export]
-//macro_rules! create_alphas {
-//    ($dimension:expr) => {
-//        const fn c_a() -> [f64; $dimension] {
-//            let mut array: [f64; $dimension] = [0.0; $dimension];
-//            for x in 0..$dimension {
-//                array[x] = x
-//            }
-//        }
-//        static ALPHAS: [f64; $dimension] = c_a();
-//    };
-//}
-
-//macro_rules! create_alphas {
-//    ($number_of_elements:expr) => {
-//        static ALPHAS: [f64; $number_of_elements] = [0.0; $number_of_elements];
-//    };
-//}
-
-//#[macro_export]
-/// Create a new sequence
-//macro_rules! new_seq {
-//    () => {
-//        new_sequence(&ALPHAS)
-//    };
-//}
-
-//static alphalpha: [f64; 2] = calculate_alphas(2);
-
-/// Creates a new LowDiscrepancySequence
-pub fn new_sequence(alphas: &'static [f64]) -> impl LowDiscrepancySequence {
-    //create_alphas!(dimension);
-    Rd::new(alphas.len(), alphas)
-}
-
-/// Creates a new LowDiscrepancySequence
-// pub fn new_sequence(_dim: usize) -> impl LowDiscrepancySequence {
-//     //create_alphas!(dimension);
-//     Rd::new(ALPHAS.len(), &ALPHAS)
-// }
-
-//const fn calculate_alphas(dim: usize) -> [f64; dim] {
-//    let mut array = [0.0; dim];
-//    alphas[0] = 0.7548776662466927;
-//    alphas[1] = 0.5698402909980532;
-//    alphas
-//}
-
-//static ALPHAS: [f64; 2] = calculate_alphas(2);
 
 struct Rd<'a> {
     dimension: usize,
@@ -127,9 +22,9 @@ struct Rd<'a> {
 }
 
 impl<'a> Rd<'a> {
-    const fn new(_dim: usize, alphas: &'a [f64]) -> Self {
+    const fn new(alphas: &'a [f64]) -> Self {
         Rd {
-            dimension: 2,
+            dimension: alphas.len(),
             alphas: alphas,
         }
     }
@@ -162,7 +57,7 @@ mod tests {
     #[test]
     fn r2_values() {
         static ALPHAS: [f64; 2] = [0.7548776662466927, 0.5698402909980532];
-        let rd = Rd::new(ALPHAS.len(), &ALPHAS);
+        let rd = Rd::new(&ALPHAS);
         assert_eq!(0.0, rd.element(0, 0).unwrap_or(1.1));
         assert_eq!(0.0, rd.element(0, 1).unwrap_or(1.1));
         assert_eq!(0.7548776662466927, rd.element(1, 0).unwrap_or(1.1));

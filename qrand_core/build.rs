@@ -1,33 +1,29 @@
-use std::env;
-use std::fs;
-use std::path::Path;
+// used to generate the alpha values
+use qrand_rd_alphas::create;
+// primarily used for writing the file
+use std::{env, fs, path::Path};
 
 fn main() {
-    // Features can be identified
-    // https://doc.rust-lang.org/cargo/reference/environment-variables.html#environment-variables-cargo-sets-for-build-scripts
-    // CARGO_FEATURE_<name>
+    // get the DIMENSION environment variable or panic
+    let dimension = usize::from_str_radix(env::var("DIMENSION").unwrap().as_str(), 10).unwrap();
 
-    // TODO print out current path
-    /*
-        let path = env::current_dir().unwrap();
-        println!("\n\nCurrent directory: {}\n\n", path.display());
+    // create string from the alpha values
+    let mut array_string = String::from("static ALPHAS:[f64; ");
+    array_string.push_str(dimension.to_string().as_str());
+    array_string.push_str("] = [\r\n");
+    let alphas = create(dimension);
+    for alpha in &alphas {
+        array_string.push_str("\u{20}\u{20}\u{20}\u{20}");
+        array_string.push_str(alpha.to_string().as_str());
+        array_string.push_str(",\r\n");
+    }
+    array_string.push_str("];\r\n");
 
-        let out_dir = env::var("OUT_DIR").unwrap();
-        println!("OUT_DIR={:?}", out_dir);
-        let dimension = usize::from_str_radix(env::var("DIMENSION").unwrap().as_str(), 10).unwrap();
-        println!("DIMENSION={:?}", dimension);
-        let mut array_string = String::from("static ALPHAS:[f64;");
-        array_string.push_str(dimension.to_string().as_str());
-        array_string.push_str("] = [0.7548776662466927, 0.5698402909980532");
-        for i in 2..dimension {
-            array_string.push_str(", 0.");
-            array_string.push_str(i.to_string().as_str());
-        }
-        array_string.push_str("];");
-        let dest_path = Path::new(&out_dir).join("alphas.rs");
-        fs::write(&dest_path, array_string).unwrap();
+    // write the string to a file
+    let out_dir = env::var("OUT_DIR").unwrap();
+    let dest_path = Path::new(&out_dir).join("alphas.rs");
+    fs::write(&dest_path, array_string).unwrap();
 
-        // set reasons to rebuild
-        println!("cargo:rerun-if-env-changed=DIMENSION");
-    */
+    // set reasons to rebuild
+    println!("cargo:rerun-if-env-changed=DIMENSION");
 }

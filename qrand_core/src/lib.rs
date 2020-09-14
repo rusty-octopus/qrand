@@ -8,8 +8,6 @@
 #![warn(missing_docs)]
 #![warn(missing_doc_code_examples)]
 #![forbid(unsafe_code)]
-#![feature(const_fn)]
-#![feature(const_generics)]
 
 mod error;
 pub use error::QrandCoreError;
@@ -19,20 +17,8 @@ pub use low_discrepancy_sequence::LowDiscrepancySequence;
 #[cfg(feature = "rd")]
 mod rd;
 #[cfg(feature = "rd")]
-pub use rd::new_sequence;
-#[cfg(feature = "rd")]
-extern crate qrand_rd_alphas;
-#[cfg(feature = "rd")]
-pub use qrand_rd_alphas::create;
-#[cfg(feature = "rd")]
-pub use rd::seq_dim;
-#[cfg(feature = "rd")]
-pub use rd::sequence;
-//#[cfg(feature = "rd")]
-//pub use rd_alphas;
+pub use rd::get_sequence;
 
-//#[cfg(feature = "rd")]
-//mod alphas;
 #[cfg(feature = "sobol")]
 mod sobol;
 #[cfg(feature = "sobol")]
