@@ -40,3 +40,14 @@ pub use sobol::new_sequence;
 
 // TODO: Use monomorphization instead of interface?
 // fn get_sequence<T: LowDiscrepancySequence>() -> T {}
+
+//extern crate core;
+//use core::default::Default;
+//
+//impl Default for dyn LowDiscrepancySequence {
+//    #[cfg(feature = "rd")]
+//    fn default() -> Self {
+//        const alphas: [f64; 1] = [0.0];
+//        rd::new_sequence(&alphas)
+//    }
+//}
