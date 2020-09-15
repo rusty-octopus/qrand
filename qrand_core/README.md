@@ -1,12 +1,20 @@
 # Readme
 
+## Features
+
+|Name|Description|
+|:---|:----------|
+|std_interface|Enables interface for usages in std (i.e. usage of dynamic memory) environments|
+|rd|LowDiscrepancySequence implemented through Rd sequence|
+|sobol|LowDiscrepancySequence implemented through Sobol sequence|
+
 ## Learning goals
 
-* no_std
-* Compile time / constant evaluation
-    * [Features](https://doc.rust-lang.org/cargo/reference/features.html)
+* ~~no_std~~
+* ~~Compile time / constant evaluation~~
+    * ~~[Features](https://doc.rust-lang.org/cargo/reference/features.html)~~
 * Debugging
-* Compile options (sobol, rd, etc.)
+* ~~Compile options (sobol, rd, etc.)~~
 * Parallelisation / (concurrency)
 
 ## Design

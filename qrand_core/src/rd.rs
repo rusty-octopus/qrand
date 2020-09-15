@@ -10,10 +10,17 @@ use crate::error::QrandCoreError;
 use crate::low_discrepancy_sequence::LowDiscrepancySequence;
 
 // including the generated alphas.rs
+#[cfg(not(feature = "std_interface"))]
 include!(concat!(env!("OUT_DIR"), "/alphas.rs"));
 
+#[cfg(not(feature = "std_interface"))]
 pub fn get_sequence() -> impl LowDiscrepancySequence {
     Rd::new(&ALPHAS)
+}
+
+#[cfg(feature = "std_interface")]
+pub fn create_sequence(alphas: &[f64]) -> impl LowDiscrepancySequence + '_ {
+    Rd::new(&alphas)
 }
 
 struct Rd<'a> {

@@ -14,9 +14,15 @@ pub use error::QrandCoreError;
 mod low_discrepancy_sequence;
 pub use low_discrepancy_sequence::LowDiscrepancySequence;
 
+//#[cfg_attr(not(feature = "std_interface"), no_std_interface)]
+//#[cfg_attr(feature = "rd", rd)]
 #[cfg(feature = "rd")]
 mod rd;
 #[cfg(feature = "rd")]
+#[cfg(feature = "std_interface")]
+pub use rd::create_sequence;
+#[cfg(feature = "rd")]
+#[cfg(not(feature = "std_interface"))]
 pub use rd::get_sequence;
 
 #[cfg(feature = "sobol")]
