@@ -149,18 +149,24 @@ quasi_monte_carlo_engine_embedded --> distribution_converter
 
 ## Todo
 
-0. Create workspace from qrand_core repo and move files there
-1. Re-design
-2. Create solution with RD + Build script + embedded feature
-3. Test constant function and procedural macro!
-4. Solve interface resp. allocation & compilation
-5. Extract and heavily test own `fract` function
-6. Then initialisation
+1. Create solution with RD + Build script + embedded feature
+    * Clean up build script
+    * create_sequence_data -> create_rd_alphas
+    * create_rd_alphas should exit the process to simplify the main
+    * Emit size in bytes during execution
+2. Use qrand_core with rd feature in benches and check out the binary utils for qrand_rd_alphas symbols
+    * [cargo-bloat](https://github.com/RazrFalcon/cargo-bloat)
+    * [cargo-binutils](https://lib.rs/crates/cargo-binutils)
+3. First simple spike for qrand_std
+    * LowDiscrepancySequenceWrapper struct?
+    * Maybe use [Renaming dependencies](https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html#renaming-dependencies-in-cargotoml) to include Rd and Sobol and maybe a new interface that enables the creation of all sequences (guarded by a feature?)
+2. Extract and heavily test own `fract` function
+    * Still necessary?
+3. Then initialisation
     * Sobol: polynomials & direction things
     * Rd: alphas, i.e. golden ratios
     * Create as constants into the source code => program code vs. Stack!
     * Consider max dimension although for Rd, e.g. output s.th. during compile time
-4. Focus on a spike
 
 ### Build.rs
 
