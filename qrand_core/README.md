@@ -154,6 +154,7 @@ quasi_monte_carlo_engine_embedded --> distribution_converter
     * create_sequence_data -> create_rd_alphas
     * create_rd_alphas should exit the process to simplify the main
     * Emit size in bytes during execution
+    * Rename `std_interface` feature to `std` only?
 2. Use qrand_core with rd feature in benches and check out the binary utils for qrand_rd_alphas symbols
     * [cargo-bloat](https://github.com/RazrFalcon/cargo-bloat)
     * [cargo-binutils](https://lib.rs/crates/cargo-binutils)
