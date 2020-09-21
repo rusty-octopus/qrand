@@ -2,6 +2,7 @@
 
 members = [
     "qrand_core",
+    "qrand_std",
     "qrand_benches",
     "qrand_rd_alphas",
     "qrand_rd_plotter"

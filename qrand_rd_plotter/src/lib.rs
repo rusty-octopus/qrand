@@ -2,7 +2,7 @@ use plotlib::page::Page;
 use plotlib::repr::Plot;
 use plotlib::style::{PointMarker, PointStyle};
 use plotlib::view::ContinuousView;
-use qrand_core::{create_sequence, LowDiscrepancySequence};
+use qrand_core::{get_sequence, LowDiscrepancySequence};
 use randomize::{formulas, PCG64};
 
 pub fn create_plot<F>(path_to_svg: &str, number_of_points: usize, create_random_points: F)
@@ -24,7 +24,7 @@ where
 }
 
 pub fn create_quasi_random_points(number_of_points: usize) -> Vec<(f64, f64)> {
-    let sequence = create_sequence!(2);
+    let sequence = get_sequence();
     let mut points = Vec::with_capacity(number_of_points);
     for i in 0..number_of_points {
         let (x, y) = (
