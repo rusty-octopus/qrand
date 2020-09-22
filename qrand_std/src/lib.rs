@@ -1,27 +1,28 @@
 pub use qrand_core::LowDiscrepancySequence;
 pub use qrand_core::QrandCoreError;
 
-struct LowDiscrepancySequenceWrapper {
-    alphas: Vec<f64>,
-    sequence: impl LowDiscrepancySequence,
+struct LowDiscrepancySequenceWrapper<T: LowDiscrepancySequence> {
+    alphas: Box<[f64]>,
+    sequence: T,
 }
 
-impl LowDiscrepancySequence for LowDiscrepancySequenceWrapper {
+impl<'a, T: LowDiscrepancySequence> LowDiscrepancySequence for LowDiscrepancySequenceWrapper<T> {
     fn element(&self, n: usize, dim: usize) -> Result<f64, QrandCoreError> {
         self.sequence.element(n, dim)
     }
 }
 
-pub fn create_sequence(dim: usize) -> impl LowDiscrepancySequence {
-    use qrand_core::create_sequence;
-
+pub fn create_sequence<T: LowDiscrepancySequence>(
+    dim: usize,
+) -> impl LowDiscrepancySequence + 'static {
     use qrand_rd_alphas::create;
 
-    let alphas = create(dim);
+    let alphas = create(dim).into_boxed_slice();
 
-    let sequence = create_sequence(&alphas);
+    let sequence = qrand_core::create_sequence(&alphas);
 
-    let low_discrepancy_sequence = LowDiscrepancySequenceWrapper { alphas, sequence };
-
-    low_discrepancy_sequence
+    LowDiscrepancySequenceWrapper {
+        alphas: alphas,
+        sequence: sequence,
+    }
 }
