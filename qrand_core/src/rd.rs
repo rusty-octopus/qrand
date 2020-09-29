@@ -24,33 +24,40 @@ pub fn create_sequence(alphas: &[f64]) -> impl LowDiscrepancySequence + '_ {
 }
 
 struct Rd<'a> {
-    dimension: usize,
     alphas: &'a [f64],
 }
 
 impl<'a> Rd<'a> {
     const fn new(alphas: &'a [f64]) -> Self {
-        Rd {
-            dimension: alphas.len(),
-            alphas: alphas,
-        }
+        Rd { alphas: alphas }
     }
 }
 
 impl<'a> LowDiscrepancySequence for Rd<'a> {
     fn element(&self, n: usize, dim: usize) -> Result<f64, QrandCoreError> {
-        if dim < self.dimension {
-            let value = n as f64 * self.alphas[dim];
-            if value < 1.0 {
-                Ok(value)
-            } else {
-                let integer_part = (value as u64) as f64;
-                Ok(value - integer_part)
-            }
-        } else {
-            Err(QrandCoreError::create_point_element_not_existing())
-        }
+        calculate_element(&self.alphas, n, dim)
     }
+}
+
+#[inline(always)]
+fn calculate_element(alphas: &[f64], n: usize, dim: usize) -> Result<f64, QrandCoreError> {
+    if dim < alphas.len() {
+        let value = n as f64 * alphas[dim];
+        if value < 1.0 {
+            Ok(value)
+        } else {
+            let integer_part = (value as u64) as f64;
+            Ok(value - integer_part)
+        }
+    } else {
+        Err(QrandCoreError::create_point_element_not_existing())
+    }
+}
+
+#[cfg(feature = "srd_interface")]
+#[inline(always)]
+pub fn rd_calculate_element(alphas: &[f64], n: usize, dim: usize) -> Result<f64, QrandCoreError> {
+    calculate_element(alphas, n, dim)
 }
 
 #[cfg(test)]

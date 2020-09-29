@@ -24,6 +24,9 @@ pub use rd::create_sequence;
 #[cfg(feature = "rd")]
 #[cfg(not(feature = "std_interface"))]
 pub use rd::get_sequence;
+#[cfg(feature = "rd")]
+#[cfg(feature = "std_interface")]
+pub use rd::rd_calculate_element;
 
 #[cfg(feature = "sobol")]
 mod sobol;
