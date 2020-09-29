@@ -54,7 +54,7 @@ fn calculate_element(alphas: &[f64], n: usize, dim: usize) -> Result<f64, QrandC
     }
 }
 
-#[cfg(feature = "srd_interface")]
+#[cfg(feature = "std_interface")]
 #[inline(always)]
 pub fn rd_calculate_element(alphas: &[f64], n: usize, dim: usize) -> Result<f64, QrandCoreError> {
     calculate_element(alphas, n, dim)
