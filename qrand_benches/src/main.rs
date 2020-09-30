@@ -1,6 +1,8 @@
 const V: usize = 0xFFFF_FFFF_FFFF_FFFe; //0xF000_0000_0000_0000; //2000000000000000000;
 const V2: usize = 0xFFFF_FFFF_FFFF_FFFF; //2000000000000000000;
 
+use qrand_core::{get_sequence, LowDiscrepancySequence, QrandCoreError};
+
 pub fn rd_u64_par(n: usize, _d: usize) -> u64 {
     let n_: u128 = n as u128;
     println!("n:u128 = {:032x}", n_);
@@ -36,4 +38,14 @@ fn main() {
     println!("");
 
     rd_u64_par(V, 1);
+
+    let sequence = get_sequence();
+
+    for n in 0..10 {
+        println!(
+            "({}, {})",
+            sequence.element(n, 0).unwrap_or(1.1),
+            sequence.element(n, 1).unwrap_or(1.1)
+        );
+    }
 }
