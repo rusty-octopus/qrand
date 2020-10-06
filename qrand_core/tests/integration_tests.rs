@@ -1,6 +1,6 @@
 #[cfg(test)]
 #[cfg_attr(tarpaulin, skip)]
-mod integration_tests {
+mod qrand_core_integration_tests {
     #[cfg(feature = "rd")]
     #[cfg(not(feature = "std_interface"))]
     use qrand_core::get_sequence;

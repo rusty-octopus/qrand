@@ -1,6 +1,6 @@
 #[cfg(test)]
 #[cfg_attr(tarpaulin, skip)]
-mod integration_tests {
+mod qrand_rd_alphas_integration_tests {
     use qrand_rd_alphas::create;
 
     #[test]
