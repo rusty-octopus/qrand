@@ -2,16 +2,19 @@ use std::fmt::Debug;
 use std::fmt::Display;
 
 #[derive(Debug)]
+#[cfg_attr(tarpaulin, skip)]
 pub enum QrandBuildScriptErrors {
     MissingEnvironmentVariable(String),
     InvalidEnvironmentVariableValue(String),
 }
 
 impl QrandBuildScriptErrors {
+    #[cfg_attr(tarpaulin, skip)]
     fn create_missing_environment_variable(name: &str) -> Self {
         Self::MissingEnvironmentVariable(format!("Environment variable \"{}\" is missing.", name))
     }
 
+    #[cfg_attr(tarpaulin, skip)]
     fn create_invalid_environment_variable_value(name: &str, type_string: &str) -> Self {
         Self::MissingEnvironmentVariable(format!(
             "Environment variable \"{}\" must be a valid `{}` value.",
@@ -20,6 +23,7 @@ impl QrandBuildScriptErrors {
     }
 }
 
+#[cfg_attr(tarpaulin, skip)]
 impl Display for QrandBuildScriptErrors {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let error_message = match self {
@@ -30,6 +34,7 @@ impl Display for QrandBuildScriptErrors {
     }
 }
 
+#[cfg_attr(tarpaulin, skip)]
 fn parse_environment_variable_value<T, E: Debug, F: Fn(&str) -> Result<T, E>>(
     name: &str,
     type_string: &str,
@@ -59,6 +64,7 @@ fn parse_environment_variable_value<T, E: Debug, F: Fn(&str) -> Result<T, E>>(
 #[cfg(feature = "rd")]
 #[cfg(not(feature = "sobol"))]
 #[cfg(not(feature = "std_interface"))]
+#[cfg_attr(tarpaulin, skip)]
 fn create_rd_alphas() -> Result<(), QrandBuildScriptErrors> {
     // used to generate the alpha values
     use qrand_rd_alphas::create;
@@ -79,7 +85,7 @@ fn create_rd_alphas() -> Result<(), QrandBuildScriptErrors> {
         array_string.push_str(dimension.to_string().as_str());
         array_string.push_str("] = [\r\n");
         let alphas = create(dimension);
-        for alpha in &alphas {
+        for alpha in alphas.iter() {
             array_string.push_str("\u{20}\u{20}\u{20}\u{20}");
             array_string.push_str(alpha.to_string().as_str());
             array_string.push_str(",\r\n");
@@ -96,6 +102,7 @@ fn create_rd_alphas() -> Result<(), QrandBuildScriptErrors> {
     }
 }
 
+#[cfg_attr(tarpaulin, skip)]
 fn main() -> Result<(), QrandBuildScriptErrors> {
     #[cfg(feature = "rd")]
     #[cfg(not(feature = "sobol"))]

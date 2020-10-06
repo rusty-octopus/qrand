@@ -20,6 +20,6 @@ impl LowDiscrepancySequence for Rd {
 }
 
 pub fn create_sequence(dim: usize) -> impl LowDiscrepancySequence {
-    let alphas = create(dim).into_boxed_slice();
+    let alphas = create(dim);
     Rd::new(alphas)
 }

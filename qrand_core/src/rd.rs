@@ -13,6 +13,19 @@ use crate::low_discrepancy_sequence::LowDiscrepancySequence;
 #[cfg(not(feature = "std_interface"))]
 include!(concat!(env!("OUT_DIR"), "/alphas.rs"));
 
+/// Gets the sequence defined by the chosen cargo feature.
+///
+/// Gets the sequence that was chosen by the set cargo feature and build into the binary.
+/// The sequence is always a [`LowDiscrepancySequence`](trait.LowDiscrepancySequence.html).
+///
+/// # Example
+/// ```rust
+/// use qrand_core::{LowDiscrepancySequence,get_sequence};
+///
+/// let sequence = get_sequence();
+///
+/// assert_eq!(0.0, sequence.element(0, 0).unwrap_or(1.1));
+/// ```
 #[cfg(not(feature = "std_interface"))]
 pub fn get_sequence() -> impl LowDiscrepancySequence {
     Rd::new(&ALPHAS)
@@ -29,7 +42,7 @@ struct Rd<'a> {
 
 impl<'a> Rd<'a> {
     const fn new(alphas: &'a [f64]) -> Self {
-        Rd { alphas: alphas }
+        Rd { alphas }
     }
 }
 

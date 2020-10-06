@@ -8,7 +8,7 @@ fn calculate_phi(dimension: usize) -> f64 {
     phi
 }
 
-pub fn create(dimension: usize) -> Vec<f64> {
+pub fn create(dimension: usize) -> Box<[f64]> {
     let mut alphas: Vec<f64> = Vec::with_capacity(dimension);
     let phi = calculate_phi(dimension);
     let inv_g = phi.recip();
@@ -16,5 +16,5 @@ pub fn create(dimension: usize) -> Vec<f64> {
     for i in 0..dim {
         alphas.push(inv_g.powf(f64::from(i + 1)).fract());
     }
-    alphas
+    alphas.into_boxed_slice()
 }

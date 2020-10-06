@@ -1,5 +1,5 @@
 [package]
-name = "lds_plotter"
+name = "qrand_rd_plotter"
 version = "0.2.0"
 authors = ["rusty-octopus <octopus@posteo.net>"]
 edition = "2018"
@@ -7,6 +7,6 @@ edition = "2018"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-qrand_core = {path = "../qrand_core", features = ["rd"]}
+qrand_std = {path = "../qrand_std"}
 plotlib = "0.5.1"
 randomize = "3.0.1"

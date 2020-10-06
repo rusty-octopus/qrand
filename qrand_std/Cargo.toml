@@ -11,5 +11,5 @@ path = "../qrand_core"
 features = ["rd", "std_interface"]
 
 [dependencies.qrand_rd_alphas]
-version = "0.3.0"
+version = "0.4.0"
 path = "../qrand_rd_alphas"
