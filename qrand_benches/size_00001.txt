@@ -1,0 +1,65 @@
+warning: missing documentation for a function
+  --> qrand_core/src/rd.rs:17:1
+   |
+17 | pub fn get_sequence() -> impl LowDiscrepancySequence {
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+note: the lint level is defined here
+  --> qrand_core/src/rd.rs:2:9
+   |
+2  | #![warn(missing_docs)]
+   |         ^^^^^^^^^^^^
+
+warning: 1 warning emitted
+
+warning: unused import: `QrandCoreError`
+ --> qrand_benches/src/main.rs:4:56
+  |
+4 | use qrand_core::{get_sequence, LowDiscrepancySequence, QrandCoreError};
+  |                                                        ^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` on by default
+
+warning: 1 warning emitted
+
+qrand_benches  :
+section                   size      addr
+.interp                   0x1c     0x2e0
+.note.gnu.build-id        0x24     0x2fc
+.note.ABI-tag             0x20     0x320
+.gnu.hash                 0x88     0x340
+.dynsym                  0x780     0x3c8
+.gnu.version              0xa0    0x109e
+.gnu.version_r           0x130    0x1140
+.init                     0x1b    0x5000
+.plt                      0xd0    0x5020
+.plt.got                  0x58    0x50f0
+.text                  0x2d405    0x5150
+.fini                      0xd   0x32558
+.rodata                 0x4dc9   0x33000
+.eh_frame_hdr            0xca4   0x37dcc
+.eh_frame               0x42c0   0x38a70
+.gcc_except_table       0x15dc   0x3cd30
+.tbss                     0xd8   0x3fb40
+.init_array               0x10   0x3fb40
+.fini_array                0x8   0x3fb50
+.data.rel.ro            0x1be0   0x3fb58
+.dynamic                 0x230   0x41738
+.got                     0x688   0x41968
+.data                     0x38   0x42000
+.bss                     0x1b0   0x42038
+.comment                  0x27       0x0
+.debug_aranges          0x8280       0x0
+.debug_pubnames        0x31316       0x0
+.debug_info            0xa234b       0x0
+.debug_abbrev           0x1638       0x0
+.debug_line            0x5d14c       0x0
+.debug_frame             0x200       0x0
+.debug_str             0xa55e3       0x0
+.debug_loc             0x27c22       0x0
+.debug_macinfo             0x8       0x0
+.debug_pubtypes           0xb4       0x0
+.debug_ranges          0x67370       0x0
+Total                 0x2aa2c3
+
+

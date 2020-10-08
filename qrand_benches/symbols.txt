@@ -1,0 +1,823 @@
+warning: missing documentation for a function
+  --> qrand_core/src/rd.rs:17:1
+   |
+17 | pub fn get_sequence() -> impl LowDiscrepancySequence {
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+note: the lint level is defined here
+  --> qrand_core/src/rd.rs:2:9
+   |
+2  | #![warn(missing_docs)]
+   |         ^^^^^^^^^^^^
+
+warning: 1 warning emitted
+
+warning: unused import: `QrandCoreError`
+ --> qrand_benches/src/main.rs:4:56
+  |
+4 | use qrand_core::{get_sequence, LowDiscrepancySequence, QrandCoreError};
+  |                                                        ^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` on by default
+
+warning: 1 warning emitted
+
+0000000000056030 V DW.ref.rust_eh_personality
+0000000000050614 r GCC_except_table100
+0000000000050620 r GCC_except_table102
+000000000005062c r GCC_except_table104
+0000000000050644 r GCC_except_table105
+000000000005168c r GCC_except_table1050
+00000000000516a0 r GCC_except_table1053
+00000000000516c4 r GCC_except_table1055
+00000000000516f0 r GCC_except_table1057
+000000000005170c r GCC_except_table1061
+0000000000051728 r GCC_except_table1084
+0000000000051748 r GCC_except_table1085
+000000000005175c r GCC_except_table1094
+0000000000051770 r GCC_except_table1095
+0000000000051784 r GCC_except_table1100
+00000000000517a4 r GCC_except_table1101
+0000000000050650 r GCC_except_table111
+00000000000517b8 r GCC_except_table1110
+00000000000517d8 r GCC_except_table1117
+00000000000517ec r GCC_except_table1129
+0000000000051800 r GCC_except_table1131
+0000000000051810 r GCC_except_table1133
+0000000000051844 r GCC_except_table1134
+0000000000051854 r GCC_except_table1136
+000000000005186c r GCC_except_table1139
+0000000000051880 r GCC_except_table1140
+0000000000051898 r GCC_except_table1141
+00000000000518b0 r GCC_except_table1142
+00000000000518c8 r GCC_except_table1143
+00000000000518e0 r GCC_except_table1144
+00000000000518f4 r GCC_except_table1145
+0000000000051928 r GCC_except_table1162
+000000000005193c r GCC_except_table1163
+0000000000051954 r GCC_except_table1164
+0000000000051970 r GCC_except_table1165
+0000000000051988 r GCC_except_table1167
+0000000000051998 r GCC_except_table1172
+0000000000051a40 r GCC_except_table1173
+0000000000051a5c r GCC_except_table1174
+0000000000051a7c r GCC_except_table1178
+0000000000051adc r GCC_except_table1179
+0000000000051af4 r GCC_except_table1185
+0000000000051b20 r GCC_except_table1190
+0000000000051b38 r GCC_except_table1191
+0000000000051b4c r GCC_except_table1193
+000000000005065c r GCC_except_table132
+0000000000050668 r GCC_except_table136
+0000000000050674 r GCC_except_table145
+0000000000050680 r GCC_except_table149
+000000000005068c r GCC_except_table155
+00000000000506a0 r GCC_except_table191
+00000000000506b4 r GCC_except_table192
+00000000000506c8 r GCC_except_table193
+00000000000506d8 r GCC_except_table194
+0000000000051b58 r GCC_except_table2
+00000000000506e8 r GCC_except_table215
+0000000000050704 r GCC_except_table217
+0000000000050718 r GCC_except_table218
+0000000000050744 r GCC_except_table219
+0000000000050758 r GCC_except_table221
+0000000000050764 r GCC_except_table229
+000000000005078c r GCC_except_table231
+00000000000507c8 r GCC_except_table233
+00000000000507e8 r GCC_except_table234
+00000000000507f8 r GCC_except_table239
+0000000000050830 r GCC_except_table241
+0000000000050840 r GCC_except_table242
+000000000005086c r GCC_except_table245
+0000000000050880 r GCC_except_table247
+00000000000508e4 r GCC_except_table249
+0000000000050918 r GCC_except_table253
+000000000005092c r GCC_except_table255
+000000000005094c r GCC_except_table256
+000000000005097c r GCC_except_table261
+0000000000050990 r GCC_except_table262
+00000000000509ac r GCC_except_table265
+00000000000509c4 r GCC_except_table266
+00000000000509d0 r GCC_except_table268
+00000000000509dc r GCC_except_table274
+00000000000509f0 r GCC_except_table278
+0000000000050a0c r GCC_except_table279
+0000000000050a28 r GCC_except_table283
+0000000000051b64 r GCC_except_table29
+00000000000505b0 r GCC_except_table30
+0000000000050a44 r GCC_except_table323
+0000000000050a58 r GCC_except_table325
+0000000000051b70 r GCC_except_table33
+0000000000051b80 r GCC_except_table34
+0000000000050a70 r GCC_except_table359
+0000000000050a84 r GCC_except_table362
+0000000000050a94 r GCC_except_table390
+0000000000050aac r GCC_except_table391
+0000000000050ac8 r GCC_except_table392
+0000000000050aec r GCC_except_table393
+0000000000050b00 r GCC_except_table421
+0000000000050b14 r GCC_except_table430
+0000000000050b48 r GCC_except_table439
+0000000000050b54 r GCC_except_table441
+0000000000050b68 r GCC_except_table443
+0000000000050b80 r GCC_except_table448
+0000000000050bb4 r GCC_except_table451
+0000000000050bd4 r GCC_except_table454
+0000000000050bf0 r GCC_except_table455
+0000000000050c24 r GCC_except_table470
+0000000000050c3c r GCC_except_table471
+0000000000050c54 r GCC_except_table484
+0000000000050c68 r GCC_except_table490
+0000000000050c80 r GCC_except_table497
+0000000000050c9c r GCC_except_table499
+0000000000050cac r GCC_except_table501
+0000000000050cbc r GCC_except_table502
+0000000000050ccc r GCC_except_table503
+0000000000050cdc r GCC_except_table504
+0000000000050cec r GCC_except_table505
+0000000000050cfc r GCC_except_table509
+0000000000050d10 r GCC_except_table510
+0000000000050d28 r GCC_except_table514
+0000000000050d3c r GCC_except_table516
+0000000000050d4c r GCC_except_table519
+0000000000050d60 r GCC_except_table520
+0000000000050d74 r GCC_except_table521
+0000000000050d90 r GCC_except_table522
+0000000000050d9c r GCC_except_table523
+0000000000050da8 r GCC_except_table524
+0000000000050dc4 r GCC_except_table525
+0000000000050dd0 r GCC_except_table526
+0000000000050ddc r GCC_except_table527
+0000000000050df4 r GCC_except_table528
+0000000000050e1c r GCC_except_table529
+0000000000050e40 r GCC_except_table534
+0000000000050e50 r GCC_except_table535
+0000000000050e60 r GCC_except_table536
+0000000000050e6c r GCC_except_table537
+0000000000050e78 r GCC_except_table538
+0000000000050e84 r GCC_except_table539
+0000000000050ea0 r GCC_except_table543
+0000000000050eb4 r GCC_except_table544
+0000000000050ec4 r GCC_except_table546
+0000000000050edc r GCC_except_table547
+0000000000050f04 r GCC_except_table548
+0000000000050f48 r GCC_except_table549
+0000000000050f80 r GCC_except_table556
+0000000000050f94 r GCC_except_table557
+0000000000050fa8 r GCC_except_table558
+0000000000050fd0 r GCC_except_table560
+0000000000050fe8 r GCC_except_table561
+0000000000051000 r GCC_except_table562
+0000000000051018 r GCC_except_table563
+0000000000051030 r GCC_except_table564
+0000000000051048 r GCC_except_table565
+0000000000051060 r GCC_except_table566
+0000000000051078 r GCC_except_table567
+000000000005108c r GCC_except_table568
+00000000000510a0 r GCC_except_table569
+00000000000510b4 r GCC_except_table570
+00000000000510c8 r GCC_except_table599
+00000000000510f4 r GCC_except_table601
+0000000000051120 r GCC_except_table615
+000000000005113c r GCC_except_table647
+0000000000051168 r GCC_except_table673
+0000000000051198 r GCC_except_table704
+00000000000511c0 r GCC_except_table721
+00000000000511d8 r GCC_except_table728
+00000000000511f0 r GCC_except_table802
+00000000000511fc r GCC_except_table803
+0000000000051208 r GCC_except_table804
+00000000000505c0 r GCC_except_table81
+0000000000051214 r GCC_except_table813
+0000000000051224 r GCC_except_table814
+0000000000051238 r GCC_except_table815
+000000000005124c r GCC_except_table836
+0000000000051258 r GCC_except_table856
+00000000000505cc r GCC_except_table86
+00000000000512d4 r GCC_except_table863
+00000000000512e0 r GCC_except_table864
+00000000000512fc r GCC_except_table875
+000000000005130c r GCC_except_table876
+000000000005132c r GCC_except_table878
+00000000000505d8 r GCC_except_table88
+0000000000051338 r GCC_except_table886
+000000000005135c r GCC_except_table887
+0000000000051370 r GCC_except_table888
+0000000000051398 r GCC_except_table890
+00000000000513a8 r GCC_except_table892
+00000000000513b4 r GCC_except_table896
+00000000000513c8 r GCC_except_table903
+00000000000513d4 r GCC_except_table905
+00000000000513e8 r GCC_except_table917
+0000000000051404 r GCC_except_table919
+000000000005141c r GCC_except_table921
+0000000000051434 r GCC_except_table922
+0000000000051448 r GCC_except_table924
+0000000000051458 r GCC_except_table926
+000000000005149c r GCC_except_table939
+00000000000505e4 r GCC_except_table94
+00000000000514d4 r GCC_except_table941
+00000000000514f4 r GCC_except_table942
+0000000000051518 r GCC_except_table943
+0000000000051540 r GCC_except_table948
+00000000000505f0 r GCC_except_table95
+000000000005155c r GCC_except_table951
+0000000000051584 r GCC_except_table961
+0000000000051598 r GCC_except_table968
+00000000000505fc r GCC_except_table97
+00000000000515b0 r GCC_except_table970
+00000000000515f0 r GCC_except_table971
+0000000000051620 r GCC_except_table978
+0000000000051634 r GCC_except_table979
+0000000000050608 r GCC_except_table98
+0000000000051644 r GCC_except_table980
+0000000000051654 r GCC_except_table985
+0000000000051660 r GCC_except_table989
+0000000000055738 d _DYNAMIC
+0000000000055968 d _GLOBAL_OFFSET_TABLE_
+                 w _ITM_deregisterTMCloneTable
+                 w _ITM_registerTMCloneTable
+                 U _Unwind_Backtrace@@GCC_3.3
+                 U _Unwind_GetDataRelBase@@GCC_3.0
+                 U _Unwind_GetIP@@GCC_3.0
+                 U _Unwind_GetIPInfo@@GCC_4.2.0
+                 U _Unwind_GetLanguageSpecificData@@GCC_3.0
+                 U _Unwind_GetRegionStart@@GCC_3.0
+                 U _Unwind_GetTextRelBase@@GCC_3.0
+                 U _Unwind_RaiseException@@GCC_3.0
+                 U _Unwind_Resume@@GCC_3.0
+                 U _Unwind_SetGR@@GCC_3.0
+                 U _Unwind_SetIP@@GCC_3.0
+00000000000057d0 T qrand_core::rd::get_sequence::h74a758b777ad9fcb
+0000000000033200 r qrand_core::rd::ALPHAS::hb1a0524dedadec25
+000000000000fba0 t panic_unwind::dwarf::eh::read_encoded_pointer::h746a214fd79c440b
+000000000000fe20 t panic_unwind::real_imp::find_eh_action::{{closure}}::h1b814942898b4d50
+000000000000fe30 t panic_unwind::real_imp::find_eh_action::{{closure}}::hf6c886cf975fb6e1
+000000000000fe00 t panic_unwind::real_imp::panic::exception_cleanup::h2918f37891ca3a48
+0000000000005250 t qrand_benches::main::h954d87a710c06dee
+0000000000027b20 T rustc_demangle::try_demangle::hde52dfe144c987eb
+00000000000249c0 t rustc_demangle::v0::Parser::skip_const::hb70feed0a0ccdcd4
+0000000000023c50 t rustc_demangle::v0::Parser::ident::hc94211a994f68f9d
+0000000000023ef0 t rustc_demangle::v0::Parser::skip_path::hfbe6a427522d31c2
+0000000000024470 t rustc_demangle::v0::Parser::skip_type::hee718d4b4709c6f7
+0000000000024c60 t rustc_demangle::v0::Printer::print_path::hc088044868c687be
+00000000000255e0 t rustc_demangle::v0::Printer::print_type::h8becbdccb9d8dd78
+0000000000026110 t rustc_demangle::v0::Printer::print_type::{{closure}}::hc2ad32a9a0073235
+0000000000026880 t rustc_demangle::v0::Printer::print_const::h0e6de5a941ddb3dd
+0000000000026700 t rustc_demangle::v0::Printer::print_dyn_trait::hd9aacb7cce0544b9
+00000000000254d0 t rustc_demangle::v0::Printer::print_generic_arg::hadbb43ddcfc1cd8e
+0000000000024b90 t rustc_demangle::v0::Printer::print_lifetime_from_index::h01419d429cc77ad0
+00000000000264e0 t rustc_demangle::v0::Printer::print_path_maybe_open_generics::h6c78998f254d33f5
+0000000000027b80 T rustc_demangle::Demangle::as_str::h9f4f596da1498a07
+0000000000026d90 T rustc_demangle::demangle::hd547c82b67e8f3ef
+00000000000321a0 t compiler_builtins::int::udiv::__udivmodti4::h8ee1f0a9dfdcdad4
+00000000000081b0 T <std::error::<impl core::convert::From<alloc::string::String> for alloc::boxed::Box<dyn std::error::Error+core::marker::Sync+core::marker::Send>>::from::StringError as core::fmt::Debug>::fmt::h6aceed355ab15465
+0000000000008180 T <std::error::<impl core::convert::From<alloc::string::String> for alloc::boxed::Box<dyn std::error::Error+core::marker::Sync+core::marker::Send>>::from::StringError as std::error::Error>::description::hcc4d14f771925a8b
+0000000000008190 T <std::error::<impl core::convert::From<alloc::string::String> for alloc::boxed::Box<dyn std::error::Error+core::marker::Sync+core::marker::Send>>::from::StringError as core::fmt::Display>::fmt::h71d09c1dff73fe45
+00000000000058d0 t <T as core::any::Any>::type_id::h6fdaff7104a74784
+00000000000058e0 t <T as core::any::Any>::type_id::h760f6d82b5d3ebf9
+000000000002b740 t <T as core::any::Any>::type_id::hca563bd064b5cd23
+00000000000058f0 t <T as core::any::Any>::type_id::hea674550f83940bc
+0000000000056098 b std::sys_common::at_exit_imp::LOCK::h5f987305abe0a6d0
+000000000000bef0 t std::sys_common::at_exit_imp::push::h747d589a09d3a0df
+00000000000560c0 b std::sys_common::at_exit_imp::QUEUE::h83010982e05919bf
+000000000000cf90 t std::sys_common::thread_info::ThreadInfo::with::{{closure}}::h2f2f21809baae150
+0000000000000080 b std::sys_common::thread_info::THREAD_INFO::__getit::__KEY::hebb43db8a7efe1ab
+000000000000d120 T std::sys_common::thread_info::set::h99b4aa3138447501
+000000000000d460 t std::sys_common::thread_local::register_dtor_fallback::h43db38886d504415
+0000000000056010 d std::sys_common::thread_local::register_dtor_fallback::DTORS::h8b0eaad2224ed69a
+000000000000d860 t std::sys_common::thread_local::register_dtor_fallback::run_dtors::hfa9ba3a4ceeb7f53
+000000000000d320 T std::sys_common::thread_local::StaticKey::lazy_init::h74e68ee246270ae2
+000000000000db60 t std::sys_common::util::dumb_print::h7ea17716e4918efe
+000000000000dc10 t std::sys_common::util::report_overflow::hb1ee59e70cb0a3e6
+000000000000dbb0 t std::sys_common::util::abort::ha2610db406c9bb69
+00000000000560f8 b std::sys_common::cleanup::CLEANUP::h765f386dbf70a80a
+000000000000c860 t std::sys_common::backtrace::_print_fmt::{{closure}}::h2f66a54b20b8d990
+000000000000c300 t std::sys_common::backtrace::_print_fmt::{{closure}}::hd5816c180f679936
+000000000000c340 t std::sys_common::backtrace::_print_fmt::{{closure}}::{{closure}}::h12bce01143544f48
+000000000000c990 t std::sys_common::backtrace::output_filename::h3d176bffdf5c3feb
+00000000000560f0 b std::sys_common::backtrace::rust_backtrace_env::ENABLED::hd8d4362f8f16b1e2
+000000000000c980 t std::sys_common::backtrace::__rust_begin_short_backtrace::hed92203172b405da
+00000000000560c8 b std::sys_common::backtrace::lock::LOCK::h3609059f80ae2a67
+0000000000009fa0 t std::io::Write::write_all_vectored::h007b965ca4fa5ce2
+000000000000a2e0 t std::io::Write::write_all_vectored::h3c87a867a5271473
+0000000000009d10 t std::io::Write::write_all::h5d4fc273c58b1dbb
+000000000000a5e0 t std::io::Write::write_fmt::hf3afc6cfd57d0033
+0000000000008fd0 t std::io::impls::<impl std::io::Write for alloc::boxed::Box<W>>::write_vectored::hf01247cc48ea2d11
+0000000000008ff0 t std::io::impls::<impl std::io::Write for alloc::boxed::Box<W>>::is_write_vectored::hd384857d120617f2
+0000000000009000 t std::io::impls::<impl std::io::Write for alloc::boxed::Box<W>>::flush::hdff52ed07c9f3e08
+0000000000008fb0 t std::io::impls::<impl std::io::Write for alloc::boxed::Box<W>>::write::h72bf989da317f943
+0000000000009020 t std::io::impls::<impl std::io::Write for alloc::boxed::Box<W>>::write_all::h3f89812fa2dc20a6
+0000000000009040 t std::io::impls::<impl std::io::Write for alloc::boxed::Box<W>>::write_fmt::ha927d7e5f294bce5
+0000000000000040 b std::io::stdio::LOCAL_STDERR::__getit::__KEY::heb0da4acd318fbd9
+0000000000000000 b std::io::stdio::LOCAL_STDOUT::__getit::__KEY::he10d137aac7f5149
+0000000000009970 T std::io::stdio::_print::h59a395b7f155a198
+0000000000009170 T std::io::stdio::stdout::h0f809e03864fc49a
+0000000000056068 b std::io::stdio::stdout::INSTANCE::hfcc6cdc412177fca
+0000000000009870 T std::io::stdio::set_panic::hee39287b09def37d
+0000000000008510 t std::io::buffered::BufWriter<W>::flush_buf::h8be73e5da4b8c4a3
+0000000000005770 t std::rt::lang_start::{{closure}}::hc0c2fc6f802352a2
+000000000000ed50 T std::rt::lang_start_internal::h72cc068ed2d0ac53
+0000000000007c10 T std::env::current_dir::hd76ce79571994c16
+0000000000007ea0 T std::env::_var_os::hb8fff00bd5baed94
+0000000000008420 T std::ffi::c_str::<impl core::convert::From<std::ffi::c_str::NulError> for std::io::error::Error>::from::h1be379cd9427436a
+00000000000082c0 T std::ffi::c_str::CString::from_vec_unchecked::h0ab879a41e42f355
+0000000000008180 T std::ffi::os_str::OsString::as_os_str::h60c3ba5db92404b2
+000000000000fac0 t std::sys::unix::abort_internal::hfac894b3be3c1df3
+000000000000f950 t std::sys::unix::stack_overflow::imp::make_handler::h20dc79d9da935ce2
+00000000000561c8 b std::sys::unix::stack_overflow::imp::MAIN_ALTSTACK::hab91bb1892c70813
+00000000000561d8 b std::sys::unix::stack_overflow::imp::NEED_ALTSTACK::h6b1c79b9f6135330.0.0
+000000000000f6b0 t std::sys::unix::stack_overflow::imp::signal_handler::h46a7b53aadd53346
+000000000000fa70 t std::sys::unix::decode_error_kind::hb4d4cbbc908d6828
+000000000000f5b0 t std::sys::unix::os::error_string::h0192efe5febd7c47
+00000000000561a0 b std::sys::unix::os::env_lock::ENV_LOCK::h98969163ffa9c904
+000000000000f310 t std::sys::unix::args::imp::ARGV_INIT_ARRAY::init_wrapper::hc0fcd418f9e071e4
+0000000000053b40 d std::sys::unix::args::imp::ARGV_INIT_ARRAY::h17c8f29913b95733
+0000000000056168 b std::sys::unix::args::imp::ARGC::h6ef0dc8ac322cbbc
+0000000000056170 b std::sys::unix::args::imp::ARGV::h144f270ef3fe34d6
+0000000000056178 b std::sys::unix::args::imp::LOCK::he9eb9a0d662922af
+00000000000561d0 b std::sys::unix::thread::guard::PAGE_SIZE::h2123420fb83fc9cc
+000000000000f350 t std::sys::unix::condvar::Condvar::init::h01112836483c8619
+0000000000008180 T std::path::<impl core::convert::AsRef<std::path::Path> for std::ffi::os_str::OsString>::as_ref::hb40c00ebfb7e812d
+000000000000b030 t std::path::Components::parse_next_component_back::hf0929548490937be
+000000000000ac00 T std::path::Components::as_path::h03431b1b1321ecc1
+000000000000a940 t std::path::iter_after::h25370c780de06479
+0000000000008180 T std::path::PathBuf::as_path::h1a9308949e233c32
+0000000000008180 T std::path::<impl core::convert::AsRef<std::path::Path> for alloc::string::String>::as_ref::hf5d407623de40b62
+000000000000baa0 T std::sync::once::Once::call_inner::h65ff97b0ed20a605
+000000000000b850 t std::sync::once::Once::call_once::{{closure}}::hd30432633f3e0760
+000000000000ddc0 t std::alloc::default_alloc_error_hook::h89d03aa6b73cb3a6
+0000000000056100 b std::alloc::HOOK::h9c82adad352c78b8
+0000000000008170 t std::error::Error::cause::h57e20b31007b1fcf
+0000000000008150 t std::error::Error::type_id::h9fc8fc098eb801c5
+0000000000008160 t std::error::Error::backtrace::hffc6b1aa32ccc25c
+00000000000074d0 T std::thread::park::h661f4bccd6921e93
+0000000000006fe0 t std::thread::local::LocalKey<T>::try_with::he522793a03fcb877
+00000000000070f0 t std::thread::local::fast::Key<T>::try_initialize::h805f60a7f4670069
+00000000000071f0 t std::thread::local::fast::Key<T>::try_initialize::h906eee3afa8e73b7
+00000000000072f0 t std::thread::local::fast::Key<T>::try_initialize::he92cfc68f0b16bd8
+00000000000073f0 t std::thread::local::fast::destroy_value::h59067502ed84cbad
+0000000000007460 t std::thread::local::fast::destroy_value::h90628dd8f2f4f5f1
+0000000000007850 T std::thread::Thread::new::hd3d1980bb5be42a9
+0000000000007b10 T std::thread::Thread::unpark::hd561e343f4f3a0bf
+0000000000056040 b std::thread::ThreadId::new::GUARD::h65effed45f12a109
+0000000000056008 d std::thread::ThreadId::new::COUNTER::h63e874e76494d37d
+000000000000b840 T std::process::abort::h16a826f8f11b718b
+000000000000ea40 t std::panicking::begin_panic::h5f0635be410c1e27
+00000000000000c0 b std::panicking::panic_count::LOCAL_PANIC_COUNT::__getit::__KEY::h73ba3a57803d1cf6
+000000000000e690 T std::panicking::panic_count::is_zero_slow_path::h2fad16d54536941a
+0000000000056160 B std::panicking::panic_count::GLOBAL_PANIC_COUNT::h00c10eb3f1dfe801
+000000000000e010 t std::panicking::default_hook::hecc34e3f729e213c
+0000000000056020 d std::panicking::default_hook::{{closure}}::FIRST_PANIC::hcead77b335c7f0c8
+000000000000e400 t std::panicking::default_hook::{{closure}}::heae49580a8d62d75
+000000000000e750 T std::panicking::begin_panic_fmt::h905a6d44880d49ef
+000000000000eaf0 T std::panicking::rust_panic_with_hook::he82f5d0644692441
+000000000000e6d0 T std::panicking::try::cleanup::hbb6df914167d85cd
+0000000000056150 b std::panicking::HOOK::h0f676aed3062e151
+0000000000056108 b std::panicking::HOOK_LOCK::h37157eeeb1cb670f
+000000000002e3d0 T <str as core::fmt::Debug>::fmt::h01002eb9172bdf9d
+000000000002e800 T <char as core::fmt::Debug>::fmt::h1166f71fef9b1c21
+0000000000031960 t <&T as core::fmt::Debug>::fmt::h078637c4c3c08747
+0000000000005900 t <&T as core::fmt::Debug>::fmt::h62d85bdc0ad0916e
+0000000000005960 t <&T as core::fmt::Debug>::fmt::h7185735d3a908667
+0000000000031b80 t <&T as core::fmt::Debug>::fmt::h744125a136bf21b4
+0000000000031c20 t <&T as core::fmt::Debug>::fmt::h8e0337c2ec27db80
+00000000000059c0 t <&T as core::fmt::Debug>::fmt::hac235d0ad19185ce
+0000000000005a40 t <&T as core::fmt::Debug>::fmt::hb7435b0178048907
+0000000000031c30 t <&T as core::fmt::Debug>::fmt::hbbdfeefd7df980ef
+0000000000031d30 t <&T as core::fmt::Debug>::fmt::hc1e66d66eb0f4dc6
+0000000000031ea0 t <&T as core::fmt::Debug>::fmt::hfb4344b822cdf80f
+000000000002e7e0 T <str as core::fmt::Display>::fmt::h4ff1dfa86d59ca8d
+000000000002ea70 T <char as core::fmt::Display>::fmt::hc1188f785f07189a
+0000000000005aa0 t <&T as core::fmt::Display>::fmt::h30825ac5a4688358
+0000000000010190 t <&T as core::fmt::Display>::fmt::h33a103d39ca0a50e
+0000000000005ab0 t <&T as core::fmt::Display>::fmt::h4ccda556ed274ee2
+0000000000031eb0 t <&T as core::fmt::Display>::fmt::h638c3cef4445f5ab
+0000000000005ad0 t <&T as core::fmt::UpperHex>::fmt::h1943afed6cbb31b2
+000000000002cf10 T core::fmt::ArgumentV1::from_usize::h39b04a2e600841ff
+00000000000313e0 T core::fmt::num::imp::<impl core::fmt::Display for u8>::fmt::hae9b2f4f8d218d1c
+0000000000031470 T core::fmt::num::imp::<impl core::fmt::Display for i32>::fmt::hdff7ceae31515f76
+00000000000315a0 T core::fmt::num::imp::<impl core::fmt::Display for u32>::fmt::h43c98606ce80fde1
+00000000000316d0 T core::fmt::num::imp::<impl core::fmt::Display for u64>::fmt::hf7050dcb5cce3380
+00000000000316d0 T core::fmt::num::imp::<impl core::fmt::Display for usize>::fmt::h9db5440c8935333d
+0000000000030d50 t core::fmt::num::<impl core::fmt::Debug for usize>::fmt::h62361d11a3d9de3f
+0000000000030f70 T core::fmt::num::<impl core::fmt::LowerHex for i8>::fmt::h91a669d994411d59
+0000000000030f70 T core::fmt::num::<impl core::fmt::LowerHex for u8>::fmt::h3bf0f8a8e29163fc
+0000000000031010 T core::fmt::num::<impl core::fmt::UpperHex for i8>::fmt::h2e302e05eeee7647
+0000000000031010 T core::fmt::num::<impl core::fmt::UpperHex for u8>::fmt::h10368181675c789c
+0000000000031800 T core::fmt::num::<impl core::fmt::Display for u128>::fmt::hbf633ed29108a0f7
+00000000000310b0 T core::fmt::num::<impl core::fmt::LowerHex for i32>::fmt::h3714c07aace5b573
+00000000000311f0 T core::fmt::num::<impl core::fmt::LowerHex for i64>::fmt::h72b3373d8b3a4eab
+00000000000310b0 T core::fmt::num::<impl core::fmt::LowerHex for u32>::fmt::hfce767795847c2ac
+00000000000311f0 T core::fmt::num::<impl core::fmt::LowerHex for u64>::fmt::h8377eae1154d58af
+0000000000031150 T core::fmt::num::<impl core::fmt::UpperHex for i32>::fmt::heacc70a279eceec1
+0000000000031290 T core::fmt::num::<impl core::fmt::UpperHex for i64>::fmt::h1597c04b920eb564
+0000000000031150 T core::fmt::num::<impl core::fmt::UpperHex for u32>::fmt::hc2f65734cb045feb
+0000000000031290 T core::fmt::num::<impl core::fmt::UpperHex for u64>::fmt::ha39b2ba18f51b7c9
+0000000000031330 T core::fmt::num::<impl core::fmt::LowerHex for i128>::fmt::h6f958c582a44dc78
+0000000000031330 T core::fmt::num::<impl core::fmt::LowerHex for u128>::fmt::h14ca6aac1d630cf4
+00000000000311f0 T core::fmt::num::<impl core::fmt::LowerHex for isize>::fmt::h7af66ec5027879d1
+00000000000311f0 T core::fmt::num::<impl core::fmt::LowerHex for usize>::fmt::h13e862fb5df3626f
+0000000000031290 T core::fmt::num::<impl core::fmt::UpperHex for isize>::fmt::h1c73769c6532cf3e
+0000000000031290 T core::fmt::num::<impl core::fmt::UpperHex for usize>::fmt::h461b4969a968fbcd
+0000000000005ae0 t core::fmt::Write::write_char::h391df36cfb630322
+000000000002ccd0 t core::fmt::Write::write_char::h424a53efa84df4a1
+0000000000005bb0 t core::fmt::Write::write_char::hda7f94e552085e0f
+0000000000005c80 t core::fmt::Write::write_fmt::h83ff59e3c1f3e01f
+000000000002cda0 t core::fmt::Write::write_fmt::hb7f396e1ff1435f1
+0000000000005cc0 t core::fmt::Write::write_fmt::hcee02f6653fa4d63
+000000000002c260 t core::fmt::float::float_to_decimal_common_exact::h6c1bb43b6c011f19
+000000000002c810 t core::fmt::float::float_to_decimal_common_shortest::he3dbdd28ec937bc2
+0000000000030cd0 T core::fmt::float::<impl core::fmt::Debug for f64>::fmt::he93872fe6b95bb0b
+0000000000030d10 T core::fmt::float::<impl core::fmt::Display for f64>::fmt::h8b57e0ef41d99948
+000000000002cf60 T core::fmt::write::he0c1e5f7426d2718
+000000000002c100 t core::fmt::builders::DebugInner::entry::h28b722bee7f6558f
+000000000002bf40 T core::fmt::builders::DebugTuple::field::hb41f7c1b362319e4
+000000000002c080 T core::fmt::builders::DebugTuple::finish::h7d65d631bab86a18
+000000000002bd40 T core::fmt::builders::DebugStruct::field::h2f67e1441bbffdf5
+000000000002bef0 T core::fmt::builders::DebugStruct::finish::h1d82522f55249e4c
+000000000002c220 T core::fmt::builders::DebugSet::entry::h7f3098c66ac4d037
+000000000002c220 T core::fmt::builders::DebugList::entry::hfcacefc41873a389
+000000000002c230 T core::fmt::builders::DebugList::finish::h94593e6e0f08ff62
+000000000002e370 T core::fmt::Formatter::debug_list::h8c75a2060af2c47a
+000000000002e330 T core::fmt::Formatter::debug_tuple::h26e6c819e6e2b254
+000000000002e300 T core::fmt::Formatter::debug_struct::hb91dbebfdaf2c675
+000000000002d6f0 t core::fmt::Formatter::pad_integral::write_prefix::hac64b8ffb70e3230
+000000000002d220 T core::fmt::Formatter::pad_integral::h7f559919cf7246ce
+000000000002e2e0 T core::fmt::Formatter::debug_lower_hex::h0f758bf74de7e467
+000000000002e2f0 T core::fmt::Formatter::debug_upper_hex::hcb8ddb31a324fd72
+000000000002dd70 t core::fmt::Formatter::pad_formatted_parts::h93f13fecccc1dce2
+000000000002df90 t core::fmt::Formatter::write_formatted_parts::h54b120a5225d7d99
+000000000002d740 T core::fmt::Formatter::pad::h6e1fcf35ea7f5028
+000000000002e2d0 T core::fmt::Formatter::alternate::h7c5844db938eef83
+000000000002e290 T core::fmt::Formatter::write_fmt::h7131ab015530ae80
+000000000002e270 T core::fmt::Formatter::write_str::h8ea147d1747a1356
+000000000002b540 t core::num::from_str_radix::h0465b5162b55f823
+0000000000030b80 T core::num::<impl u32>::from_str_radix::h4e42791e112e280a
+0000000000030b90 T core::num::<impl core::str::FromStr for u64>::from_str::h1ed343100b5de445
+0000000000030b90 T core::num::<impl core::str::FromStr for usize>::from_str::hdafb21ff34398874
+00000000000307d0 T core::num::bignum::Big32x40::mul_digits::hb76a1956e10ac6ac
+0000000000030640 T core::num::bignum::Big32x40::mul_pow2::h1506a81b647d5931
+000000000002b430 T core::num::flt2dec::round_up::h45f064f7a1222c12
+000000000004a278 R core::num::flt2dec::strategy::grisu::CACHED_POW10::hc4ec67bd7ad4155b
+000000000002ae00 T core::num::flt2dec::strategy::grisu::format_exact_opt::h29ed75845a3c7a23
+000000000002a430 T core::num::flt2dec::strategy::grisu::format_shortest_opt::h8fdf8a15f98381bc
+000000000004a0b8 r core::num::flt2dec::strategy::dragon::POW10TO128::h72f7d4eb68217763
+000000000004a0f0 r core::num::flt2dec::strategy::dragon::POW10TO256::haa8228aa93a3a0a3
+0000000000029440 T core::num::flt2dec::strategy::dragon::format_exact::h9a55f44daed76fab
+0000000000028020 T core::num::flt2dec::strategy::dragon::format_shortest::h0f15e692340d845f
+000000000004a034 r core::num::flt2dec::strategy::dragon::POW10::hf8a3a78fefa88046
+000000000004a05c r core::num::flt2dec::strategy::dragon::TWOPOW10::h5a8a68430911de99
+000000000004a084 r core::num::flt2dec::strategy::dragon::POW10TO16::hebeac5760983a290
+000000000004a08c r core::num::flt2dec::strategy::dragon::POW10TO32::hf6d9b6beccbd49d6
+000000000004a09c r core::num::flt2dec::strategy::dragon::POW10TO64::hdf76219e35713a1d
+0000000000027d30 T core::num::flt2dec::strategy::dragon::mul_pow10::h6eb6d730b841e459
+0000000000005d00 t core::ops::function::FnOnce::call_once{{vtable.shim}}::h196cb88cf6825b9d
+0000000000005d10 t core::ops::function::FnOnce::call_once{{vtable.shim}}::h25f126cb00402fac
+00000000000101b0 t core::ops::function::FnOnce::call_once{{vtable.shim}}::h2dab69025efa0186
+0000000000005d20 t core::ops::function::FnOnce::call_once{{vtable.shim}}::h575360becc948cd8
+0000000000005d40 t core::ops::function::FnOnce::call_once{{vtable.shim}}::h6c00a35e1acd5819
+000000000000fad0 t core::ops::function::FnOnce::call_once{{vtable.shim}}::h7c4cb3e18d73e051
+0000000000005780 t core::ops::function::FnOnce::call_once{{vtable.shim}}::hb5dbb7b791bb44e1
+000000000000fae0 t core::ops::function::FnOnce::call_once{{vtable.shim}}::hb7dc32cfadecf588
+0000000000005db0 t core::ops::function::FnOnce::call_once{{vtable.shim}}::hcd8ad5177dd1e09f
+0000000000027d00 t core::ops::function::FnOnce::call_once::heab8826cfb09c567
+0000000000027d20 t core::ptr::drop_in_place::h001a6a298b87060c
+0000000000005e20 t core::ptr::drop_in_place::h037fe275f4d41e16
+00000000000227d0 t core::ptr::drop_in_place::h0c1df5e8f5d5122a
+0000000000005e30 t core::ptr::drop_in_place::h0d9db690ba8e462d
+0000000000005e50 t core::ptr::drop_in_place::h108848fe295b0957
+000000000000faf0 t core::ptr::drop_in_place::h13f177423a821d8d
+0000000000005ef0 t core::ptr::drop_in_place::h147b919c0f531e47
+0000000000005f50 t core::ptr::drop_in_place::h19ef85f029b3ce0d
+0000000000005f60 t core::ptr::drop_in_place::h1fe10a80412db428
+0000000000005fc0 t core::ptr::drop_in_place::h2dd8ecd52f3cb2b0
+00000000000060b0 t core::ptr::drop_in_place::h2ee008c22db0ebff
+0000000000006130 t core::ptr::drop_in_place::h300a0cdc994c8a77
+0000000000006150 t core::ptr::drop_in_place::h36aa521b8538384f
+0000000000006170 t core::ptr::drop_in_place::h38724602941d4c91
+0000000000006180 t core::ptr::drop_in_place::h3b78fe4899ba4f63
+0000000000006200 t core::ptr::drop_in_place::h4630029e0b697fdf
+0000000000006220 t core::ptr::drop_in_place::h4b9b1683714034b4
+0000000000006250 t core::ptr::drop_in_place::h5344a0a5a7fd23f4
+00000000000101d0 t core::ptr::drop_in_place::h5d6d4c346eeee2f9
+0000000000006260 t core::ptr::drop_in_place::h6530d3a657fbdc99
+0000000000006270 t core::ptr::drop_in_place::h6e76e2cbe27cc7fa
+0000000000006290 t core::ptr::drop_in_place::h7279e50ef4f258fe
+00000000000062b0 t core::ptr::drop_in_place::h72884224fabdfc86
+0000000000006300 t core::ptr::drop_in_place::h7441622c483f7e53
+0000000000006330 t core::ptr::drop_in_place::h786133f70e20e80c
+0000000000006380 t core::ptr::drop_in_place::h7e198075ee146acd
+00000000000063b0 t core::ptr::drop_in_place::h7f8f4e9da8c670aa
+000000000000fb60 t core::ptr::drop_in_place::h815fdf8ef3b89baa
+00000000000063c0 t core::ptr::drop_in_place::h81bc5db52b2c98b1
+0000000000006420 t core::ptr::drop_in_place::h8b54f1c889a1c1c6
+0000000000006450 t core::ptr::drop_in_place::h9b2f2332d89a6320
+0000000000006460 t core::ptr::drop_in_place::ha1c86f8b19db1ca8
+0000000000006490 t core::ptr::drop_in_place::ha4c38d9cf66a736b
+0000000000006510 t core::ptr::drop_in_place::ha607884cdf139b90
+0000000000006530 t core::ptr::drop_in_place::hc143b5e457ff5e40
+0000000000006590 t core::ptr::drop_in_place::hc268aedf68338e85
+00000000000065c0 t core::ptr::drop_in_place::hca47e7eda7e3356e
+00000000000065d0 t core::ptr::drop_in_place::hcf471dd596dd902c
+00000000000101e0 t core::ptr::drop_in_place::hd3b867f768215776
+0000000000005790 t core::ptr::drop_in_place::he5eb56fc9346c46a
+00000000000066a0 t core::ptr::drop_in_place::hf2ad4bfc2518a4db
+00000000000066c0 t core::ptr::drop_in_place::hf4e8facb04f4e889
+000000000004aba0 R core::str::UTF8_CHAR_WIDTH::h19faeb7f96a6a3ee
+000000000002ffb0 T core::str::slice_error_fail::he019309d67ce7ec8
+000000000002f720 T core::str::lossy::Utf8Lossy::from_bytes::h946fca3fc0f96b59
+000000000002f730 T core::str::lossy::Utf8Lossy::chunks::hd09f48fc2cfbb035
+000000000002f720 T core::str::lossy::Utf8Lossy::from_str::he3ab5de1d5c540a0
+000000000002ff80 t core::str::traits::<impl core::slice::SliceIndex<str> for core::ops::range::Range<usize>>::index::{{closure}}::h088ace93dd4c622c
+00000000000227e0 t core::str::traits::<impl core::slice::SliceIndex<str> for core::ops::range::Range<usize>>::index::{{closure}}::hb836663931688f57
+0000000000022810 t core::str::traits::<impl core::slice::SliceIndex<str> for core::ops::range::RangeTo<usize>>::index::{{closure}}::h89bde3fda4c764f7
+00000000000066f0 t core::str::traits::<impl core::slice::SliceIndex<str> for core::ops::range::RangeFrom<usize>>::index::{{closure}}::h309d6ea8293bdbd2
+0000000000022830 t core::str::traits::<impl core::slice::SliceIndex<str> for core::ops::range::RangeFrom<usize>>::index::{{closure}}::h91fdb011f18d907a
+000000000002ee60 T core::str::pattern::StrSearcher::new::h1b039f593a903783
+000000000002fce0 T core::str::Utf8Error::valid_up_to::hfb95156c951898d9
+000000000002fcf0 T core::str::Utf8Error::error_len::he3c317b0247e6d52
+000000000002fd00 T core::str::from_utf8::he2becd7cca4907b6
+000000000002b960 T core::panic::Location::caller::h448ae3f5b3d48db2
+000000000002b940 T core::panic::PanicInfo::message::h1b13578496afb78a
+000000000002b930 T core::panic::PanicInfo::payload::hd8a791987d3d1d30
+000000000002b950 T core::panic::PanicInfo::location::h3c36cc16f4792416
+000000000002ed40 T core::slice::slice_index_len_fail::h2e0e7056607bc84f
+000000000002edc0 T core::slice::slice_index_order_fail::he8a6e0235aabafad
+000000000002ee40 T core::slice::slice_index_overflow_fail::h9bc40d638705f95d
+000000000002eb60 T core::slice::memchr::memchr::h9b0215dfa65ad5cd
+000000000002b830 T core::option::expect_failed::hb49e05615ae76cc6
+000000000002b8a0 T core::option::expect_none_failed::h188f17af6c9f404b
+000000000002b8a0 T core::result::unwrap_failed::hd1bb4e5d04c9e26d
+0000000000049c20 r core::unicode::unicode_data::white_space::SHORT_OFFSET_RUNS::hcb2db4a443490607
+000000000004b31c r core::unicode::unicode_data::grapheme_extend::SHORT_OFFSET_RUNS::h8b776ecd85c4ce3d
+0000000000031fd0 T core::unicode::unicode_data::grapheme_extend::lookup::h0ca5dba70b617b1e
+000000000004b398 r core::unicode::unicode_data::grapheme_extend::OFFSETS::h25527a25171d2625
+0000000000031fb0 T core::unicode::unicode_data::cc::lookup::h42ebf4c7477ca59c
+00000000000303b0 T core::unicode::printable::is_printable::h30203a9eac3a7500
+000000000002ba50 T core::panicking::panic_bounds_check::hbdc398d43c7789be
+000000000002ba00 T core::panicking::panic::h7ece43057e5422d4
+000000000002bad0 T core::panicking::panic_fmt::h09c929f06bb87c98
+0000000000010210 t <*mut T as core::fmt::Debug>::fmt::h99b77ece7eb4a5ae
+000000000002cdf0 t <&mut W as core::fmt::Write>::write_char::h30d533eada30d03e
+0000000000006720 t <&mut W as core::fmt::Write>::write_char::h61660374a8731f95
+00000000000067f0 t <&mut W as core::fmt::Write>::write_char::h72eea5a7d30705fa
+00000000000068c0 t <&mut W as core::fmt::Write>::write_char::h9c4a55b67d3b1641
+0000000000006ae0 t <&mut W as core::fmt::Write>::write_fmt::h1964a9129728cbdb
+0000000000006b30 t <&mut W as core::fmt::Write>::write_fmt::h259fe234a0a103ff
+000000000002cec0 t <&mut W as core::fmt::Write>::write_fmt::h861dab8c8bd8d4c5
+0000000000006b80 t <&mut W as core::fmt::Write>::write_fmt::h8c23df57f02de366
+000000000002cde0 t <&mut W as core::fmt::Write>::write_str::h23d6b047f02728a0
+0000000000006bd0 t <&mut W as core::fmt::Write>::write_str::h6b9065173dfc9bf0
+0000000000006be0 t <&mut W as core::fmt::Write>::write_str::h8422a8cc4b593572
+0000000000006cb0 t <&mut W as core::fmt::Write>::write_str::hf112bb66a46c2b94
+000000000000b820 T <std::path::Display as core::fmt::Debug>::fmt::hb9b8fe5536e683db
+000000000002cf20 T <core::fmt::Arguments as core::fmt::Debug>::fmt::h8f5ec4adebd869df
+000000000002e3b0 T <core::fmt::Formatter as core::fmt::Write>::write_char::h36e0a18fb39c3075
+000000000002e290 T <core::fmt::Formatter as core::fmt::Write>::write_fmt::hd63ebc41f2a64a04
+000000000002e270 T <core::fmt::Formatter as core::fmt::Write>::write_str::he3e55e6281275b2a
+0000000000031ed0 T <core::str::Utf8Error as core::fmt::Debug>::fmt::h4d2d99c3005c5668
+00000000000093b0 T <std::io::stdio::Stdout as std::io::Write>::write_fmt::h0370c5d8a684c1fa
+000000000002cf20 T <core::fmt::Arguments as core::fmt::Display>::fmt::h19cd578fd598a921
+0000000000006cc0 t alloc::vec::Vec<T>::into_boxed_slice::h3b34d9492faf2665
+0000000000027c80 T alloc::vec::Vec<T>::drain::end_assert_failed::hc3dae388920f6442
+0000000000006d70 t alloc::sync::Arc<T>::drop_slow::h26acd0dd668887b6
+0000000000006dc0 t alloc::sync::Arc<T>::drop_slow::h9381efc30679c789
+0000000000027c30 T alloc::alloc::handle_alloc_error::h57669a6de6307986
+0000000000006e60 t alloc::alloc::box_free::h50d83e2626f60a83
+000000000000fb70 t alloc::alloc::box_free::hac233c4df5740414
+0000000000006e70 t alloc::alloc::box_free::hb42189915344713b
+000000000000fb80 t alloc::alloc::box_free::hee600c8469c01536
+0000000000006e90 t alloc::alloc::box_free::hff48b6a1d2b5ac27
+0000000000006ea0 t alloc::slice::<impl alloc::borrow::ToOwned for [T]>::to_owned::h0c07c487a0cdef7b
+0000000000027c60 T alloc::string::<impl core::convert::From<alloc::string::String> for alloc::vec::Vec<u8>>::from::hca0288d9936572ad
+0000000000027c40 T alloc::raw_vec::capacity_overflow::h8b985bbf9a0b2054
+0000000000006f90 t <alloc::string::String as core::fmt::Display>::fmt::h628a2c444b6f0fa4
+000000000002b750 T <core::cell::BorrowError as core::fmt::Debug>::fmt::h7025d833ec7a1ef8
+000000000002b970 T <core::panic::Location as core::fmt::Display>::fmt::h058d42b50fde1a88
+0000000000008d30 T <std::io::error::Error as core::fmt::Display>::fmt::hf6d12283419852cd
+00000000000090f0 T <std::io::stdio::StderrRaw as std::io::Write>::write_vectored::h3d1fa9884356eae3
+0000000000009160 T <std::io::stdio::StderrRaw as std::io::Write>::flush::h84d05ef994b74e91
+0000000000009080 T <std::io::stdio::StderrRaw as std::io::Write>::write::hc30686e08801c0b6
+0000000000009160 T <std::io::stdio::StdoutRaw as std::io::Write>::flush::h393a7ce1a91e6e6e
+0000000000030c20 T <core::num::ParseIntError as core::fmt::Debug>::fmt::hf7b77f786f76aaa5
+0000000000027b90 T <rustc_demangle::Demangle as core::fmt::Debug>::fmt::hd7c0bfb328f97e32
+00000000000095c0 T <std::io::stdio::StdoutLock as std::io::Write>::write_all::h463d83c8087eba9f
+000000000000f2a0 T <std::ffi::c_str::NulError as core::fmt::Debug>::fmt::h085e92c66915e411
+000000000002b770 T <core::cell::BorrowMutError as core::fmt::Debug>::fmt::h86498a82c1b9600f
+0000000000027b90 T <rustc_demangle::Demangle as core::fmt::Display>::fmt::h386fd4e47253402f
+00000000000237a0 T <rustc_demangle::v0::Ident as core::fmt::Display>::fmt::h22845c0abf84b7ca
+00000000000090f0 T <std::sys::unix::stdio::Stderr as std::io::Write>::write_vectored::h86200a98a1524290
+000000000000fa60 t <std::sys::unix::stdio::Stderr as std::io::Write>::is_write_vectored::h040ffd69bebc1a9f
+0000000000009160 T <std::sys::unix::stdio::Stderr as std::io::Write>::flush::hbd50207e31083b02
+0000000000009080 T <std::sys::unix::stdio::Stderr as std::io::Write>::write::hf4402c4471f4cd4e
+0000000000009160 T <std::sys::unix::stdio::Stdout as std::io::Write>::flush::hdd42b560d294a7fc
+000000000002fbc0 T <core::str::lossy::Utf8Lossy as core::fmt::Display>::fmt::ha5c57655249682c1
+000000000000ab30 T <std::path::PrefixComponent as core::cmp::PartialEq>::eq::haac93adfd9dc6ce3
+000000000002bb10 T <core::fmt::builders::PadAdapter as core::fmt::Write>::write_str::hf0e87f119507d605
+0000000000006fb0 T <std::thread::local::AccessError as core::fmt::Debug>::fmt::h56dbff3ca6b7a035
+000000000000bdb0 T <std::sync::once::WaiterQueue as core::ops::drop::Drop>::drop::h7e1b42adbcdb3a9b
+0000000000010cc0 T <backtrace::symbolize::SymbolName as core::fmt::Display>::fmt::h5d30f824e470848e
+000000000002b6c0 t <core::ops::range::Range<Idx> as core::fmt::Debug>::fmt::h1a58a86831c89940
+00000000000229e0 T <rustc_demangle::legacy::Demangle as core::fmt::Display>::fmt::he1be78c6f9410169
+0000000000008870 t <std::io::buffered::BufWriter<W> as std::io::Write>::write::hc774f758b6db9280
+0000000000008a60 t <std::io::buffered::LineWriter<W> as std::io::Write>::write::h6d7705cf146b2e04
+000000000000cbc0 T <std::sys_common::os_str_bytes::Slice as core::fmt::Debug>::fmt::hb0068a492091e13c
+0000000000008180 T <std::sys_common::wtf8::Wtf8Buf as core::ops::deref::Deref>::deref::h87c8c06b566743b2
+0000000000010c60 T <backtrace::print::BacktraceFrameFmt as core::ops::drop::Drop>::drop::h478aea7de7fc8bd7
+00000000000081d0 T <&[u8] as std::ffi::c_str::CString::new::SpecIntoVec>::into_vec::h3e529158c1987d3b
+000000000000a7a0 t <std::io::Write::write_fmt::Adaptor<T> as core::fmt::Write>::write_str::h9746df100cc719c0
+000000000000a870 t <std::io::Write::write_fmt::Adaptor<T> as core::fmt::Write>::write_str::h9c29abf58efd0172
+000000000000b340 T <std::path::Components as core::iter::traits::iterator::Iterator>::next::h7c6452f566c94bd4
+000000000002b790 T <core::char::EscapeDebug as core::iter::traits::iterator::Iterator>::next::ha0aee5e9c91974c6
+0000000000008180 T <std::path::PathBuf as core::borrow::Borrow<std::path::Path>>::borrow::h372024a41d020805
+000000000000cf70 t <std::sys_common::poison::PoisonError<T> as core::fmt::Debug>::fmt::h325c78bf2c5efb7a
+0000000000022860 t <core::str::Split<P> as core::iter::traits::iterator::Iterator>::next::h6225f21495b6764d
+000000000000e970 T <std::panicking::begin_panic_handler::PanicPayload as core::panic::BoxMeUp>::get::h381440c33a9db36a
+000000000000e840 T <std::panicking::begin_panic_handler::PanicPayload as core::panic::BoxMeUp>::take_box::h161094c3ba5cc044
+0000000000008180 T <std::path::PathBuf as core::convert::AsRef<std::ffi::os_str::OsStr>>::as_ref::h4f096a3c63e1c801
+000000000000ead0 t <std::panicking::begin_panic::PanicPayload<A> as core::panic::BoxMeUp>::get::ha0ce738f08c53151
+000000000000ea70 t <std::panicking::begin_panic::PanicPayload<A> as core::panic::BoxMeUp>::take_box::h33db33440d315953
+000000000000c0f0 T <std::sys_common::backtrace::_print::DisplayBacktrace as core::fmt::Display>::fmt::ha8f928866ff7571e
+000000000002f740 T <core::str::lossy::Utf8LossyChunksIter as core::iter::traits::iterator::Iterator>::next::hd086a29dfcacb8ac
+0000000000008180 T <std::ffi::os_str::OsString as core::borrow::Borrow<std::ffi::os_str::OsStr>>::borrow::hcb310b5eb8d7f8ef
+00000000000057e0 T <qrand_core::rd::Rd as qrand_core::low_discrepancy_sequence::LowDiscrepancySequence>::element::hcc4b55d9ff1e2ed9
+0000000000008180 T <std::sys_common::os_str_bytes::Buf as std::sys_common::AsInner<[u8]>>::as_inner::h0b066936c115ab38
+0000000000010570 T backtrace::print::BacktraceFmt::add_context::h34d122b317fd8cc8
+0000000000010550 T backtrace::print::BacktraceFmt::new::h2f0956528c095cd7
+0000000000010580 T backtrace::print::BacktraceFmt::frame::hb644360f5e0e8df7
+0000000000010570 T backtrace::print::BacktraceFmt::finish::h108a7cddbed6cd23
+0000000000010590 T backtrace::print::BacktraceFrameFmt::symbol::h4d0a7fb7cf693036
+0000000000010630 T backtrace::print::BacktraceFrameFmt::print_raw::hbf573fe90ca0aa98
+0000000000010280 T backtrace::backtrace::Frame::ip::h69f6fdc95811c8ab
+0000000000010c70 T backtrace::backtrace::libunwind::trace::trace_fn::h62e11857b741f78c
+00000000000104f0 T backtrace::symbolize::SymbolName::as_str::ha0210e9c1a3bbac4
+00000000000561e0 b backtrace::symbolize::libbacktrace::init_state::STATE::hf8a1eed3de87affd
+0000000000010de0 t backtrace::symbolize::libbacktrace::syminfo_cb::hb33037f7a2c54883
+0000000000010f00 T backtrace::symbolize::libbacktrace::resolve::h57e48c55088287e5
+0000000000011160 t backtrace::symbolize::libbacktrace::resolve::{{closure}}::h6e4ea97d168529c0
+0000000000010dd0 t backtrace::symbolize::libbacktrace::error_cb::haf28203729442463
+0000000000010ea0 t backtrace::symbolize::libbacktrace::pcinfo_cb::ha8aba943b6bbfe4f
+00000000000102a0 T backtrace::symbolize::Symbol::name::h857615bac2ff7277
+00000000000505ac r __FRAME_END__
+000000000004b64c r __GNU_EH_FRAME_HDR
+0000000000056038 D __TMC_END__
+0000000000000320 r __abi_tag
+0000000000056038 B __bss_start
+                 w __cxa_finalize@@GLIBC_2.2.5
+                 w __cxa_thread_atexit_impl@@GLIBC_2.18
+0000000000032150 T __divti3
+00000000000051f0 t __do_global_dtors_aux
+0000000000053b50 d __do_global_dtors_aux_fini_array_entry
+0000000000056000 D __dso_handle
+                 U __errno_location@@GLIBC_2.2.5
+0000000000053b48 d __frame_dummy_init_array_entry
+                 U __fxstat@@GLIBC_2.2.5
+                 w __gmon_start__
+0000000000053b50 d __init_array_end
+0000000000053b40 d __init_array_start
+0000000000032550 T __libc_csu_fini
+00000000000324e0 T __libc_csu_init
+                 U __libc_start_main@@GLIBC_2.2.5
+000000000000dec0 t __rdl_alloc
+000000000000df10 t __rdl_dealloc
+000000000000df20 t __rdl_realloc
+0000000000015d90 t __rdos_backtrace_alloc
+00000000000114d0 t __rdos_backtrace_close
+0000000000011510 T __rdos_backtrace_create_state
+0000000000015fa0 t __rdos_backtrace_dwarf_add
+0000000000015de0 t __rdos_backtrace_free
+00000000000226e0 t __rdos_backtrace_get_view
+00000000000115b0 t __rdos_backtrace_initialize
+0000000000011460 t __rdos_backtrace_open
+0000000000011180 T __rdos_backtrace_pcinfo
+0000000000021f10 t __rdos_backtrace_qsort
+0000000000022790 t __rdos_backtrace_release_view
+0000000000011400 T __rdos_backtrace_syminfo
+0000000000015eb0 t __rdos_backtrace_vector_finish
+0000000000015df0 t __rdos_backtrace_vector_grow
+0000000000015f30 t __rdos_backtrace_vector_release
+00000000000057a0 T __rust_alloc
+00000000000057b0 T __rust_dealloc
+000000000000dfc0 T __rust_drop_panic
+000000000000fd30 T __rust_panic_cleanup
+00000000000057c0 T __rust_realloc
+000000000000fd60 T __rust_start_panic
+                 U __tls_get_addr@@GLIBC_2.3
+00000000000324d0 T __udivti3
+0000000000032120 T __umodti3
+                 U __xpg_strerror_r@@GLIBC_2.3.4
+0000000000056038 D _edata
+00000000000561e8 B _end
+0000000000032558 T _fini
+0000000000005000 t _init
+0000000000056028 d _rust_extern_with_linkage___dso_handle
+0000000000005150 T _start
+0000000000018900 t abbrev_compare
+                 U abort@@GLIBC_2.2.5
+00000000000219e0 t add_function_range
+000000000001a720 t add_ranges
+000000000001d210 t add_unit_addr
+0000000000053cd8 D anon.2bb19f2a273de07ddfc280a2a521fbf4.0.llvm.15047815585259407744
+0000000000046a80 R anon.d6e2a809bd85595982eae235e44946c3.0.llvm.11826563835478503039
+                 U bcmp@@GLIBC_2.2.5
+                 U bsearch@@GLIBC_2.2.5
+                 U close@@GLIBC_2.2.5
+0000000000056038 b completed.0
+0000000000005180 t deregister_tm_clones
+                 U dl_iterate_phdr@@GLIBC_2.2.5
+                 U dladdr@@GLIBC_2.2.5
+0000000000017e90 t dwarf_fileline
+000000000001d2b0 t dwarf_lookup_pc
+00000000000116f0 t elf_add
+0000000000048840 r elf_crc32.crc32_table
+00000000000116d0 t elf_nodebug
+0000000000013d70 t elf_nosyms
+00000000000159e0 t elf_open_debugfile_by_debuglink
+0000000000015d50 t elf_symbol_compare
+0000000000015d70 t elf_symbol_search
+0000000000013cd0 t elf_syminfo
+0000000000048640 r elf_zlib_default_dist_table
+0000000000048360 r elf_zlib_default_table
+0000000000013d90 t elf_zlib_inflate_and_verify
+0000000000014cb0 t elf_zlib_inflate_table
+00000000000111f0 t fileline_initialize
+0000000000018020 t find_address_ranges
+0000000000005240 t frame_dummy
+                 U free@@GLIBC_2.2.5
+0000000000021880 t function_addrs_compare
+00000000000202d0 t function_addrs_search
+                 U getcwd@@GLIBC_2.2.5
+                 U getenv@@GLIBC_2.2.5
+                 U getpagesize@@GLIBC_2.2.5
+                 U getpid@@GLIBC_2.2.5
+0000000000020420 t line_compare
+00000000000202b0 t line_search
+0000000000005740 T main
+                 U malloc@@GLIBC_2.2.5
+                 U memchr@@GLIBC_2.2.5
+                 U memcpy@@GLIBC_2.14
+                 U memmove@@GLIBC_2.2.5
+                 U memrchr@@GLIBC_2.2.5
+                 U memset@@GLIBC_2.2.5
+                 U mmap@@GLIBC_2.2.5
+                 U mprotect@@GLIBC_2.2.5
+                 U munmap@@GLIBC_2.2.5
+                 U open@@GLIBC_2.2.5
+0000000000013c00 t phdr_callback
+                 U posix_memalign@@GLIBC_2.2.5
+                 U pthread_attr_destroy@@GLIBC_2.2.5
+                 U pthread_attr_getstack@@GLIBC_2.2.5
+                 U pthread_attr_init@@GLIBC_2.2.5
+                 U pthread_cond_destroy@@GLIBC_2.3.2
+                 U pthread_cond_init@@GLIBC_2.3.2
+                 U pthread_cond_signal@@GLIBC_2.3.2
+                 U pthread_cond_wait@@GLIBC_2.3.2
+                 U pthread_condattr_destroy@@GLIBC_2.2.5
+                 U pthread_condattr_init@@GLIBC_2.2.5
+                 U pthread_condattr_setclock@@GLIBC_2.3.3
+                 U pthread_getattr_np@@GLIBC_2.32
+                 U pthread_getspecific@@GLIBC_2.2.5
+                 U pthread_key_create@@GLIBC_2.2.5
+                 U pthread_key_delete@@GLIBC_2.2.5
+                 U pthread_mutex_destroy@@GLIBC_2.2.5
+                 U pthread_mutex_init@@GLIBC_2.2.5
+                 U pthread_mutex_lock@@GLIBC_2.2.5
+                 U pthread_mutex_unlock@@GLIBC_2.2.5
+                 U pthread_mutexattr_destroy@@GLIBC_2.2.5
+                 U pthread_mutexattr_init@@GLIBC_2.2.5
+                 U pthread_mutexattr_settype@@GLIBC_2.2.5
+                 U pthread_rwlock_rdlock@@GLIBC_2.2.5
+                 U pthread_rwlock_unlock@@GLIBC_2.2.5
+                 U pthread_self@@GLIBC_2.2.5
+                 U pthread_setspecific@@GLIBC_2.2.5
+0000000000018920 t read_attribute
+0000000000020bd0 t read_function_entry
+0000000000020450 t read_line_header_format_entries
+000000000001d970 t read_line_info
+0000000000021a80 t read_referenced_name
+00000000000218c0 t read_referenced_name_from_attr
+0000000000017f70 t read_uint64
+                 U realloc@@GLIBC_2.2.5
+00000000000051b0 t register_tm_clones
+00000000000202f0 t report_inlined_functions
+000000000001a520 t resolve_string
+000000000000e790 T rust_begin_unwind
+000000000000fe40 T rust_eh_personality
+000000000000dea0 T rust_oom
+000000000000ece0 T rust_panic
+                 U sigaction@@GLIBC_2.2.5
+                 U sigaltstack@@GLIBC_2.2.5
+                 U signal@@GLIBC_2.2.5
+                 U snprintf@@GLIBC_2.2.5
+000000000004a7e0 r str.1
+                 U strcmp@@GLIBC_2.2.5
+                 U strlen@@GLIBC_2.2.5
+                 U strrchr@@GLIBC_2.2.5
+                 U sysconf@@GLIBC_2.2.5
+0000000000017f20 t unit_addrs_compare
+000000000001d950 t unit_addrs_search
+0000000000021ef0 t units_search
+                 U write@@GLIBC_2.2.5
+                 U writev@@GLIBC_2.2.5

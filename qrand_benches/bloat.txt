@@ -1,0 +1,420 @@
+File  .text     Size         Crate Name
+0.4%   5.8%  10.7KiB     [Unknown] add_ranges
+0.4%   5.5%  10.3KiB     [Unknown] read_line_info
+0.3%   5.0%   9.3KiB     [Unknown] elf_add
+0.3%   4.2%   7.7KiB           std __rdos_backtrace_dwarf_add
+0.2%   3.8%   7.0KiB     [Unknown] read_attribute
+0.2%   2.7%   5.0KiB           std core::num::flt2dec::strategy::dragon::format_shortest
+0.1%   2.1%   4.0KiB           std core::num::flt2dec::strategy::dragon::format_exact
+0.1%   2.0%   3.8KiB     [Unknown] elf_zlib_inflate_and_verify
+0.1%   1.8%   3.4KiB           std <rustc_demangle::legacy::Demangle as core::fmt::Display>::fmt
+0.1%   1.8%   3.4KiB           std rustc_demangle::demangle
+0.1%   1.8%   3.3KiB     [Unknown] elf_zlib_inflate_table
+0.1%   1.7%   3.2KiB     [Unknown] read_function_entry
+0.1%   1.5%   2.8KiB           std rustc_demangle::v0::Printer::print_type
+0.1%   1.3%   2.4KiB           std core::num::flt2dec::strategy::grisu::format_shortest_opt
+0.1%   1.2%   2.2KiB     [Unknown] find_address_ranges
+0.1%   1.2%   2.2KiB           std core::str::pattern::StrSearcher::new
+0.1%   1.1%   2.1KiB           std rustc_demangle::v0::Printer::print_path
+0.1%   1.0%   1.9KiB           std __rdos_backtrace_qsort
+0.1%   1.0%   1.9KiB     [Unknown] read_line_header_format_entries
+0.1%   0.9%   1.7KiB qrand_benches qrand_benches::main
+0.1%   0.9%   1.7KiB     [Unknown] dwarf_lookup_pc
+0.1%   0.8%   1.5KiB           std backtrace::print::BacktraceFrameFmt::print_raw
+0.1%   0.8%   1.5KiB           std core::fmt::Formatter::pad
+0.1%   0.8%   1.5KiB           std core::num::flt2dec::strategy::grisu::format_exact_opt
+0.1%   0.8%   1.5KiB qrand_benches qrand_benches::rd_u64_par
+0.0%   0.8%   1.4KiB           std core::fmt::float::float_to_decimal_common_exact
+0.0%   0.7%   1.4KiB           std rustc_demangle::v0::Parser::skip_path
+0.0%   0.7%   1.3KiB           std std::rt::lang_start_internal
+0.0%   0.7%   1.3KiB           std rustc_demangle::v0::Parser::skip_type
+0.0%   0.7%   1.3KiB           std std::sys_common::backtrace::_print_fmt::{{closure}}::{{closure}}
+0.0%   0.7%   1.3KiB           std rustc_demangle::v0::Printer::print_const
+0.0%   0.7%   1.2KiB           std <std::path::Components as core::iter::traits::iterator::Iterator>::next
+0.0%   0.6%   1.2KiB           std core::fmt::Formatter::pad_integral
+0.0%   0.6%   1.2KiB           std core::fmt::float::float_to_decimal_common_shortest
+0.0%   0.6%   1.2KiB           std <rustc_demangle::v0::Ident as core::fmt::Display>::fmt
+0.0%   0.6%   1.1KiB           std <core::str::lossy::Utf8LossyChunksIter as core::iter::traits::iterator::Iterato...
+0.0%   0.6%   1.1KiB     [Unknown] read_referenced_name
+0.0%   0.6%   1.0KiB           std std::path::Components::as_path
+0.0%   0.5%   1.0KiB           std <str as core::fmt::Debug>::fmt
+0.0%   0.5%    1013B           std core::str::slice_error_fail
+0.0%   0.5%    1013B           std std::sys_common::thread_local::register_dtor_fallback
+0.0%   0.5%     997B           std std::panicking::default_hook
+0.0%   0.5%     969B           std rustc_demangle::v0::Printer::print_type::{{closure}}
+0.0%   0.5%     939B           std <std::sys_common::os_str_bytes::Slice as core::fmt::Debug>::fmt
+0.0%   0.5%     931B           std core::num::bignum::Big32x40::mul_digits
+0.0%   0.5%     920B           std std::io::stdio::_print
+0.0%   0.5%     885B           std std::thread::park
+0.0%   0.5%     879B     [Unknown] elf_open_debugfile_by_debuglink
+0.0%   0.5%     860B           std std::io::buffered::BufWriter<W>::flush_buf
+0.0%   0.4%     848B           std rust_eh_personality
+0.0%   0.4%     829B           std std::io::Write::write_all_vectored
+0.0%   0.4%     808B           std compiler_builtins::int::udiv::__udivmodti4
+0.0%   0.4%     783B           std std::path::Components::parse_next_component_back
+0.0%   0.4%     782B           std std::sync::once::Once::call_inner
+0.0%   0.4%     763B           std std::sys_common::thread_local::register_dtor_fallback::run_dtors
+0.0%   0.4%     759B           std std::io::Write::write_all_vectored
+0.0%   0.4%     740B           std core::num::flt2dec::strategy::dragon::mul_pow10
+0.0%   0.4%     723B           std core::fmt::Formatter::write_formatted_parts
+0.0%   0.4%     715B           std <std::io::buffered::LineWriter<W> as std::io::Write>::write
+0.0%   0.4%     689B           std core::fmt::write
+0.0%   0.4%     689B           std std::thread::Thread::new
+0.0%   0.4%     686B           std std::env::_var_os
+0.0%   0.4%     681B           std <std::io::stdio::StdoutLock as std::io::Write>::write_all
+0.0%   0.4%     666B           std rustc_demangle::v0::Parser::ident
+0.0%   0.3%     658B           std std::sys::unix::stack_overflow::imp::signal_handler
+0.0%   0.3%     652B           std core::unicode::printable::is_printable
+0.0%   0.3%     652B           std std::env::current_dir
+0.0%   0.3%     648B           std std::panicking::default_hook::{{closure}}
+0.0%   0.3%     643B           std std::io::Write::write_all
+0.0%   0.3%     632B           std <std::io::error::Error as core::fmt::Display>::fmt
+0.0%   0.3%     627B           std core::str::from_utf8
+0.0%   0.3%     616B           std <char as core::fmt::Debug>::fmt
+0.0%   0.3%     606B           std backtrace::symbolize::libbacktrace::resolve
+0.0%   0.3%     601B           std std::sys::unix::condvar::Condvar::init
+0.0%   0.3%     586B           std std::sync::once::Once::call_once::{{closure}}
+0.0%   0.3%     581B           std backtrace::symbolize::Symbol::name
+0.0%   0.3%     564B           std std::io::stdio::stdout
+0.0%   0.3%     560B           std std::sys_common::backtrace::output_filename
+0.0%   0.3%     554B           std <core::fmt::builders::PadAdapter as core::fmt::Write>::write_str
+0.0%   0.3%     541B           std <&mut W as core::fmt::Write>::write_char
+0.0%   0.3%     540B           std <&T as core::fmt::Debug>::fmt
+0.0%   0.3%     540B           std core::fmt::num::<impl core::fmt::Debug for usize>::fmt
+0.0%   0.3%     537B           std rustc_demangle::v0::Printer::print_path_maybe_open_generics
+0.0%   0.3%     529B           std core::fmt::Formatter::pad_formatted_parts
+0.0%   0.3%     516B     [Unknown] fileline_initialize
+0.0%   0.3%     516B           std core::ptr::swap_nonoverlapping_bytes
+0.0%   0.3%     514B           std <std::sys_common::backtrace::_print::DisplayBacktrace as core::fmt::Display>::fmt
+0.0%   0.3%     514B           std <std::io::stdio::Stdout as std::io::Write>::write_fmt
+0.0%   0.3%     512B           std std::sys_common::at_exit_imp::push
+0.0%   0.3%     508B     [Unknown] resolve_string
+0.0%   0.3%     504B           std std::sys_common::thread_info::set
+0.0%   0.3%     496B           std std::path::iter_after
+0.0%   0.3%     496B           std <std::io::buffered::BufWriter<W> as std::io::Write>::write
+0.0%   0.3%     488B    qrand_core <qrand_core::rd::Rd as qrand_core::low_discrepancy_sequence::LowDiscrepancySequ...
+0.0%   0.3%     483B           std std::panicking::rust_panic_with_hook
+0.0%   0.3%     480B           std core::slice::memchr::memchr
+0.0%   0.2%     464B           std rustc_demangle::v0::Parser::skip_const
+0.0%   0.2%     447B           std std::io::Write::write_fmt
+0.0%   0.2%     428B           std std::sys_common::util::report_overflow
+0.0%   0.2%     423B           std core::fmt::builders::DebugStruct::field
+0.0%   0.2%     389B           std core::num::bignum::Big32x40::mul_pow2
+0.0%   0.2%     389B           std panic_unwind::dwarf::eh::read_encoded_pointer
+0.0%   0.2%     388B           std std::sys_common::thread_info::ThreadInfo::with::{{closure}}
+0.0%   0.2%     373B           std core::num::from_str_radix
+0.0%   0.2%     372B           std rustc_demangle::v0::Printer::print_dyn_trait
+0.0%   0.2%     369B           std <core::str::Split<P> as core::iter::traits::iterator::Iterator>::next
+0.0%   0.2%     360B           std <&T as core::fmt::Debug>::fmt
+0.0%   0.2%     349B           std std::ffi::c_str::CString::from_vec_unchecked
+0.0%   0.2%     341B           std core::fmt::num::<impl core::fmt::Display for u128>::fmt
+0.0%   0.2%     328B           std core::unicode::unicode_data::grapheme_extend::lookup
+0.0%   0.2%     316B           std <std::sync::once::WaiterQueue as core::ops::drop::Drop>::drop
+0.0%   0.2%     315B           std std::sys_common::thread_local::StaticKey::lazy_init
+0.0%   0.2%     306B           std core::fmt::builders::DebugTuple::field
+0.0%   0.2%     300B     [Unknown] report_inlined_functions
+0.0%   0.2%     296B           std core::fmt::num::imp::<impl core::fmt::Display for i32>::fmt
+0.0%   0.2%     294B           std core::fmt::num::imp::<impl core::fmt::Display for usize>::fmt
+0.0%   0.2%     294B           std core::fmt::num::imp::<impl core::fmt::Display for u32>::fmt
+0.0%   0.2%     290B           std <std::panicking::begin_panic_handler::PanicPayload as core::panic::BoxMeUp>::ta...
+0.0%   0.2%     288B           std std::sys_common::backtrace::_print_fmt::{{closure}}
+0.0%   0.2%     286B           std __rdos_backtrace_initialize
+0.0%   0.1%     279B           std core::fmt::builders::DebugInner::entry
+0.0%   0.1%     276B           std <core::str::lossy::Utf8Lossy as core::fmt::Display>::fmt
+0.0%   0.1%     275B     [Unknown] read_referenced_name_from_attr
+0.0%   0.1%     267B           std std::sys::unix::stack_overflow::imp::make_handler
+0.0%   0.1%     266B           std core::num::flt2dec::round_up
+0.0%   0.1%     266B           std rustc_demangle::v0::Printer::print_generic_arg
+0.0%   0.1%     262B           std std::thread::local::LocalKey<T>::try_with
+0.0%   0.1%     259B           std <backtrace::symbolize::SymbolName as core::fmt::Display>::fmt
+0.0%   0.1%     256B           std std::sys::unix::os::error_string
+0.0%   0.1%     256B           std std::thread::Thread::unpark
+0.0%   0.1%     253B           std std::thread::local::fast::Key<T>::try_initialize
+0.0%   0.1%     253B           std std::thread::local::fast::Key<T>::try_initialize
+0.0%   0.1%     249B           std <&T as core::fmt::Debug>::fmt
+0.0%   0.1%     247B           std std::thread::local::fast::Key<T>::try_initialize
+0.0%   0.1%     243B           std std::io::stdio::set_panic
+0.0%   0.1%     236B           std <&[u8] as std::ffi::c_str::CString::new::SpecIntoVec>::into_vec
+0.0%   0.1%     235B           std std::ffi::c_str::<impl core::convert::From<std::ffi::c_str::NulError> for std::...
+0.0%   0.1%     227B           std core::ptr::drop_in_place
+0.0%   0.1%     226B           std <char as core::fmt::Display>::fmt
+0.0%   0.1%     225B           std alloc::slice::<impl alloc::borrow::ToOwned for [T]>::to_owned
+0.0%   0.1%     223B           std std::alloc::default_alloc_error_hook
+0.0%   0.1%     220B           std <core::str::Utf8Error as core::fmt::Debug>::fmt
+0.0%   0.1%     209B           std core::ptr::swap_nonoverlapping_one
+0.0%   0.1%     207B     [Unknown] phdr_callback
+0.0%   0.1%     206B           std rustc_demangle::v0::Printer::print_lifetime_from_index
+0.0%   0.1%     206B           std core::ptr::drop_in_place
+0.0%   0.1%     205B           std <std::panicking::begin_panic_handler::PanicPayload as core::panic::BoxMeUp>::get
+0.0%   0.1%     204B           std <&mut W as core::fmt::Write>::write_str
+0.0%   0.1%     203B           std <&mut W as core::fmt::Write>::write_char
+0.0%   0.1%     200B           std core::fmt::Write::write_char
+0.0%   0.1%     200B           std <std::path::PrefixComponent as core::cmp::PartialEq>::eq
+0.0%   0.1%     199B           std <&mut W as core::fmt::Write>::write_char
+0.0%   0.1%     199B           std <&mut W as core::fmt::Write>::write_char
+0.0%   0.1%     198B          std? <std::io::Write::write_fmt::Adaptor<T> as core::fmt::Write>::write_str
+0.0%   0.1%     197B          std? <std::io::Write::write_fmt::Adaptor<T> as core::fmt::Write>::write_str
+0.0%   0.1%     196B           std core::fmt::Write::write_char
+0.0%   0.1%     196B           std core::fmt::Write::write_char
+0.0%   0.1%     180B           std __rdos_backtrace_vector_grow
+0.0%   0.1%     178B           std backtrace::symbolize::libbacktrace::syminfo_cb
+0.0%   0.1%     173B           std __rdos_backtrace_get_view
+0.0%   0.1%     172B           std core::fmt::num::<impl core::fmt::LowerHex for i128>::fmt
+0.0%   0.1%     166B           std <core::num::ParseIntError as core::fmt::Debug>::fmt
+0.0%   0.1%     164B           std rust_begin_unwind
+0.0%   0.1%     163B           std alloc::vec::Vec<T>::into_boxed_slice
+0.0%   0.1%     161B     [Unknown] read_uint64
+0.0%   0.1%     161B           std core::iter::range::<impl core::iter::traits::iterator::Iterator for core::ops::...
+0.0%   0.1%     160B           std backtrace::print::BacktraceFrameFmt::symbol
+0.0%   0.1%     158B           std <core::char::EscapeDebug as core::iter::traits::iterator::Iterator>::next
+0.0%   0.1%     158B     [Unknown] elf_syminfo
+0.0%   0.1%     158B           std core::ptr::drop_in_place
+0.0%   0.1%     156B           std __rust_start_panic
+0.0%   0.1%     154B     [Unknown] add_function_range
+0.0%   0.1%     154B     [Unknown] add_unit_addr
+0.0%   0.1%     152B           std <&T as core::fmt::Debug>::fmt
+0.0%   0.1%     152B           std <rustc_demangle::Demangle as core::fmt::Display>::fmt
+0.0%   0.1%     152B           std alloc::sync::Arc<T>::drop_slow
+0.0%   0.1%     150B           std __rdos_backtrace_create_state
+0.0%   0.1%     149B           std core::fmt::num::<impl core::fmt::UpperHex for usize>::fmt
+0.0%   0.1%     149B           std core::fmt::num::<impl core::fmt::LowerHex for u64>::fmt
+0.0%   0.1%     147B           std __rdl_realloc
+0.0%   0.1%     146B           std core::fmt::num::<impl core::fmt::UpperHex for u32>::fmt
+0.0%   0.1%     146B           std core::fmt::num::<impl core::fmt::LowerHex for i32>::fmt
+0.0%   0.1%     146B           std core::fmt::num::<impl core::fmt::UpperHex for u8>::fmt
+0.0%   0.1%     146B           std core::fmt::num::<impl core::fmt::LowerHex for i8>::fmt
+0.0%   0.1%     141B           std core::fmt::num::imp::<impl core::fmt::Display for u8>::fmt
+0.0%   0.1%     139B           std core::num::<impl core::str::FromStr for u64>::from_str
+0.0%   0.1%     133B           std core::option::expect_none_failed
+0.0%   0.1%     131B     [Unknown] dwarf_fileline
+0.0%   0.1%     129B           std <core::panic::Location as core::fmt::Display>::fmt
+0.0%   0.1%     128B           std <core::ops::range::Range<Idx> as core::fmt::Debug>::fmt
+0.0%   0.1%     126B           std core::result::Result<T,E>::unwrap_or
+0.0%   0.1%     123B           std core::ptr::drop_in_place
+0.0%   0.1%     122B           std core::ptr::drop_in_place
+0.0%   0.1%     120B           std alloc::vec::Vec<T>::drain::end_assert_failed
+0.0%   0.1%     117B           std std::panicking::try::cleanup
+0.0%   0.1%     117B           std core::ptr::drop_in_place
+0.0%   0.1%     116B           std core::slice::slice_index_order_fail
+0.0%   0.1%     116B           std core::slice::slice_index_len_fail
+0.0%   0.1%     116B           std core::panicking::panic_bounds_check
+0.0%   0.1%     115B           std __rdos_backtrace_vector_finish
+0.0%   0.1%     115B           std <&T as core::fmt::Debug>::fmt
+0.0%   0.1%     114B           std core::fmt::builders::DebugTuple::finish
+0.0%   0.1%     112B           std __rdos_backtrace_vector_release
+0.0%   0.1%     112B           std rust_panic
+0.0%   0.1%     112B           std core::ops::function::FnOnce::call_once{{vtable.shim}}
+0.0%   0.1%     110B           std <*mut T as core::fmt::Debug>::fmt
+0.0%   0.1%     110B           std std::thread::local::fast::destroy_value
+0.0%   0.1%     108B           std <std::ffi::c_str::NulError as core::fmt::Debug>::fmt
+0.0%   0.1%     106B           std core::ptr::drop_in_place
+0.0%   0.1%     105B           std <std::io::stdio::StderrRaw as std::io::Write>::write
+0.0%   0.1%     103B           std core::ptr::swap_nonoverlapping
+0.0%   0.1%     102B           std __rdos_backtrace_pcinfo
+0.0%   0.1%     102B           std <std::sys::unix::stdio::Stderr as std::io::Write>::write_vectored
+0.0%   0.1%     102B           std core::ops::function::FnOnce::call_once{{vtable.shim}}
+0.0%   0.1%     101B     [Unknown] __libc_csu_init
+0.0%   0.1%     101B           std core::option::expect_failed
+0.0%   0.1%      98B           std __rdos_backtrace_open
+0.0%   0.1%      97B           std std::thread::local::fast::destroy_value
+0.0%   0.0%      94B           std backtrace::symbolize::libbacktrace::pcinfo_cb
+0.0%   0.0%      92B           std __rdos_backtrace_syminfo
+0.0%   0.0%      92B          std? <std::panicking::begin_panic::PanicPayload<A> as core::panic::BoxMeUp>::take_box
+0.0%   0.0%      90B           std core::ptr::drop_in_place
+0.0%   0.0%      88B           std core::fmt::Arguments::new_v1_formatted
+0.0%   0.0%      87B           std std::sys_common::util::abort
+0.0%   0.0%      87B           std core::ptr::drop_in_place
+0.0%   0.0%      87B           std core::ptr::read
+0.0%   0.0%      87B           std core::fmt::ArgumentV1::new
+0.0%   0.0%      87B           std core::fmt::ArgumentV1::new
+0.0%   0.0%      87B           std core::fmt::ArgumentV1::new
+0.0%   0.0%      84B           std backtrace::symbolize::SymbolName::as_str
+0.0%   0.0%      84B           std std::rt::lang_start
+0.0%   0.0%      83B           std rustc_demangle::try_demangle
+0.0%   0.0%      83B           std <&T as core::fmt::Debug>::fmt
+0.0%   0.0%      83B           std <&T as core::fmt::Debug>::fmt
+0.0%   0.0%      83B           std <&T as core::fmt::Debug>::fmt
+0.0%   0.0%      82B           std core::ptr::drop_in_place
+0.0%   0.0%      82B           std core::ptr::drop_in_place
+0.0%   0.0%      80B           std alloc::sync::Arc<T>::drop_slow
+0.0%   0.0%      79B           std core::fmt::Formatter::pad_integral::write_prefix
+0.0%   0.0%      79B           std core::panicking::panic
+0.0%   0.0%      74B           std __divti3
+0.0%   0.0%      73B           std core::fmt::builders::DebugStruct::finish
+0.0%   0.0%      72B           std __rdl_alloc
+0.0%   0.0%      72B           std core::fmt::Arguments::new_v1
+0.0%   0.0%      71B           std __rdos_backtrace_alloc
+0.0%   0.0%      71B           std backtrace::backtrace::libunwind::trace::trace_fn
+0.0%   0.0%      69B     [Unknown] unit_addrs_compare
+0.0%   0.0%      69B           std std::sys::unix::decode_error_kind
+0.0%   0.0%      68B           std std::sys_common::util::dumb_print
+0.0%   0.0%      67B           std __rust_drop_panic
+0.0%   0.0%      67B           std core::ptr::drop_in_place
+0.0%   0.0%      67B           std core::ptr::drop_in_place
+0.0%   0.0%      66B           std <&mut W as core::fmt::Write>::write_fmt
+0.0%   0.0%      66B           std <&mut W as core::fmt::Write>::write_fmt
+0.0%   0.0%      66B           std <&mut W as core::fmt::Write>::write_fmt
+0.0%   0.0%      66B           std <&mut W as core::fmt::Write>::write_fmt
+0.0%   0.0%      63B           std core::fmt::Write::write_fmt
+0.0%   0.0%      63B           std core::fmt::Write::write_fmt
+0.0%   0.0%      63B           std core::fmt::Write::write_fmt
+0.0%   0.0%      61B           std core::fmt::Formatter::debug_tuple
+0.0%   0.0%      61B           std __rdos_backtrace_release_view
+0.0%   0.0%      61B           std __rdos_backtrace_close
+0.0%   0.0%      61B           std std::panicking::begin_panic_fmt
+0.0%   0.0%      61B           std core::mem::replace
+0.0%   0.0%      61B           std core::ops::function::FnOnce::call_once
+0.0%   0.0%      60B           std std::panicking::panic_count::is_zero_slow_path
+0.0%   0.0%      58B           std std::io::impls::<impl std::io::Write for alloc::boxed::Box<W>>::write_fmt
+0.0%   0.0%      57B           std <core::fmt::Formatter as core::fmt::Write>::write_fmt
+0.0%   0.0%      57B     [Unknown] function_addrs_compare
+0.0%   0.0%      55B           std core::fmt::float::<impl core::fmt::Debug for f64>::fmt
+0.0%   0.0%      55B           std std::sys::unix::args::imp::ARGV_INIT_ARRAY::init_wrapper
+0.0%   0.0%      54B           std core::fmt::Formatter::debug_list
+0.0%   0.0%      54B           std <core::fmt::Arguments as core::fmt::Debug>::fmt
+0.0%   0.0%      52B           std std::sys_common::backtrace::_print_fmt::{{closure}}
+0.0%   0.0%      51B           std core::panicking::panic_fmt
+0.0%   0.0%      49B           std core::fmt::float::<impl core::fmt::Display for f64>::fmt
+0.0%   0.0%      49B    qrand_core qrand_core::rd::get_sequence
+0.0%   0.0%      48B           std core::fmt::Formatter::debug_struct
+0.0%   0.0%      48B           std std::panicking::begin_panic
+0.0%   0.0%      47B     [Unknown] main
+0.0%   0.0%      47B     [Unknown] _start
+0.0%   0.0%      46B           std core::intrinsics::copy_nonoverlapping
+0.0%   0.0%      46B           std core::intrinsics::copy_nonoverlapping
+0.0%   0.0%      44B           std <std::thread::local::AccessError as core::fmt::Debug>::fmt
+0.0%   0.0%      43B           std core::str::traits::<impl core::slice::SliceIndex<str> for core::ops::range::Ran...
+0.0%   0.0%      43B           std core::str::traits::<impl core::slice::SliceIndex<str> for core::ops::range::Ran...
+0.0%   0.0%      43B           std core::str::traits::<impl core::slice::SliceIndex<str> for core::ops::range::Ran...
+0.0%   0.0%      43B           std core::str::traits::<impl core::slice::SliceIndex<str> for core::ops::range::Ran...
+0.0%   0.0%      42B           std __rust_panic_cleanup
+0.0%   0.0%      40B     [Unknown] line_compare
+0.0%   0.0%      40B           std core::ptr::mut_ptr::<impl *mut T>::offset
+0.0%   0.0%      40B           std core::num::<impl usize>::unchecked_add
+0.0%   0.0%      39B           std core::ptr::drop_in_place
+0.0%   0.0%      38B           std core::fmt::builders::DebugList::finish
+0.0%   0.0%      38B    qrand_core qrand_core::error::QrandCoreError::create_point_element_not_existing
+0.0%   0.0%      37B           std __umodti3
+0.0%   0.0%      37B    qrand_core qrand_core::rd::Rd::new
+0.0%   0.0%      35B           std core::ptr::drop_in_place
+0.0%   0.0%      35B           std core::ptr::drop_in_place
+0.0%   0.0%      33B           std core::ptr::drop_in_place
+0.0%   0.0%      33B           std core::ptr::drop_in_place
+0.0%   0.0%      33B           std core::ptr::drop_in_place
+0.0%   0.0%      33B           std core::ptr::drop_in_place
+0.0%   0.0%      33B           std core::ptr::drop_in_place
+0.0%   0.0%      33B    qrand_core core::slice::<impl [T]>::len
+0.0%   0.0%      33B           std core::cmp::impls::<impl core::cmp::PartialOrd for usize>::lt
+0.0%   0.0%      32B           std rust_oom
+0.0%   0.0%      32B           std core::ptr::drop_in_place
+0.0%   0.0%      32B           std core::ptr::drop_in_place
+0.0%   0.0%      32B           std <usize as core::iter::range::Step>::forward_unchecked
+0.0%   0.0%      32B           std core::ptr::mut_ptr::<impl *mut T>::add
+0.0%   0.0%      31B           std core::str::traits::<impl core::slice::SliceIndex<str> for core::ops::range::Ran...
+0.0%   0.0%      30B     [Unknown] elf_symbol_search
+0.0%   0.0%      30B           std core::ptr::drop_in_place
+0.0%   0.0%      30B           std core::ptr::drop_in_place
+0.0%   0.0%      30B           std core::ops::function::FnOnce::call_once{{vtable.shim}}
+0.0%   0.0%      29B           std std::rt::lang_start::{{closure}}
+0.0%   0.0%      28B           std alloc::raw_vec::capacity_overflow
+0.0%   0.0%      27B     [Unknown] units_search
+0.0%   0.0%      27B          std? <std::panicking::begin_panic::PanicPayload<A> as core::panic::BoxMeUp>::get
+0.0%   0.0%      26B           std <core::cell::BorrowMutError as core::fmt::Debug>::fmt
+0.0%   0.0%      26B           std <core::cell::BorrowError as core::fmt::Debug>::fmt
+0.0%   0.0%      26B           std backtrace::print::BacktraceFmt::new
+0.0%   0.0%      26B           std core::ptr::drop_in_place
+0.0%   0.0%      25B     [Unknown] elf_nodebug
+0.0%   0.0%      24B           std core::slice::slice_index_overflow_fail
+0.0%   0.0%      24B           std backtrace::backtrace::Frame::ip
+0.0%   0.0%      24B           std <std::process::ExitCode as std::process::Termination>::report
+0.0%   0.0%      24B           std <() as std::process::Termination>::report
+0.0%   0.0%      24B           std core::mem::swap
+0.0%   0.0%      24B           std <I as core::iter::traits::collect::IntoIterator>::into_iter
+0.0%   0.0%      23B     [Unknown] function_addrs_search
+0.0%   0.0%      23B     [Unknown] line_search
+0.0%   0.0%      23B     [Unknown] unit_addrs_search
+0.0%   0.0%      23B           std backtrace::symbolize::libbacktrace::resolve::{{closure}}
+0.0%   0.0%      23B           std core::ops::function::FnOnce::call_once{{vtable.shim}}
+0.0%   0.0%      23B           std alloc::alloc::box_free
+0.0%   0.0%      23B           std std::io::impls::<impl std::io::Write for alloc::boxed::Box<W>>::write_all
+0.0%   0.0%      23B           std std::io::impls::<impl std::io::Write for alloc::boxed::Box<W>>::write_vectored
+0.0%   0.0%      23B           std std::io::impls::<impl std::io::Write for alloc::boxed::Box<W>>::write
+0.0%   0.0%      23B           std alloc::alloc::box_free
+0.0%   0.0%      22B     [Unknown] elf_symbol_compare
+0.0%   0.0%      22B           std std::io::impls::<impl std::io::Write for alloc::boxed::Box<W>>::flush
+0.0%   0.0%      22B           std core::ptr::write
+0.0%   0.0%      21B           std panic_unwind::real_imp::panic::exception_cleanup
+0.0%   0.0%      21B          std? <std::sys_common::poison::PoisonError<T> as core::fmt::Debug>::fmt
+0.0%   0.0%      21B           std core::ptr::drop_in_place
+0.0%   0.0%      21B           std core::ptr::drop_in_place
+0.0%   0.0%      21B           std core::ptr::drop_in_place
+0.0%   0.0%      20B     [Unknown] abbrev_compare
+0.0%   0.0%      19B           std <&T as core::fmt::Display>::fmt
+0.0%   0.0%      19B           std <&T as core::fmt::Display>::fmt
+0.0%   0.0%      19B           std <std::path::Display as core::fmt::Debug>::fmt
+0.0%   0.0%      19B           std <std::error::<impl core::convert::From<alloc::string::String> for alloc::boxed:...
+0.0%   0.0%      19B           std <std::error::<impl core::convert::From<alloc::string::String> for alloc::boxed:...
+0.0%   0.0%      19B          std? <alloc::string::String as core::fmt::Display>::fmt
+0.0%   0.0%      19B           std <&T as core::fmt::Display>::fmt
+0.0%   0.0%      18B           std core::unicode::unicode_data::cc::lookup
+0.0%   0.0%      18B           std <str as core::fmt::Display>::fmt
+0.0%   0.0%      18B           std core::ops::function::FnOnce::call_once
+0.0%   0.0%      18B           std alloc::string::<impl core::convert::From<alloc::string::String> for alloc::vec:...
+0.0%   0.0%      18B           std core::ops::function::FnOnce::call_once{{vtable.shim}}
+0.0%   0.0%      17B           std <core::fmt::Formatter as core::fmt::Write>::write_char
+0.0%   0.0%      17B           std core::fmt::Formatter::write_str
+0.0%   0.0%      17B     [Unknown] elf_nosyms
+0.0%   0.0%      16B           std <&T as core::fmt::Debug>::fmt
+0.0%   0.0%      16B           std alloc::alloc::box_free
+0.0%   0.0%      16B           std alloc::alloc::box_free
+0.0%   0.0%      16B           std alloc::alloc::box_free
+0.0%   0.0%      16B           std core::ptr::drop_in_place
+0.0%   0.0%      16B           std core::ptr::drop_in_place
+0.0%   0.0%      14B           std core::fmt::builders::DebugSet::entry
+0.0%   0.0%      14B           std core::ptr::drop_in_place
+0.0%   0.0%      13B           std std::io::impls::<impl std::io::Write for alloc::boxed::Box<W>>::is_write_vectored
+0.0%   0.0%      13B           std core::ptr::drop_in_place
+0.0%   0.0%      12B           std panic_unwind::real_imp::find_eh_action::{{closure}}
+0.0%   0.0%      12B           std panic_unwind::real_imp::find_eh_action::{{closure}}
+0.0%   0.0%      12B           std core::ops::function::FnOnce::call_once{{vtable.shim}}
+0.0%   0.0%      12B           std core::ops::function::FnOnce::call_once{{vtable.shim}}
+0.0%   0.0%      11B           std core::fmt::ArgumentV1::from_usize
+0.0%   0.0%      11B           std <T as core::any::Any>::type_id
+0.0%   0.0%      11B           std std::error::Error::type_id
+0.0%   0.0%      11B           std <T as core::any::Any>::type_id
+0.0%   0.0%      11B           std <T as core::any::Any>::type_id
+0.0%   0.0%      11B           std <T as core::any::Any>::type_id
+0.0%   0.0%      10B           std core::clone::impls::<impl core::clone::Clone for usize>::clone
+0.0%   0.0%      10B           std std::sys::unix::process::process_common::ExitCode::as_i32
+0.0%   0.0%       9B           std core::str::Utf8Error::error_len
+0.0%   0.0%       9B           std core::fmt::Formatter::debug_upper_hex
+0.0%   0.0%       9B           std core::fmt::Formatter::debug_lower_hex
+0.0%   0.0%       9B           std core::fmt::Formatter::alternate
+0.0%   0.0%       9B           std <&mut W as core::fmt::Write>::write_str
+0.0%   0.0%       9B           std alloc::alloc::handle_alloc_error
+0.0%   0.0%       9B           std rustc_demangle::Demangle::as_str
+0.0%   0.0%       9B           std <backtrace::print::BacktraceFrameFmt as core::ops::drop::Drop>::drop
+0.0%   0.0%       9B           std std::sys::unix::abort_internal
+0.0%   0.0%       9B           std core::ptr::drop_in_place
+0.0%   0.0%       9B           std <&T as core::fmt::UpperHex>::fmt
+0.0%   0.0%       9B           std <&T as core::fmt::Display>::fmt
+0.0%   0.0%       8B           std __udivti3
+0.0%   0.0%       8B           std <&T as core::fmt::Debug>::fmt
+0.0%   0.0%       8B           std core::panic::PanicInfo::payload
+0.0%   0.0%       8B           std __rdos_backtrace_free
+0.0%   0.0%       8B           std std::process::abort
+0.0%   0.0%       8B           std <std::sys_common::wtf8::Wtf8Buf as core::ops::deref::Deref>::deref
+0.0%   0.0%       8B           std <&mut W as core::fmt::Write>::write_str
+0.0%   0.0%       8B           std <&mut W as core::fmt::Write>::write_str
+0.0%   0.0%       7B           std core::str::lossy::Utf8Lossy::chunks
+0.0%   0.0%       7B           std core::str::lossy::Utf8Lossy::from_bytes
+0.0%   0.0%       7B           std <std::io::stdio::StderrRaw as std::io::Write>::flush
+0.0%   0.0%       6B           std backtrace::print::BacktraceFmt::frame
+0.0%   0.0%       6B           std __rdl_dealloc
+0.0%   0.0%       6B           std core::ptr::drop_in_place
+0.0%   0.0%       6B           std core::ptr::drop_in_place
+0.0%   0.0%       5B     [Unknown] __libc_csu_fini
+0.0%   0.0%       5B           std core::num::<impl u32>::from_str_radix
+0.0%   0.0%       5B           std core::panic::PanicInfo::location
+0.0%   0.0%      64B               And 20 smaller methods. Use -n N to show more.
+6.5% 100.0% 185.8KiB               .text section size, the file size is 2.8MiB
