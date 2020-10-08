@@ -1,5 +1,5 @@
 #[cfg(test)]
-#[cfg_attr(tarpaulin, skip)]
+#[cfg(not(tarpaulin_include))]
 mod qrand_core_integration_tests {
     #[cfg(feature = "rd")]
     #[cfg(not(feature = "std_interface"))]

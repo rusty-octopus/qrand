@@ -28,10 +28,7 @@ pub use rd::get_sequence;
 #[cfg(feature = "std_interface")]
 pub use rd::rd_calculate_element;
 
-#[cfg(feature = "sobol")]
-mod sobol;
-#[cfg(feature = "sobol")]
-pub use sobol::new_sequence;
-
-// TODO: Use monomorphization instead of interface?
-// fn get_sequence<T: LowDiscrepancySequence>() -> T {}
+//#[cfg(feature = "sobol")]
+//mod sobol;
+//#[cfg(feature = "sobol")]
+//pub use sobol::new_sequence;

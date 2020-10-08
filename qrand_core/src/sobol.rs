@@ -12,10 +12,12 @@ use crate::error::QrandCoreError;
 use crate::low_discrepancy_sequence::LowDiscrepancySequence;
 
 /// Creates a new LowDiscrepancySequence
+#[cfg(not(tarpaulin_include))]
 pub fn new_sequence(dimension: usize) -> impl LowDiscrepancySequence {
     Sobol::new()
 }
 
+#[cfg(not(tarpaulin_include))]
 static DIRECTION_NUMBER: [u32; 64] = [
     0x80000000, 0x40000000, 0x20000000, 0x10000000, 0x08000000, 0x04000000, 0x02000000, 0x01000000,
     0x00800000, 0x00400000, 0x00200000, 0x00100000, 0x00080000, 0x00040000, 0x00020000, 0x00010000,
@@ -27,11 +29,13 @@ static DIRECTION_NUMBER: [u32; 64] = [
     0x80808080, 0xc0c0c0c0, 0xa0a0a0a0, 0xf0f0f0f0, 0x88888888, 0xcccccccc, 0xaaaaaaaa, 0xffffffff,
 ];
 
+#[cfg(not(tarpaulin_include))]
 struct Sobol<'a> {
     dimension: usize,
     direction_numbers: &'a [u32],
 }
 
+#[cfg(not(tarpaulin_include))]
 impl<'a> Sobol<'a> {
     fn new() -> Self {
         Sobol {
@@ -41,6 +45,7 @@ impl<'a> Sobol<'a> {
     }
 }
 
+#[cfg(not(tarpaulin_include))]
 impl<'a> LowDiscrepancySequence for Sobol<'a> {
     fn element(&self, n: usize, dim: usize) -> Result<f64, QrandCoreError> {
         if dim < self.dimension {
@@ -64,6 +69,7 @@ impl<'a> LowDiscrepancySequence for Sobol<'a> {
 }
 
 #[cfg(test)]
+#[cfg(not(tarpaulin_include))]
 mod tests {
 
     use super::*;

@@ -1,5 +1,5 @@
 #[cfg(test)]
-#[cfg_attr(tarpaulin, skip)]
+#[cfg(not(tarpaulin_include))]
 mod qrand_std_integration_tests {
     use qrand_std::create_sequence;
     use qrand_std::LowDiscrepancySequence;
