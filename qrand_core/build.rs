@@ -2,7 +2,6 @@ use std::fmt::Debug;
 use std::fmt::Display;
 
 #[derive(Debug)]
-#[cfg(not(tarpaulin_include))]
 pub enum QrandBuildScriptErrors {
     MissingEnvironmentVariable(String),
     InvalidEnvironmentVariableValue(String),
@@ -23,7 +22,6 @@ impl QrandBuildScriptErrors {
     }
 }
 
-#[cfg(not(tarpaulin_include))]
 impl Display for QrandBuildScriptErrors {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let error_message = match self {
@@ -34,7 +32,6 @@ impl Display for QrandBuildScriptErrors {
     }
 }
 
-#[cfg(not(tarpaulin_include))]
 fn parse_environment_variable_value<T, E: Debug, F: Fn(&str) -> Result<T, E>>(
     name: &str,
     type_string: &str,
@@ -64,7 +61,6 @@ fn parse_environment_variable_value<T, E: Debug, F: Fn(&str) -> Result<T, E>>(
 #[cfg(feature = "rd")]
 #[cfg(not(feature = "sobol"))]
 #[cfg(not(feature = "std_interface"))]
-#[cfg(not(tarpaulin_include))]
 fn create_rd_alphas() -> Result<(), QrandBuildScriptErrors> {
     // used to generate the alpha values
     use qrand_rd_alphas::create;
@@ -102,7 +98,6 @@ fn create_rd_alphas() -> Result<(), QrandBuildScriptErrors> {
     }
 }
 
-#[cfg(not(tarpaulin_include))]
 fn main() -> Result<(), QrandBuildScriptErrors> {
     #[cfg(feature = "rd")]
     #[cfg(not(feature = "sobol"))]
