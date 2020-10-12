@@ -47,12 +47,13 @@ impl<'a> Rd<'a> {
 }
 
 impl<'a> LowDiscrepancySequence for Rd<'a> {
+    #[inline]
     fn element(&self, n: usize, dim: usize) -> Result<f64, QrandCoreError> {
         calculate_element(&self.alphas, n, dim)
     }
 }
 
-#[inline(always)]
+#[inline]
 fn calculate_element(alphas: &[f64], n: usize, dim: usize) -> Result<f64, QrandCoreError> {
     if dim < alphas.len() {
         let value = n as f64 * alphas[dim];
@@ -68,12 +69,13 @@ fn calculate_element(alphas: &[f64], n: usize, dim: usize) -> Result<f64, QrandC
 }
 
 #[cfg(feature = "std_interface")]
-#[inline(always)]
+#[inline]
 pub fn rd_calculate_element(alphas: &[f64], n: usize, dim: usize) -> Result<f64, QrandCoreError> {
     calculate_element(alphas, n, dim)
 }
 
 #[cfg(test)]
+#[cfg(not(tarpaulin_include))]
 mod tests {
 
     use super::*;
@@ -91,5 +93,40 @@ mod tests {
         assert_eq!(0.5698402909980532, rd.element(1, 1).unwrap_or(1.1));
         assert_eq!(0.5097553324933854, rd.element(2, 0).unwrap_or(1.1));
         assert_eq!(0.13968058199610645, rd.element(2, 1).unwrap_or(1.1));
+    }
+
+    #[test]
+    fn test_element_not_existing_error() {
+        static ALPHAS: [f64; 2] = [0.7548776662466927, 0.5698402909980532];
+        let rd = Rd::new(&ALPHAS);
+        let result = rd.element(3, 3);
+        assert_eq!(
+            Err(QrandCoreError::create_point_element_not_existing()),
+            result
+        );
+    }
+
+    #[cfg(feature = "std_interface")]
+    #[test]
+    fn test_rd_calculate_element() {
+        static ALPHAS: [f64; 2] = [0.7548776662466927, 0.5698402909980532];
+        assert_eq!(0.0, rd_calculate_element(&ALPHAS, 0, 0).unwrap_or(1.1));
+        assert_eq!(0.0, rd_calculate_element(&ALPHAS, 0, 1).unwrap_or(1.1));
+        assert_eq!(
+            0.7548776662466927,
+            rd_calculate_element(&ALPHAS, 1, 0).unwrap_or(1.1)
+        );
+        assert_eq!(
+            0.5698402909980532,
+            rd_calculate_element(&ALPHAS, 1, 1).unwrap_or(1.1)
+        );
+        assert_eq!(
+            0.5097553324933854,
+            rd_calculate_element(&ALPHAS, 2, 0).unwrap_or(1.1)
+        );
+        assert_eq!(
+            0.13968058199610645,
+            rd_calculate_element(&ALPHAS, 2, 1).unwrap_or(1.1)
+        );
     }
 }

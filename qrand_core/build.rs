@@ -12,7 +12,6 @@ impl QrandBuildScriptErrors {
     fn create_missing_environment_variable(name: &str) -> Self {
         Self::MissingEnvironmentVariable(format!("Environment variable \"{}\" is missing.", name))
     }
-
     #[cfg(not(tarpaulin_include))]
     fn create_invalid_environment_variable_value(name: &str, type_string: &str) -> Self {
         Self::MissingEnvironmentVariable(format!(
@@ -23,6 +22,7 @@ impl QrandBuildScriptErrors {
 }
 
 impl Display for QrandBuildScriptErrors {
+    #[cfg(not(tarpaulin_include))]
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let error_message = match self {
             Self::MissingEnvironmentVariable(error_message) => error_message,
