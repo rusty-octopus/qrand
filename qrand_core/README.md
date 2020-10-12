@@ -154,6 +154,7 @@ quasi_monte_carlo_engine_embedded --> distribution_converter
     * Rename `std_interface` feature to `std` only?
     * Extract helper functions in new crate qrand_build_utils & test
     * Extract rd creation in new crate & test
+2. Rename error and error description
 3. qrand_std
     * Maybe use [Renaming dependencies](https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html#renaming-dependencies-in-cargotoml) to include Rd and Sobol and maybe a new interface that enables the creation of all sequences (guarded by a feature?)
 4. qrand_core examples?
