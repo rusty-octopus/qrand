@@ -120,4 +120,15 @@ mod tests {
             assert_eq!(SOBOL_2D[n].1, sobol.element(gray_code(n), 1).unwrap_or(1.1));
         }
     }
+
+    #[test]
+    fn test_element_missing() {
+        let sobol = Sobol::new();
+        let result = sobol.element(0, 3);
+        assert!(result.is_err());
+        assert_eq!(
+            Err(QrandCoreError::create_point_element_not_existing()),
+            result
+        );
+    }
 }
