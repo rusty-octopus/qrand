@@ -77,3 +77,7 @@ qrand_std_mod -down-> create_direction_numbers
 build -up-> alphas
 build -up-> direction_numbers
 ```
+
+## Links
+
+* [So you want to write object oriented Rust](https://blog.darrien.dev/posts/so-you-want-to-object/)

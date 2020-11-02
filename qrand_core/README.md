@@ -17,6 +17,25 @@
 * ~~Compile options (sobol, rd, etc.)~~
 * Parallelisation / (concurrency)
 
+## Todos
+
+1. Create solution with RD + Build script + embedded feature
+    * Emit size in bytes during execution
+    * Rename `std_interface` feature to `std` only?
+    * Extract helper functions in new crate qrand_build_utils & test
+    * Extract rd creation in new crate & test
+2. Rename error and error description
+3. qrand_std
+    * Maybe use [Renaming dependencies](https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html#renaming-dependencies-in-cargotoml) to include Rd and Sobol and maybe a new interface that enables the creation of all sequences (guarded by a feature?)
+4. qrand_core examples?
+5. Extract and heavily test own `fract` function
+    * Still necessary?
+6. Then initialisation
+    * Sobol: polynomials & direction things
+    * Rd: alphas, i.e. golden ratios
+    * Create as constants into the source code => program code vs. Stack!
+    * Consider max dimension although for Rd, e.g. output s.th. during compile time
+
 ## Design
 
 ```plantuml
@@ -146,38 +165,6 @@ quasi_monte_carlo_engine_embedded --> distribution_converter
     * Can I unit test these functions?
 * Is it necessary that the output is the one side open interval [0,1)? Or is it possible to have [0,1]?
 * Parallelisation: Skip & Leap like in Matlab?
-
-## Todo
-
-1. Create solution with RD + Build script + embedded feature
-    * Emit size in bytes during execution
-    * Rename `std_interface` feature to `std` only?
-    * Extract helper functions in new crate qrand_build_utils & test
-    * Extract rd creation in new crate & test
-2. Rename error and error description
-3. qrand_std
-    * Maybe use [Renaming dependencies](https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html#renaming-dependencies-in-cargotoml) to include Rd and Sobol and maybe a new interface that enables the creation of all sequences (guarded by a feature?)
-4. qrand_core examples?
-5. Extract and heavily test own `fract` function
-    * Still necessary?
-6. Then initialisation
-    * Sobol: polynomials & direction things
-    * Rd: alphas, i.e. golden ratios
-    * Create as constants into the source code => program code vs. Stack!
-    * Consider max dimension although for Rd, e.g. output s.th. during compile time
-
-### Build.rs
-
-0. set up a workspace project
-1. Test application with build.rs to check if this works
-2. Re-design
-    * Dependencies
-    * CFG / Features table
-3. To use the crate for embedded one must create a build.rs and println! two env variables
-    * The sequence & the dimension
-    * [build.rs - doc](https://doc.rust-lang.org/cargo/reference/build-scripts.html)
-4. build dependencies for building the data
-5. Enable a non-default feature that can be used for std use cases (qrand vs. qrand_core)
 
 ### Procedural macros
 
