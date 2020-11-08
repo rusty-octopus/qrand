@@ -17,25 +17,6 @@
 * ~~Compile options (sobol, rd, etc.)~~
 * Parallelisation / (concurrency)
 
-## Todos
-
-1. Create solution with RD + Build script + embedded feature
-    * Emit size in bytes during execution
-    * Rename `std_interface` feature to `std` only?
-    * Extract helper functions in new crate qrand_build_utils & test
-    * Extract rd creation in new crate & test
-2. Rename error and error description
-3. qrand_std
-    * Maybe use [Renaming dependencies](https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html#renaming-dependencies-in-cargotoml) to include Rd and Sobol and maybe a new interface that enables the creation of all sequences (guarded by a feature?)
-4. qrand_core examples?
-5. Extract and heavily test own `fract` function
-    * Still necessary?
-6. Then initialisation
-    * Sobol: polynomials & direction things
-    * Rd: alphas, i.e. golden ratios
-    * Create as constants into the source code => program code vs. Stack!
-    * Consider max dimension although for Rd, e.g. output s.th. during compile time
-
 ## Design
 
 ```plantuml
@@ -166,54 +147,6 @@ quasi_monte_carlo_engine_embedded --> distribution_converter
 * Is it necessary that the output is the one side open interval [0,1)? Or is it possible to have [0,1]?
 * Parallelisation: Skip & Leap like in Matlab?
 
-### Procedural macros
-
-* [quote](https://crates.io/crates/quote)
-* [syn](https://crates.io/crates/syn)
-* [RustLatam 2019 - Alex Crichton: Procedural Macros vs Sliced Bread](https://www.youtube.com/watch?v=g4SYTOc8fL0)
-* [Procuderal Macros](https://doc.rust-lang.org/reference/procedural-macros.html)
-* [procedural macro workshop](https://github.com/dtolnay/proc-macro-workshop)
-* [Introduction to procedural macros in Rust](https://tinkering.xyz/introduction-to-proc-macros/)
-* [Procedural Macros in Rust 101](https://dev.to/naufraghi/procedural-macro-in-rust-101-k3f)
-
-### Solution ideas for allocation & compilation
-
-* Make constant functions public and enable creation of alphas resp. direction numbers in a "two step" fashion
-    * Add a static array for alphas or direction numbers
-    * Create sequences with a ref to these arrays
-    * Con: No clear seperation of impl. to interface
-* Create macro that creates the array (as constant? / static?) and the sequence into the source code in one step
-    * Pro: A little bit more separation
-    * Con: No clear seperation of impl. to interface, apis of the struct are then available, although as insider "look"
-* Two steps but with even more interface separation
-    * Create one macro to create the static array to be placed "outside" of methods
-        * `compile_seq_data_?_into_binary`
-    * Create another macro to create a new sequence by using the name of the array as parameter
-    * Change `new_sequence` interface to
-        * `pub fn new_sequence(alphas: &[f64]) -> impl LowDiscrepancySequence` for Rd and
-        * `pub fn new_sequence(direction_numbers: &[u32]) -> impl LowDiscrepancySequence` for Sobol
-    * Con: Implementation detail (alphas / direction number still leaked)
-    * Pro: Simplifies interface to be used in non `no_std` use cases for qrand
-        * E.g. make the constant functions public in these cases
-    * Extend feautures heavily
-        * Macros for init, constant functions etc.
-
-### Library & executable to create direction numbers
-
-* Library that extracts the values and creates the required direction numbers
-* Exports these as u32 (u64?) array
-* Write the array as byte array to a file
-    * Consider Endianness
-* can be used with `include_bytes!` macro
-
-### Benchmarks
-
-* Rd
-    * f64 vs. u128 speed & performance
-    * also test that the result is closely the "same"
-* Sobol calculation vs. Rd calculation
-    * I.e. f64 multiplication vs. 32 XORss
-
 ### Sobol details
 
 * Direction numbers are required to calculate the points in the sequence
@@ -265,3 +198,10 @@ quasi_monte_carlo_engine_embedded --> distribution_converter
 * [cargo expand trait](https://crates.io/crates/cargo-expand)
 * [static_assertions](https://docs.rs/static_assertions/1.1.0/static_assertions/)
 * [5 essential elements of modular SW design](https://www.genui.com/insights/5-essential-elements-of-modular-software-design)
+* [quote](https://crates.io/crates/quote)
+* [syn](https://crates.io/crates/syn)
+* [RustLatam 2019 - Alex Crichton: Procedural Macros vs Sliced Bread](https://www.youtube.com/watch?v=g4SYTOc8fL0)
+* [Procuderal Macros](https://doc.rust-lang.org/reference/procedural-macros.html)
+* [procedural macro workshop](https://github.com/dtolnay/proc-macro-workshop)
+* [Introduction to procedural macros in Rust](https://tinkering.xyz/introduction-to-proc-macros/)
+* [Procedural Macros in Rust 101](https://dev.to/naufraghi/procedural-macro-in-rust-101-k3f)
