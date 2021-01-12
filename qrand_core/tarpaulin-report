@@ -1,0 +1,12 @@
+[INFO tarpaulin] Coverage Results:
+|| Uncovered Lines:
+|| src/error.rs: 23
+|| src/sobol.rs: 39
+|| ../qrand_std/src/rd.rs: 11, 17-18
+|| Tested/Total Lines:
+|| src/error.rs: 5/6 +83.33333333333334%
+|| src/rd.rs: 15/15 +100%
+|| src/sobol.rs: 17/18 +94.44444444444444%
+|| ../qrand_std/src/rd.rs: 0/3 +0%
+|| 
+88.10% coverage, 37/42 lines covered, +61.17216117216117% change in coverage

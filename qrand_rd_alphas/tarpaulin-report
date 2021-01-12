@@ -1,0 +1,6 @@
+[INFO tarpaulin] Coverage Results:
+|| Uncovered Lines:
+|| Tested/Total Lines:
+|| src/lib.rs: 14/14
+|| 
+100.00% coverage, 14/14 lines covered
