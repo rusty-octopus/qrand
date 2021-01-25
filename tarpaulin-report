@@ -1,0 +1,11 @@
+|| Uncovered Lines:
+|| qrand_core/src/error.rs: 23
+|| qrand_core/src/sobol.rs: 39
+|| Tested/Total Lines:
+|| qrand_core/src/error.rs: 5/6 +0%
+|| qrand_core/src/rd.rs: 15/15 +0%
+|| qrand_core/src/sobol.rs: 17/18 +0%
+|| qrand_rd_alphas/src/lib.rs: 14/14 +0%
+|| qrand_std/src/rd.rs: 6/6 +0%
+|| 
+96.61% coverage, 57/59 lines covered, +0% change in coverage

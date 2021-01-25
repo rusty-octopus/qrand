@@ -8,7 +8,7 @@
 extern crate core;
 use core::result::{Result, Result::Err, Result::Ok};
 
-use crate::error::QrandCoreError;
+use crate::error::Error;
 use crate::low_discrepancy_sequence::LowDiscrepancySequence;
 
 /// Creates a new LowDiscrepancySequence
@@ -42,7 +42,7 @@ impl<'a> Sobol<'a> {
 }
 
 impl<'a> LowDiscrepancySequence for Sobol<'a> {
-    fn element(&self, n: usize, dim: usize) -> Result<f64, QrandCoreError> {
+    fn element(&self, n: usize, dim: usize) -> Result<f64, Error> {
         if dim < self.dimension {
             let mut n = n;
             let mut value: u32 = 0;
@@ -58,7 +58,7 @@ impl<'a> LowDiscrepancySequence for Sobol<'a> {
             let two_pow_32: u64 = 0x100000000;
             Ok(value as f64 / two_pow_32 as f64)
         } else {
-            Err(QrandCoreError::create_point_element_not_existing())
+            Err(Error::create_point_element_not_existing())
         }
     }
 }
@@ -126,9 +126,6 @@ mod tests {
         let sobol = Sobol::new();
         let result = sobol.element(0, 3);
         assert!(result.is_err());
-        assert_eq!(
-            Err(QrandCoreError::create_point_element_not_existing()),
-            result
-        );
+        assert_eq!(Err(Error::create_point_element_not_existing()), result);
     }
 }

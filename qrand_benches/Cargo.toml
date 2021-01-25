@@ -7,6 +7,7 @@ edition = "2018"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies.qrand_core]
+version = "0.33.0"
 path = "../qrand_core"
 features = ["rd"]
 

@@ -10,7 +10,7 @@
 #![forbid(unsafe_code)]
 
 mod error;
-pub use error::QrandCoreError;
+pub use error::Error;
 mod low_discrepancy_sequence;
 pub use low_discrepancy_sequence::LowDiscrepancySequence;
 

@@ -6,7 +6,7 @@
 extern crate core;
 use core::result::{Result, Result::Err, Result::Ok};
 
-use crate::error::QrandCoreError;
+use crate::error::Error;
 use crate::low_discrepancy_sequence::LowDiscrepancySequence;
 
 // including the generated alphas.rs
@@ -48,13 +48,13 @@ impl<'a> Rd<'a> {
 
 impl<'a> LowDiscrepancySequence for Rd<'a> {
     #[inline]
-    fn element(&self, n: usize, dim: usize) -> Result<f64, QrandCoreError> {
+    fn element(&self, n: usize, dim: usize) -> Result<f64, Error> {
         calculate_element(&self.alphas, n, dim)
     }
 }
 
 #[inline]
-fn calculate_element(alphas: &[f64], n: usize, dim: usize) -> Result<f64, QrandCoreError> {
+fn calculate_element(alphas: &[f64], n: usize, dim: usize) -> Result<f64, Error> {
     if dim < alphas.len() {
         let value = n as f64 * alphas[dim];
         if value < 1.0 {
@@ -64,13 +64,13 @@ fn calculate_element(alphas: &[f64], n: usize, dim: usize) -> Result<f64, QrandC
             Ok(value - integer_part)
         }
     } else {
-        Err(QrandCoreError::create_point_element_not_existing())
+        Err(Error::create_point_element_not_existing())
     }
 }
 
 #[cfg(feature = "std_interface")]
 #[inline]
-pub fn rd_calculate_element(alphas: &[f64], n: usize, dim: usize) -> Result<f64, QrandCoreError> {
+pub fn rd_calculate_element(alphas: &[f64], n: usize, dim: usize) -> Result<f64, Error> {
     calculate_element(alphas, n, dim)
 }
 
@@ -100,10 +100,7 @@ mod tests {
         static ALPHAS: [f64; 2] = [0.7548776662466927, 0.5698402909980532];
         let rd = Rd::new(&ALPHAS);
         let result = rd.element(3, 3);
-        assert_eq!(
-            Err(QrandCoreError::create_point_element_not_existing()),
-            result
-        );
+        assert_eq!(Err(Error::create_point_element_not_existing()), result);
     }
 
     #[cfg(feature = "std_interface")]

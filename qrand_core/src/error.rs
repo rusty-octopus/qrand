@@ -7,15 +7,15 @@ extern crate core;
 use core::fmt::{Debug, Display, Formatter, Result};
 /// Public errors of qrand_core
 #[derive(Debug, PartialEq)]
-pub enum QrandCoreError {
+pub enum Error {
     /// Point element not existing error.
     /// Occurs when a point element is requested that is larger than the chosen dimension of the sequence.
     PointElementNotExisting(&'static str),
 }
 
-impl QrandCoreError {
-    pub(crate) fn create_point_element_not_existing() -> QrandCoreError {
-        QrandCoreError::PointElementNotExisting(
+impl Error {
+    pub(crate) fn create_point_element_not_existing() -> Error {
+        Error::PointElementNotExisting(
             "Point element not existing. Element of point is too large for the chosen dimension.",
         )
     }
@@ -26,7 +26,7 @@ impl QrandCoreError {
     }
 }
 
-impl Display for QrandCoreError {
+impl Display for Error {
     fn fmt(&self, f: &mut Formatter<'_>) -> Result {
         f.write_str(self.description())
     }
@@ -46,10 +46,10 @@ mod tests {
 
     #[test]
     fn test_element_not_existing() {
-        let error = QrandCoreError::create_point_element_not_existing();
+        let error = Error::create_point_element_not_existing();
         assert_eq!(
             error,
-            QrandCoreError::PointElementNotExisting("Point element not existing. Element of point is too large for the chosen dimension.")
+            Error::PointElementNotExisting("Point element not existing. Element of point is too large for the chosen dimension.")
         );
         let error_string = format!("{}", error);
         assert_eq!(

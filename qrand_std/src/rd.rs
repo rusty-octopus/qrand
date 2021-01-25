@@ -1,6 +1,6 @@
 use qrand_core::rd_calculate_element;
+use qrand_core::Error;
 use qrand_core::LowDiscrepancySequence;
-use qrand_core::QrandCoreError;
 use qrand_rd_alphas::create;
 
 struct Rd {
@@ -14,7 +14,7 @@ impl Rd {
 }
 
 impl LowDiscrepancySequence for Rd {
-    fn element(&self, n: usize, dim: usize) -> Result<f64, QrandCoreError> {
+    fn element(&self, n: usize, dim: usize) -> Result<f64, Error> {
         rd_calculate_element(&self.alphas, n, dim)
     }
 }

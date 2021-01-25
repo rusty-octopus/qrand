@@ -6,7 +6,7 @@ edition = "2018"
 license = "MIT"
 
 [dependencies.qrand_core]
-version = "0.32.0"
+version = "0.33.0"
 path = "../qrand_core" 
 features = ["rd", "std_interface"]
 

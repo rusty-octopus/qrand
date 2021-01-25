@@ -1,5 +1,9 @@
 # Todos
 
+0. Review code
+    * [https://rust-unofficial.github.io/patterns/intro.html]
+    * NewType?
+    * COnstructor?
 1. Create solution with RD + Build script + embedded feature
     * Emit size in bytes during execution
     * Rename `std_interface` feature to `std` only?
@@ -10,20 +14,19 @@
 2. Update #[cfg] usage to have real either Rd or Sobol with following pattern
     * #[cfg(all(feature = "feat1", not(feature = "feat2")))]
     * See [Advanced Cargo Features](https://blog.turbo.fish/cargo-features/)
-3. Rename error and error description
-4. qrand_std
+3. qrand_std
     * Maybe use [Renaming dependencies](https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html#renaming-dependencies-in-cargotoml) to include Rd and Sobol and maybe a new interface that enables the creation of all sequences (guarded by a feature?)
-5. qrand_core examples?
-6. freestanding (#[no_main]) real embedded example, possibly in a new crate (since we need some output in the form of defmt or similar)
+4. qrand_core examples?
+5. freestanding (#[no_main]) real embedded example, possibly in a new crate (since we need some output in the form of defmt or similar)
     * [freestanding rust binary](https://os.phil-opp.com/freestanding-rust-binary/)
-7. Extract and heavily test own `fract` function
+6. Extract and heavily test own `fract` function
     * Still necessary?
-8. Then initialisation
+7. Then initialisation
     * Sobol: polynomials & direction things
     * Rd: alphas, i.e. golden ratios
     * Create as constants into the source code => program code vs. Stack!
     * Consider max dimension although for Rd, e.g. output s.th. during compile time
-9. Rework Readme.md
+8. Rework Readme.md
 
 ## Library & executable to create direction numbers
 

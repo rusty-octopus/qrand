@@ -6,7 +6,7 @@
 extern crate core;
 use core::result::Result;
 
-use crate::error::QrandCoreError;
+use crate::error::Error;
 
 /// Interface of a low-discrepance sequence.
 pub trait LowDiscrepancySequence {
@@ -17,7 +17,7 @@ pub trait LowDiscrepancySequence {
 
     /// Get the n-th sequence element of the specified dimensions.
     /// Is used for parallel execution instead of sequential execution.
-    /// Returns `QrandCoreError` when `dim` is larger than the dimension
+    /// Returns an Error when `dim` is larger than the dimension
     /// of the sequence.
-    fn element(&self, n: usize, dim: usize) -> Result<f64, QrandCoreError>;
+    fn element(&self, n: usize, dim: usize) -> Result<f64, Error>;
 }

@@ -18,7 +18,7 @@ mod qrand_std_integration_tests {
     #[test]
     fn test_error() {
         let sequence = create_sequence(2);
-        assert_eq!(Err(qrand_core::QrandCoreError::PointElementNotExisting("Point element not existing. Element of point is too large for the chosen dimension.")), sequence.element(0, 5));
+        assert_eq!(Err(qrand_core::Error::PointElementNotExisting("Point element not existing. Element of point is too large for the chosen dimension.")), sequence.element(0, 5));
         assert_eq!(
             "Point element not existing. Element of point is too large for the chosen dimension.",
             format!("{}", sequence.element(0, 5).unwrap_err())

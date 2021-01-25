@@ -3,3 +3,4 @@ Cargo.lock
 qrand_core/tarpaulin-report.html
 qrand_std/tarpaulin-report.html
 qrand_rd_alphas/tarpaulin-report.html
+tarpaulin-report.html
